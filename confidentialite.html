@@ -13,10 +13,10 @@
     <p>BONGO — Muscle &amp; Miam</p>
   </div>
   <main>
-    <p class="maj">Dernière mise à jour : 4 septembre 2026</p>
+    <p class="maj">Dernière mise à jour : 10 septembre 2026</p>
 
     <h2>L'idée en une phrase</h2>
-    <p>Sans compte, <strong>tout reste sur ton téléphone</strong>. Si tu crées un compte (optionnel), ta progression — profil, repas, poids, séances, routines — est sauvegardée en ligne pour que tu la retrouves en changeant de téléphone. <strong>Tes photos, elles, ne quittent jamais ton appareil.</strong></p>
+    <p>Sans compte, <strong>tes données de jeu restent stockées sur ton téléphone</strong> : rien n'est conservé sur nos serveurs. Certaines fonctions passent quand même par internet (le scan d'aliments, l'activation d'un abonnement) — tout est détaillé ci-dessous. Si tu crées un compte (optionnel), ta progression est sauvegardée en ligne pour que tu la retrouves en changeant de téléphone. <strong>Tes photos, elles, ne sont jamais envoyées sur nos serveurs.</strong></p>
 
     <h2>Qui est responsable ?</h2>
     <p>L'app BONGO est éditée par Mathys Hosin, développeur indépendant en France. Contact : <a href="mailto:Mathyshosin@gmail.com">Mathyshosin@gmail.com</a>.</p>
@@ -31,20 +31,31 @@
         <li>Tes réponses au questionnaire de départ (âge, budget, niveau…)</li>
       </ul>
     </div>
-    <p>Ces données sont enregistrées localement sur ton appareil. Sans compte, rien ne quitte ton téléphone. Tes photos de progression ne sont <strong>jamais</strong> envoyées en ligne, compte ou pas.</p>
+    <p>Ces données sont enregistrées localement sur ton appareil. Sans compte, elles ne sont stockées nulle part ailleurs. Deux précisions honnêtes : certaines fonctions envoient des requêtes sur internet même sans compte (voir « Le scan » et « Abonnement » ci-dessous), et si tu utilises la sauvegarde iCloud de ton iPhone, Apple peut inclure les données de l'app (photos comprises) dans TA sauvegarde d'appareil — c'est ta sauvegarde Apple, pas nos serveurs. Nous, on n'envoie jamais tes photos en ligne, compte ou pas.</p>
 
     <h2>Si tu crées un compte (optionnel)</h2>
     <p>Le compte sert à sauvegarder ta progression et à te comparer à tes amis. Dans ce cas, sont stockés sur nos serveurs (hébergés par Supabase) :</p>
     <ul>
       <li><strong>Ton e-mail</strong> (ou ton identifiant Apple/Google si tu te connectes avec) — uniquement pour t'identifier</li>
-      <li><strong>Ton prénom et ton code ami</strong>, visibles par les joueurs qui t'ajoutent</li>
+      <li><strong>Ton prénom et ton code ami</strong> — comme dans tout jeu avec un classement, ils sont visibles des autres joueurs connectés (c'est ce qui permet de te trouver par ton code). N'utilise pas ton nom complet si tu préfères rester discret.</li>
       <li><strong>Ton résumé de jeu</strong> pour le classement : niveau, XP, série, statistiques de la carte joueur, skin et titre portés</li>
       <li><strong>Ta sauvegarde de progression</strong> — le contenu de l'app <em>sans les photos</em> : profil et réponses au questionnaire (âge, poids, objectif…), journal de repas, pesées, séances, routines, XP, badges et collection — pour la retrouver si tu changes de téléphone. Elle est conservée tant que ton compte existe, et effacée avec lui.</li>
     </ul>
     <p>Tes repas détaillés, ton poids et tes photos ne sont <strong>pas</strong> visibles par les autres joueurs.</p>
 
     <h2>Abonnement BONGO+</h2>
-    <p>Les paiements passent exclusivement par l'App Store (Apple) ou Google Play. Nous ne voyons jamais tes coordonnées bancaires. Notre prestataire RevenueCat traite un identifiant anonyme d'achat pour activer ton abonnement dans l'app.</p>
+    <p>Les paiements passent exclusivement par l'App Store (Apple) ou Google Play. Nous ne voyons jamais tes coordonnées bancaires. Notre prestataire <a href="https://www.revenuecat.com/privacy" rel="noopener">RevenueCat</a> traite un identifiant d'achat <strong>pseudonyme</strong> (une suite de caractères, pas ton nom) et ton historique d'abonnement pour activer BONGO+ dans l'app — cela fonctionne même sans compte. Si tu crées un compte, cet identifiant est rattaché à ton compte BONGO pour retrouver ton abonnement en changeant de téléphone.</p>
+
+    <h2>Nos prestataires</h2>
+    <p>Pour faire tourner BONGO, on s'appuie sur des services qui traitent des données pour notre compte, jamais pour les revendre :</p>
+    <div class="carte">
+      <ul>
+        <li><strong>Supabase</strong> (serveurs en Europe) — héberge les comptes, les sauvegardes et le classement, tant que ton compte existe.</li>
+        <li><strong>RevenueCat</strong> — gère l'activation des abonnements (identifiant pseudonyme + historique d'achat).</li>
+        <li><strong>Apple / Google</strong> — traitent le paiement et, si tu l'utilises, la connexion « Sign in with Apple / Google ».</li>
+        <li><strong>Open Food Facts</strong> — reçoit les codes-barres scannés et les recherches d'aliments (jamais ton identité).</li>
+      </ul>
+    </div>
 
     <h2>Le scan et la recherche d'aliments</h2>
     <p>Quand tu scannes un code-barres ou cherches un produit, l'app interroge la base publique <a href="https://world.openfoodfacts.org" rel="noopener">Open Food Facts</a>. Seul le code-barres ou le nom recherché est transmis — jamais ton identité.</p>
@@ -53,7 +64,8 @@
     <div class="carte">
       <ul>
         <li>❌ Pas de publicité</li>
-        <li>❌ Pas de vente ni de partage de données à des tiers</li>
+        <li>❌ Pas de vente de données, à personne</li>
+        <li>❌ Pas de partage au-delà des prestataires listés ci-dessus, qui agissent pour notre compte</li>
         <li>❌ Pas de trackers publicitaires ni d'outils d'analyse tierce</li>
         <li>❌ Pas de lecture de tes contacts, ta position ou tes autres apps</li>
       </ul>
@@ -62,8 +74,11 @@
     <h2>Supprimer tes données</h2>
     <p>Dans l'app : Profil → Réglages → <strong>« Supprimer mon compte et mes données »</strong>. Cette action efface définitivement tout ce qui est sur le téléphone <em>et</em> ton compte en ligne (e-mail, code ami, classement, sauvegarde). Tu peux aussi nous écrire pour toute demande liée à tes données (accès, rectification, suppression) : <a href="mailto:Mathyshosin@gmail.com">Mathyshosin@gmail.com</a>.</p>
 
+    <h2>Tes données de santé</h2>
+    <p>Ton poids, tes pesées et ton journal de repas sont des données liées à ta santé : on les traite avec un soin particulier. Elles ne servent qu'à faire fonctionner l'app (tes seuils, ta progression), ne sont jamais utilisées pour de la publicité, et ne partent en ligne que si tu crées un compte, uniquement pour ta sauvegarde. Les conseils de BONGO sont des repères généraux de bien-être, pas un avis médical.</p>
+
     <h2>Les mineurs</h2>
-    <p>BONGO s'adresse aux 16 ans et plus. L'app ne demande aucune donnée sensible et ne propose aucun contenu inapproprié.</p>
+    <p>BONGO s'adresse aux 16 ans et plus, et ne propose aucun contenu inapproprié.</p>
 
     <h2>Changements</h2>
     <p>Si cette politique évolue, la date en haut de cette page sera mise à jour, et les changements importants seront signalés dans l'app.</p>
