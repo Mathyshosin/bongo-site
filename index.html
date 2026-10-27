@@ -3,31 +3,609 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BONGO — Muscle &amp; Miam</title>
-  <link rel="stylesheet" href="style.css">
+  <title>BONGO — Prends du muscle à la maison, sans exploser ton budget</title>
+  <meta name="description" content="BONGO, l'app iPhone pour prendre du muscle à la maison : séances guidées sans matériel, repas simples, liste de courses selon ton budget, et Bongo, ton gorille de coach.">
+  <meta property="og:title" content="BONGO — Prends du muscle. Pas du budget.">
+  <meta property="og:description" content="Séances à la maison, repas simples, courses selon ton budget. Bongo s'occupe du plan, toi tu suis.">
+  <meta property="og:image" content="https://mathyshosin.github.io/bongo-site/img/icone-app.png">
+  <meta name="theme-color" content="#FBF9F1">
+  <link rel="icon" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --creme: #FBF9F1;
+      --creme-2: #F3EEE1;
+      --carte: #FFFFFF;
+      --encre: #233522;
+      --encre-doux: #5E6B5C;
+      --vert: #58C536;
+      --vert-fonce: #3B8F2A;
+      --foret: #1F3A1E;
+      --vert-pale: #EEF3DF;
+      --or: #D99A00;
+      --or-clair: #FFC83D;
+      --bord: rgba(35, 53, 34, 0.08);
+      --ombre: 0 18px 50px rgba(35, 53, 34, 0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: clip; }
+    body {
+      background: var(--creme);
+      color: var(--encre);
+      font-family: 'Nunito', system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.55;
+      overflow-x: clip;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    h1, h2, h3, .titre { font-family: 'Baloo 2', sans-serif; line-height: 1.02; letter-spacing: -0.02em; }
+    .conteneur { width: min(1160px, 100% - 32px); margin: 0 auto; }
+
+    /* ---------- Barre du haut ---------- */
+    .barre {
+      position: sticky; top: 12px; z-index: 50;
+      width: min(1160px, 100% - 24px); margin: 12px auto 0;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 10px 10px 10px 18px;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--bord); border-radius: 22px;
+      box-shadow: 0 8px 30px rgba(35, 53, 34, 0.08);
+    }
+    .marque { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .marque img { width: 36px; height: 36px; border-radius: 10px; }
+    .marque span { font-family: 'Baloo 2'; font-weight: 800; font-size: 24px; letter-spacing: -0.02em; }
+    .marque span b { color: var(--vert); }
+    .liens { display: flex; gap: 26px; font-weight: 700; font-size: 15px; }
+    .liens a { text-decoration: none; opacity: 0.8; }
+    .liens a:hover { opacity: 1; color: var(--vert-fonce); }
+    .bouton {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      font-family: 'Baloo 2'; font-weight: 800; letter-spacing: 0.02em;
+      text-decoration: none; border-radius: 16px; transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .bouton:hover { transform: translateY(-2px); }
+    .bouton:active { transform: translateY(1px); }
+    .bouton-vert {
+      background: var(--vert); color: #fff; padding: 12px 22px; font-size: 16px;
+      box-shadow: 0 5px 0 var(--vert-fonce);
+    }
+    .bouton-vert:hover { box-shadow: 0 7px 0 var(--vert-fonce); }
+    .bouton-store {
+      background: var(--encre); color: #fff; padding: 12px 22px 12px 18px; border-radius: 16px;
+      box-shadow: 0 10px 26px rgba(35, 53, 34, 0.25);
+    }
+    .bouton-store svg { width: 26px; height: 26px; }
+    .bouton-store .petit { display: block; font-family: 'Nunito'; font-size: 11px; font-weight: 700; opacity: .8; letter-spacing: 0.02em; line-height: 1.1; }
+    .bouton-store .grand { display: block; font-size: 21px; line-height: 1.05; letter-spacing: 0; }
+
+    /* ---------- Téléphones ---------- */
+    .tel {
+      position: relative; width: 280px; aspect-ratio: 393 / 852;
+      background: #16211A; border-radius: 46px; padding: 9px;
+      box-shadow: 0 40px 80px rgba(35, 53, 34, 0.25), inset 0 0 0 2px rgba(255,255,255,0.08);
+    }
+    .tel img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 38px; padding-top: 30px; background: #FBF9F1; }
+    .tel.sombre img { background: #101410; }
+    .tel::before {
+      content: ''; position: absolute; top: 19px; left: 50%; transform: translateX(-50%);
+      width: 78px; height: 22px; border-radius: 14px; background: #0B0F0C; z-index: 2;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero { position: relative; padding: 70px 0 40px; }
+    .hero .conteneur { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center; }
+    .pastille {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; border: 1px solid var(--bord); border-radius: 999px;
+      padding: 7px 14px 7px 8px; font-weight: 800; font-size: 13px; box-shadow: 0 4px 14px rgba(35,53,34,0.06);
+    }
+    .pastille img { width: 22px; height: 22px; }
+    .hero h1 { font-size: clamp(50px, 6.6vw, 84px); font-weight: 800; margin: 22px 0 18px; }
+    .hero h1 .vert { color: var(--vert); display: block; }
+    .hero .accroche { font-size: 20px; color: var(--encre-doux); max-width: 30ch; font-weight: 600; }
+    .hero .actions { display: flex; align-items: center; gap: 18px; margin: 30px 0 38px; flex-wrap: wrap; }
+    .hero .actions .note { font-size: 14px; font-weight: 700; color: var(--encre-doux); }
+    .trois { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; border-top: 1px solid var(--bord); padding-top: 22px; max-width: 520px; }
+    .trois div { font-weight: 800; font-size: 14px; line-height: 1.3; }
+    .trois b { display: block; font-family: 'Baloo 2'; color: var(--vert); font-size: 15px; margin-bottom: 4px; }
+    .scene { position: relative; height: 640px; }
+    .scene .tel { position: absolute; }
+    .scene .tel.a { left: 6%; top: 10px; transform: rotate(-6deg); z-index: 2; }
+    .scene .tel.b { right: 2%; top: 60px; transform: rotate(6deg); width: 262px; }
+    .flotte { position: absolute; z-index: 3; animation: flotte 5s ease-in-out infinite; filter: drop-shadow(0 12px 18px rgba(35,53,34,0.2)); }
+    .flotte.d1 { animation-delay: -1.2s; } .flotte.d2 { animation-delay: -2.4s; } .flotte.d3 { animation-delay: -3.6s; }
+    @keyframes flotte { 0%, 100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-16px) rotate(4deg); } }
+    .bulle {
+      position: absolute; z-index: 4; background: #fff; border-radius: 18px; padding: 12px 16px;
+      box-shadow: var(--ombre); display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 14px; line-height: 1.25;
+    }
+    .bulle img { width: 38px; height: 38px; }
+    .bulle small { display: block; font-weight: 700; color: var(--encre-doux); font-size: 12px; }
+
+    /* ---------- Sections ---------- */
+    section { padding: 90px 0; }
+    .surtitre { font-weight: 800; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--vert-fonce); margin-bottom: 14px; }
+    h2 { font-size: clamp(38px, 5vw, 60px); font-weight: 800; }
+    .sous { font-size: 19px; color: var(--encre-doux); font-weight: 600; margin-top: 16px; max-width: 34ch; }
+
+    .etapes { text-align: center; }
+    .etapes h2 { max-width: 16ch; margin: 0 auto; }
+    .grille-etapes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 50px; text-align: left; }
+    .etape { background: #fff; border: 1px solid var(--bord); border-radius: 28px; padding: 28px; box-shadow: 0 10px 30px rgba(35,53,34,0.05); }
+    .etape .tete { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 22px; }
+    .etape .num { font-family: 'Baloo 2'; font-weight: 800; font-size: 46px; color: var(--vert-pale); -webkit-text-stroke: 1.5px var(--vert); line-height: 1; }
+    .etape img { width: 72px; height: 72px; }
+    .etape h3 { font-size: 24px; font-weight: 800; margin-bottom: 6px; }
+    .etape p { color: var(--encre-doux); font-weight: 600; }
+
+    .bloc { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .bloc.inverse .texte { order: 2; }
+    .visuel { position: relative; display: flex; justify-content: center; padding: 30px 0; }
+    .visuel .halo { position: absolute; inset: 8% 10%; border-radius: 50%; background: radial-gradient(circle, rgba(88,197,54,0.22), transparent 65%); }
+    .visuel .tel { width: 300px; }
+    .puces { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .puce { background: #fff; border: 1px solid var(--bord); border-radius: 14px; padding: 10px 16px; font-weight: 800; font-size: 15px; box-shadow: 0 4px 14px rgba(35,53,34,0.05); display: inline-flex; align-items: center; gap: 8px; }
+    .puce img { width: 24px; height: 24px; }
+    .puce.on { background: var(--vert); color: #fff; border-color: var(--vert); box-shadow: 0 4px 0 var(--vert-fonce); }
+
+    .semaine { display: flex; gap: 8px; margin-top: 28px; }
+    .semaine div { width: 46px; height: 58px; border-radius: 14px; background: #fff; border: 1px solid var(--bord); display: grid; place-items: center; font-family: 'Baloo 2'; font-weight: 800; color: var(--encre-doux); }
+    .semaine div.ok { background: linear-gradient(180deg, #FFD86B, var(--or)); color: #fff; border: 0; box-shadow: 0 4px 0 #A87500; }
+    .semaine div img { width: 26px; height: 26px; }
+
+    /* ---------- Tenues ---------- */
+    .tenues { background: var(--foret); color: #fff; border-radius: 44px; width: min(1220px, 100% - 24px); margin: 0 auto; padding: 90px 0; position: relative; overflow: hidden; }
+    .tenues::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 0%, rgba(88,197,54,0.35), transparent 45%), radial-gradient(circle at 90% 100%, rgba(255,200,61,0.22), transparent 45%); }
+    .tenues .conteneur { position: relative; }
+    .tenues .surtitre { color: var(--or-clair); }
+    .tenues .sous { color: rgba(255,255,255,0.75); }
+    .tenues .entete { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; flex-wrap: wrap; }
+    .defile { display: flex; gap: 18px; margin-top: 50px; animation: defile 38s linear infinite; width: max-content; }
+    .defile-cadre { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+    @keyframes defile { to { transform: translateX(-50%); } }
+    .skin { width: 200px; flex: none; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: 28px; padding: 16px 16px 18px; text-align: center; }
+    .skin img { width: 100%; aspect-ratio: 1; object-fit: contain; }
+    .skin span { font-family: 'Baloo 2'; font-weight: 800; font-size: 18px; }
+    .skin small { display: block; font-size: 12px; font-weight: 800; letter-spacing: 0.12em; color: var(--or-clair); }
+    .recompenses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+    .recompense { display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: 22px; padding: 16px 18px; }
+    .recompense img { width: 54px; height: 54px; flex: none; }
+    .recompense b { font-family: 'Baloo 2'; font-size: 20px; display: block; line-height: 1.1; }
+    .recompense span { font-size: 14px; color: rgba(255,255,255,0.72); font-weight: 600; }
+
+    /* ---------- BONGO+ ---------- */
+    .plus { text-align: center; }
+    .plus h2 { max-width: 20ch; margin: 0 auto; }
+    .plus .sous { margin: 16px auto 0; }
+    .cartes-plus { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 860px; margin: 46px auto 0; text-align: left; }
+    .offre { background: #fff; border: 1px solid var(--bord); border-radius: 30px; padding: 30px; }
+    .offre.dore { background: linear-gradient(160deg, #FFF8E1, #FFFFFF 60%); border: 2px solid var(--or-clair); position: relative; box-shadow: 0 20px 50px rgba(217,154,0,0.18); }
+    .offre .tag { position: absolute; top: -14px; left: 28px; background: var(--or); color: #fff; font-weight: 800; font-size: 12px; letter-spacing: 0.1em; padding: 6px 12px; border-radius: 10px; }
+    .offre h3 { font-size: 30px; font-weight: 800; display: flex; align-items: center; gap: 10px; }
+    .offre h3 img { width: 40px; height: 40px; }
+    .offre ul { list-style: none; margin-top: 18px; display: grid; gap: 12px; }
+    .offre li { display: flex; gap: 10px; font-weight: 700; }
+    .offre li::before { content: ''; flex: none; width: 22px; height: 22px; margin-top: 2px; border-radius: 50%; background: var(--vert) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat; }
+    .offre.dore li::before { background-color: var(--or); }
+    .offre .mention { font-size: 13px; color: var(--encre-doux); margin-top: 18px; font-weight: 600; }
+
+    /* ---------- FAQ ---------- */
+    .faq .grille { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; }
+    details { background: #fff; border: 1px solid var(--bord); border-radius: 20px; padding: 18px 22px; margin-bottom: 12px; }
+    summary { cursor: pointer; font-family: 'Baloo 2'; font-weight: 800; font-size: 19px; list-style: none; display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: '+'; font-size: 26px; color: var(--vert); line-height: 1; transition: transform .2s; }
+    details[open] summary::after { transform: rotate(45deg); }
+    details p { margin-top: 10px; color: var(--encre-doux); font-weight: 600; }
+    .contact { background: var(--vert-pale); border-radius: 24px; padding: 24px; margin-top: 28px; font-weight: 700; }
+    .contact a { color: var(--vert-fonce); font-weight: 800; }
+
+    /* ---------- Final ---------- */
+    .final { padding: 40px 0 90px; }
+    .carte-finale {
+      position: relative; overflow: hidden; border-radius: 44px; padding: 70px 60px;
+      background: linear-gradient(140deg, #FFFFFF, #F1F7E6);
+      border: 1px solid var(--bord); box-shadow: var(--ombre);
+      display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 30px;
+    }
+    .carte-finale h2 { font-size: clamp(40px, 5.2vw, 66px); }
+    .carte-finale .bongo { position: relative; justify-self: center; width: min(420px, 100%); }
+    .carte-finale .bongo img { width: 100%; filter: drop-shadow(0 30px 40px rgba(35,53,34,0.25)); }
+    .carte-finale .actions { margin-top: 30px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+
+    /* ---------- Pied ---------- */
+    footer { padding: 30px 0 0; overflow: hidden; }
+    .pied-liens { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 30px; padding-bottom: 30px; border-bottom: 1px solid var(--bord); }
+    .pied-liens h4 { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--vert-fonce); margin-bottom: 12px; }
+    .pied-liens a { display: block; text-decoration: none; font-weight: 700; font-size: 15px; margin-bottom: 8px; opacity: .8; }
+    .pied-liens a:hover { opacity: 1; }
+    .pied-liens p { color: var(--encre-doux); font-weight: 600; font-size: 15px; max-width: 30ch; margin-top: 10px; }
+    .pied-bas { display: flex; justify-content: space-between; padding: 20px 0; font-size: 14px; font-weight: 700; color: var(--encre-doux); }
+    .geant { font-family: 'Baloo 2'; font-weight: 800; font-size: clamp(110px, 25vw, 330px); line-height: 0.8; text-align: center; color: transparent; background: linear-gradient(180deg, rgba(88,197,54,0.28), rgba(88,197,54,0)); -webkit-background-clip: text; background-clip: text; letter-spacing: -0.04em; user-select: none; }
+
+    /* ---------- Apparition au défilement ---------- */
+    .apparait { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1); }
+    .apparait.vu { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .apparait { opacity: 1; transform: none; transition: none; }
+      .flotte, .defile { animation: none; }
+    }
+
+    /* ---------- Téléphone (écran étroit) ---------- */
+    @media (max-width: 900px) {
+      .liens { display: none; }
+      .cache-mobile { display: none; }
+      .hero { padding-top: 40px; }
+      .hero .conteneur, .bloc, .faq .grille, .carte-finale { grid-template-columns: 1fr; }
+      .bloc.inverse .texte { order: 0; }
+      .scene { height: 520px; max-width: 420px; margin: 0 auto; width: 100%; }
+      .scene .tel.a { width: 220px; left: 0; }
+      .scene .tel.b { width: 205px; right: 0; top: 50px; }
+      .grille-etapes, .recompenses, .cartes-plus { grid-template-columns: 1fr; }
+      .pied-liens { grid-template-columns: 1fr 1fr; }
+      .carte-finale { padding: 44px 24px 0; border-radius: 32px; }
+      .tenues { border-radius: 32px; padding: 64px 0; }
+      section { padding: 64px 0; }
+      .visuel .tel { width: 260px; }
+    }
+    @media (max-width: 480px) {
+      .barre .bouton-vert { padding: 10px 14px; font-size: 14px; }
+      .trois { grid-template-columns: 1fr; gap: 10px; }
+      .trois div { display: flex; gap: 10px; }
+      .scene { height: 440px; }
+      .scene .tel.a { width: 185px; }
+      .scene .tel.b { width: 172px; }
+      .semaine div { width: 38px; height: 50px; }
+      .pied-bas { flex-direction: column; gap: 6px; }
+    }
+  </style>
 </head>
 <body>
-  <div class="hero">
-    <div class="embleme">🦍</div>
-    <h1>BONGO</h1>
-    <p>Prends du muscle à la maison, sans exploser ton budget courses.</p>
-  </div>
-  <main>
-    <h2>C'est quoi BONGO ?</h2>
-    <p>BONGO est une app iPhone et Android pensée pour les étudiants : des séances de sport à la maison sans matériel, un panier de courses généré selon ton budget, un suivi des repas tout simple, et une bonne dose de jeu — série quotidienne, sacs à récompenses et Bongo, ton gorille de coach.</p>
 
-    <h2>Besoin d'aide ?</h2>
-    <div class="carte">
-      <p>Une question, un bug, une idée ? Écris-nous :</p>
-      <p><a href="mailto:Mathyshosin@gmail.com">Mathyshosin@gmail.com</a></p>
-      <p style="margin-top: 8px; font-size: 14px;">On répond vite — l'app est développée en France 🇫🇷</p>
+  <nav class="barre">
+    <a class="marque" href="#">
+      <img src="img/icone-app.png" alt="">
+      <span>Bongo<b>.</b></span>
+    </a>
+    <div class="liens">
+      <a href="#comment">Comment ça marche</a>
+      <a href="#seances">L'app</a>
+      <a href="#plus">BONGO+</a>
+      <a href="#faq">FAQ</a>
     </div>
+    <a class="bouton bouton-vert" href="https://apps.apple.com/app/id6798278399">Télécharger</a>
+  </nav>
 
-    <h2>Tes données</h2>
-    <p>BONGO est conçue pour garder tes données sur ton téléphone. Le détail complet est dans notre <a href="confidentialite.html">politique de confidentialité</a>.</p>
-  </main>
-  <div class="pied">
-    <p>© 2026 BONGO · <a href="confidentialite.html">Politique de confidentialité</a></p>
-  </div>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="conteneur">
+      <div>
+        <span class="pastille"><img src="img/ic-flamme.webp" alt="">Sur iPhone · fait en France</span>
+        <h1>Prends du muscle.<span class="vert">Pas du budget.</span></h1>
+        <p class="accroche">Des séances à la maison, des repas simples et une liste de courses selon ton budget. Bongo fait le plan, toi tu suis.</p>
+        <div class="actions">
+          <a class="bouton bouton-store" href="https://apps.apple.com/app/id6798278399" aria-label="Télécharger dans l'App Store">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.27-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.66zM14.1 5.84c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.1 1.76-.96 2.8 1.01.08 2.05-.52 2.68-1.28z"/></svg>
+            <span><span class="petit">Télécharger dans</span><span class="grand">l'App Store</span></span>
+          </a>
+          <span class="note">Gratuit · essai BONGO+ offert</span>
+        </div>
+        <div class="trois">
+          <div><b>01</b>Ton salon devient ta salle</div>
+          <div><b>02</b>Tes courses selon ton budget</div>
+          <div><b>03</b>Un coach qui te suit chaque jour</div>
+        </div>
+      </div>
+
+      <div class="scene">
+        <div class="tel a"><img src="img/ecran-accueil.webp" alt="Écran d'accueil de BONGO"></div>
+        <div class="tel b sombre"><img src="img/ecran-seance.webp" alt="Une séance guidée dans BONGO"></div>
+        <img class="flotte cache-mobile" src="img/ic-flamme.webp" alt="" style="width:74px; left:-4%; top:30px;">
+        <img class="flotte d1" src="img/ic-haltere.webp" alt="" style="width:84px; right:-2%; top:6px;">
+        <img class="flotte d2" src="img/ic-piece.webp" alt="" style="width:58px; left:46%; bottom:20px;">
+        <img class="flotte d3" src="img/ic-eclair.webp" alt="" style="width:56px; right:6%; bottom:120px;">
+        <div class="bulle" style="left:-2%; bottom:70px;"><img src="img/ic-flamme.webp" alt=""><span>6 jours d'affilée<small>Ta série continue</small></span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ÉTAPES -->
+  <section class="etapes" id="comment">
+    <div class="conteneur">
+      <p class="surtitre apparait">C'est simple</p>
+      <h2 class="apparait">Trois minutes pour te lancer. Bongo fait le reste.</h2>
+      <div class="grille-etapes">
+        <div class="etape apparait">
+          <div class="tete"><span class="num">01</span><img src="img/ic-cible.webp" alt=""></div>
+          <h3>Dis-lui ton objectif</h3>
+          <p>Ton poids, ton but, ton budget. Quelques questions et c'est réglé.</p>
+        </div>
+        <div class="etape apparait">
+          <div class="tete"><span class="num">02</span><img src="img/ic-calendrier.webp" alt=""></div>
+          <h3>Reçois ton plan</h3>
+          <p>Tes séances de la semaine, tes repas et ta liste de courses, prêts tout de suite.</p>
+        </div>
+        <div class="etape apparait">
+          <div class="tete"><span class="num">03</span><img src="img/ic-trophee.webp" alt=""></div>
+          <h3>Suis, progresse</h3>
+          <p>Une séance, un repas noté, une pesée. Tu vois ta courbe monter, semaine après semaine.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SÉANCES -->
+  <section id="seances">
+    <div class="conteneur bloc">
+      <div class="texte apparait">
+        <p class="surtitre">Séances guidées</p>
+        <h2>Ton salon suffit. Pas besoin de salle.</h2>
+        <p class="sous">Des séances sans matériel, expliquées exercice par exercice. Tu choisis la durée, Bongo compte avec toi.</p>
+        <div class="puces">
+          <span class="puce">15 min</span>
+          <span class="puce on">30 min</span>
+          <span class="puce">45 min</span>
+          <span class="puce"><img src="img/ic-maison.webp" alt="">0 matériel</span>
+        </div>
+      </div>
+      <div class="visuel apparait">
+        <div class="halo"></div>
+        <div class="tel"><img src="img/ecran-sport.webp" alt="L'onglet séances de BONGO" loading="lazy"></div>
+        <div class="bulle" style="right:2%; top:22%;"><img src="img/ic-haltere.webp" alt=""><span>Bas du corps<small>30 min · +50 XP</small></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPAS -->
+  <section>
+    <div class="conteneur bloc inverse">
+      <div class="texte apparait">
+        <p class="surtitre">Repas</p>
+        <h2>Mange assez. Sans compter chaque calorie.</h2>
+        <p class="sous">Écris ce que tu as mangé comme tu le dirais à un pote. Bongo calcule tes protéines et te dit ce qu'il manque.</p>
+        <div class="puces">
+          <span class="puce"><img src="img/ic-proteine.webp" alt="">Protéines</span>
+          <span class="puce"><img src="img/ic-assiette.webp" alt="">Calories</span>
+          <span class="puce"><img src="img/ic-chrono.webp" alt="">10 secondes</span>
+        </div>
+      </div>
+      <div class="visuel apparait">
+        <div class="halo"></div>
+        <div class="tel"><img src="img/ecran-repas.webp" alt="L'onglet repas de BONGO" loading="lazy"></div>
+        <div class="bulle" style="left:0; bottom:22%;"><img src="img/ic-proteine.webp" alt=""><span>+42 g de protéines<small>riz, poulet, brocolis</small></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section>
+    <div class="conteneur bloc">
+      <div class="texte apparait">
+        <p class="surtitre">Courses</p>
+        <h2>Ton panier, calé sur ton budget.</h2>
+        <p class="sous">Tu donnes ton budget de la semaine, Bongo te sort la liste qui te nourrit vraiment. Étudiant compatible.</p>
+        <div class="puces">
+          <span class="puce">15 €</span>
+          <span class="puce on">25 €</span>
+          <span class="puce">40 €</span>
+          <span class="puce"><img src="img/ic-chariot.webp" alt="">Liste prête</span>
+        </div>
+      </div>
+      <div class="visuel apparait">
+        <div class="halo"></div>
+        <div class="tel"><img src="img/ecran-courses.webp" alt="L'onglet courses de BONGO" loading="lazy"></div>
+        <div class="bulle" style="right:0; bottom:26%;"><img src="img/ic-piece.webp" alt=""><span>24,40 € la semaine<small>86 g de protéines par jour</small></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SÉRIE -->
+  <section>
+    <div class="conteneur bloc inverse">
+      <div class="texte apparait">
+        <p class="surtitre">Chaque jour</p>
+        <h2>Garde ta série. Regarde-toi changer.</h2>
+        <p class="sous">Une mission par jour, une flamme qui grandit, une courbe de poids qui monte. Le plus dur, c'est de commencer.</p>
+        <div class="semaine" aria-label="Série de la semaine">
+          <div class="ok"><img src="img/ic-flamme.webp" alt=""></div>
+          <div class="ok"><img src="img/ic-flamme.webp" alt=""></div>
+          <div class="ok"><img src="img/ic-flamme.webp" alt=""></div>
+          <div class="ok"><img src="img/ic-flamme.webp" alt=""></div>
+          <div class="ok"><img src="img/ic-flamme.webp" alt=""></div>
+          <div>S</div>
+          <div>D</div>
+        </div>
+      </div>
+      <div class="visuel apparait">
+        <div class="halo"></div>
+        <img src="img/bongo-flex-a.webp" alt="Bongo, le gorille coach, qui montre ses muscles" loading="lazy" style="width:min(420px, 90%); position:relative; filter: drop-shadow(0 30px 40px rgba(35,53,34,0.22));">
+        <div class="bulle" style="left:0; top:14%;"><img src="img/ic-trophee.webp" alt=""><span>+2,5 kg en 4 semaines<small>ta courbe monte</small></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TENUES & RÉCOMPENSES -->
+  <section class="tenues" id="tenues">
+    <div class="conteneur">
+      <div class="entete">
+        <div class="apparait">
+          <p class="surtitre">À débloquer</p>
+          <h2>Chaque séance te rapporte quelque chose.</h2>
+        </div>
+        <p class="sous apparait">De l'XP, des sacs à ouvrir et des tenues pour Bongo. Tu progresses, lui aussi.</p>
+      </div>
+    </div>
+    <div class="defile-cadre">
+      <div class="defile">
+        <div class="skin"><img src="img/skin-roi.webp" alt="" loading="lazy"><small>LÉGENDAIRE</small><span>Roi Bongo</span></div>
+        <div class="skin"><img src="img/skin-ninja.webp" alt="" loading="lazy"><small>RARE</small><span>Bongo Ninja</span></div>
+        <div class="skin"><img src="img/skin-astronaute.webp" alt="" loading="lazy"><small>LÉGENDAIRE</small><span>Bongo Cosmique</span></div>
+        <div class="skin"><img src="img/skin-boxe.webp" alt="" loading="lazy"><small>RARE</small><span>Bongo Champ</span></div>
+        <div class="skin"><img src="img/skin-chef.webp" alt="" loading="lazy"><small>COMMUN</small><span>Bongo Cuistot</span></div>
+        <div class="skin"><img src="img/skin-pirate.webp" alt="" loading="lazy"><small>ÉPIQUE</small><span>Bongo Pirate</span></div>
+        <div class="skin"><img src="img/skin-superhero.webp" alt="" loading="lazy"><small>ÉPIQUE</small><span>Super Bongo</span></div>
+        <div class="skin"><img src="img/skin-surf.webp" alt="" loading="lazy"><small>COMMUN</small><span>Bongo Surfeur</span></div>
+        <div class="skin" aria-hidden="true"><img src="img/skin-roi.webp" alt="" loading="lazy"><small>LÉGENDAIRE</small><span>Roi Bongo</span></div>
+        <div class="skin" aria-hidden="true"><img src="img/skin-ninja.webp" alt="" loading="lazy"><small>RARE</small><span>Bongo Ninja</span></div>
+        <div class="skin" aria-hidden="true"><img src="img/skin-astronaute.webp" alt="" loading="lazy"><small>LÉGENDAIRE</small><span>Bongo Cosmique</span></div>
+        <div class="skin" aria-hidden="true"><img src="img/skin-boxe.webp" alt="" loading="lazy"><small>RARE</small><span>Bongo Champ</span></div>
+        <div class="skin" aria-hidden="true"><img src="img/skin-chef.webp" alt="" loading="lazy"><small>COMMUN</small><span>Bongo Cuistot</span></div>
+        <div class="skin" aria-hidden="true"><img src="img/skin-pirate.webp" alt="" loading="lazy"><small>ÉPIQUE</small><span>Bongo Pirate</span></div>
+        <div class="skin" aria-hidden="true"><img src="img/skin-superhero.webp" alt="" loading="lazy"><small>ÉPIQUE</small><span>Super Bongo</span></div>
+        <div class="skin" aria-hidden="true"><img src="img/skin-surf.webp" alt="" loading="lazy"><small>COMMUN</small><span>Bongo Surfeur</span></div>
+      </div>
+    </div>
+    <div class="conteneur">
+      <div class="recompenses">
+        <div class="recompense apparait"><img src="img/ic-eclair.webp" alt=""><div><b>+50 XP</b><span>à chaque séance terminée</span></div></div>
+        <div class="recompense apparait"><img src="img/ic-sac.webp" alt=""><div><b>1 sac par semaine</b><span>tenues, titres, recettes</span></div></div>
+        <div class="recompense apparait"><img src="img/ic-couronne.webp" alt=""><div><b>Des niveaux</b><span>de Brindille à Monstre</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BONGO+ -->
+  <section class="plus" id="plus">
+    <div class="conteneur">
+      <p class="surtitre apparait">Gratuit ou BONGO+</p>
+      <h2 class="apparait">Commence gratuitement. Passe à la vitesse supérieure.</h2>
+      <p class="sous apparait">BONGO est gratuit à télécharger. BONGO+ débloque tout, avec un essai gratuit pour tester.</p>
+      <div class="cartes-plus">
+        <div class="offre apparait">
+          <h3><img src="img/ic-pousse.webp" alt="">Gratuit</h3>
+          <ul>
+            <li>2 séances guidées par semaine</li>
+            <li>Le suivi des repas et des protéines</li>
+            <li>Ta série, tes missions, ta courbe de poids</li>
+          </ul>
+        </div>
+        <div class="offre dore apparait">
+          <span class="tag">ESSAI GRATUIT</span>
+          <h3><img src="img/ic-couronne.webp" alt="">BONGO+</h3>
+          <ul>
+            <li>Séances guidées illimitées</li>
+            <li>Ta liste de courses complète selon ton budget</li>
+            <li>Le scanner de code-barres</li>
+            <li>Le parcours guidé et les routines repas</li>
+          </ul>
+          <p class="mention">Prix et durée de l'essai affichés dans l'app. Abonnement sans engagement, annulable à tout moment depuis les réglages de ton iPhone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="conteneur grille">
+      <div class="apparait">
+        <p class="surtitre">FAQ</p>
+        <h2>Tes questions.</h2>
+        <div class="contact">
+          Une question, un bug, une idée ?<br>
+          Écris-nous : <a href="mailto:Mathyshosin@gmail.com">Mathyshosin@gmail.com</a><br>
+          On répond vite.
+        </div>
+      </div>
+      <div class="apparait">
+        <details open>
+          <summary>J'ai besoin de matériel ?</summary>
+          <p>Non. Toutes les séances se font au poids du corps, dans ta chambre ou ton salon. Si tu as une barre de traction, Bongo peut s'en servir, mais ce n'est pas obligatoire.</p>
+        </details>
+        <details>
+          <summary>C'est pour qui ?</summary>
+          <p>Pour tous ceux qui veulent prendre du muscle sans salle et sans se ruiner, surtout les étudiants et les débutants. Le plan s'adapte à ton niveau.</p>
+        </details>
+        <details>
+          <summary>BONGO est gratuit ?</summary>
+          <p>Oui, l'app est gratuite et tu peux t'entraîner sans payer. BONGO+ débloque tout le reste, avec un essai gratuit. Le prix exact est affiché dans l'app avant tout paiement.</p>
+        </details>
+        <details>
+          <summary>Comment j'annule BONGO+ ?</summary>
+          <p>Dans Réglages de ton iPhone → ton nom → Abonnements → BONGO. L'annulation prend effet à la fin de la période en cours.</p>
+        </details>
+        <details>
+          <summary>Et sur Android ?</summary>
+          <p>BONGO est disponible sur iPhone. La version Android arrive.</p>
+        </details>
+        <details>
+          <summary>Mes données sont en sécurité ?</summary>
+          <p>BONGO garde un maximum de choses sur ton téléphone. Tout est détaillé dans notre <a href="confidentialite.html">politique de confidentialité</a>.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="final">
+    <div class="conteneur">
+      <div class="carte-finale apparait">
+        <div>
+          <p class="surtitre">Prêt ?</p>
+          <h2>Ta transfo commence par une séance.</h2>
+          <p class="sous">Télécharge BONGO, réponds à quelques questions, et Bongo t'attend pour la première.</p>
+          <div class="actions">
+            <a class="bouton bouton-store" href="https://apps.apple.com/app/id6798278399" aria-label="Télécharger dans l'App Store">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.27-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.66zM14.1 5.84c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.1 1.76-.96 2.8 1.01.08 2.05-.52 2.68-1.28z"/></svg>
+              <span><span class="petit">Télécharger dans</span><span class="grand">l'App Store</span></span>
+            </a>
+            <span class="note" style="font-weight:700; color: var(--encre-doux); font-size:14px;">iPhone · Android arrive</span>
+          </div>
+        </div>
+        <div class="bongo">
+          <img src="img/bongo-fete.webp" alt="Bongo qui fait la fête" loading="lazy">
+          <img class="flotte" src="img/ic-etoile.webp" alt="" style="width:60px; left:0; top:10%;">
+          <img class="flotte d2" src="img/ic-couronne.webp" alt="" style="width:70px; right:0; top:0;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="conteneur">
+      <div class="pied-liens">
+        <div>
+          <a class="marque" href="#"><img src="img/icone-app.png" alt=""><span>Bongo<b>.</b></span></a>
+          <p>Prends du muscle à la maison, sans exploser ton budget courses.</p>
+        </div>
+        <div>
+          <h4>L'app</h4>
+          <a href="#comment">Comment ça marche</a>
+          <a href="#seances">Séances</a>
+          <a href="#tenues">Récompenses</a>
+          <a href="#plus">BONGO+</a>
+        </div>
+        <div>
+          <h4>Aide</h4>
+          <a href="#faq">FAQ</a>
+          <a href="mailto:Mathyshosin@gmail.com">Contact</a>
+        </div>
+        <div>
+          <h4>Légal</h4>
+          <a href="confidentialite.html">Confidentialité</a>
+          <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Conditions d'utilisation</a>
+        </div>
+      </div>
+      <div class="pied-bas">
+        <span>© 2026 BONGO · fait en France</span>
+        <span>Bouge. Mange. Deviens fort.</span>
+      </div>
+    </div>
+    <div class="geant" aria-hidden="true">BONGO</div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver((entrees) => {
+      entrees.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('vu'); obs.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.apparait').forEach((el, i) => {
+      el.style.transitionDelay = (el.parentElement.querySelectorAll(':scope > .apparait').length > 1 ? (Array.from(el.parentElement.children).indexOf(el) % 4) * 90 : 0) + 'ms';
+      obs.observe(el);
+    });
+  </script>
 </body>
 </html>
