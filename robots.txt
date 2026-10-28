@@ -53,4 +53,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://mathyshosin.github.io/bongo-site/sitemap.xml
+Sitemap: https://bongoapp.fr/sitemap.xml

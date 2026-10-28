@@ -1,11 +1,11 @@
 # BONGO — texte complet des guides
 
-Source : https://mathyshosin.github.io/bongo-site/ · App : https://apps.apple.com/fr/app/bongo-prise-de-masse/id6798278399
+Source : https://bongoapp.fr/ · App : https://apps.apple.com/fr/app/bongo-prise-de-masse/id6798278399
 
 
 
 # Prendre de la masse sans salle : le programme complet à la maison
-URL : https://mathyshosin.github.io/bongo-site/guides/prise-de-masse-sans-salle/
+URL : https://bongoapp.fr/guides/prise-de-masse-sans-salle/
 
 Oui, on peut prendre du muscle sans salle de sport. Le programme maison au poids du corps, 3 à 4 séances par semaine, et comment progresser sans matériel.
 
@@ -74,7 +74,7 @@ Questions fréquentes :
   Non. La whey est pratique mais pas obligatoire : œufs, lentilles, fromage blanc, thon et poulet couvrent les besoins pour beaucoup moins cher.
 
 # Prise de masse petit budget : la liste de courses à 25 € par semaine
-URL : https://mathyshosin.github.io/bongo-site/guides/prise-de-masse-petit-budget/
+URL : https://bongoapp.fr/guides/prise-de-masse-petit-budget/
 
 Prendre de la masse quand on est étudiant et fauché : la liste de courses à 25 € par semaine, les aliments les plus rentables en protéines et une journée type.
 
@@ -163,7 +163,7 @@ Questions fréquentes :
   Oui. Œufs, produits laitiers, lentilles, pois chiches, tofu et flocons d'avoine couvrent les besoins en protéines. Il faut simplement varier les sources.
 
 # Combien de protéines par jour pour prendre du muscle ?
-URL : https://mathyshosin.github.io/bongo-site/guides/combien-de-proteines-par-jour/
+URL : https://bongoapp.fr/guides/combien-de-proteines-par-jour/
 
 Pour prendre du muscle, visez environ 1,6 g de protéines par kilo de poids de corps et par jour (jusqu'à 2,2 g). Le tableau par poids, les meilleures sources et comment les répartir.
 
@@ -242,7 +242,7 @@ Questions fréquentes :
   Non. C'est une source pratique, mais les œufs, le fromage blanc, les légumineuses et la viande couvrent les besoins aussi bien, souvent pour moins cher.
 
 # Combien de calories pour prendre du poids (et du muscle) ?
-URL : https://mathyshosin.github.io/bongo-site/guides/combien-de-calories-pour-prendre-du-poids/
+URL : https://bongoapp.fr/guides/combien-de-calories-pour-prendre-du-poids/
 
 Pour prendre du poids proprement, mangez 300 à 500 kcal de plus que vos dépenses. La méthode simple pour calculer vos besoins, et comment ajuster selon la balance.
 
@@ -299,7 +299,7 @@ Questions fréquentes :
   Le plus souvent, on surestime ce qu'on mange : une journée copieuse suivie d'une journée légère s'annulent. Notez vos repas quelques jours pour voir votre vraie moyenne.
 
 # Je mange beaucoup mais je ne grossis pas : que faire ?
-URL : https://mathyshosin.github.io/bongo-site/guides/je-mange-mais-je-ne-grossis-pas/
+URL : https://bongoapp.fr/guides/je-mange-mais-je-ne-grossis-pas/
 
 Vous avez l'impression de manger beaucoup sans prendre un gramme ? Les vraies raisons (et ce n'est pas un métabolisme « bizarre »), plus 8 astuces concrètes pour enfin prendre du poids.
 
@@ -356,7 +356,7 @@ Questions fréquentes :
   Ce n'est pas obligatoire, mais une collation le soir (fromage blanc, lait) est une façon simple d'ajouter des calories et des protéines quand on a du mal à manger assez.
 
 # Exercices au poids du corps pour débutant : les 10 essentiels
-URL : https://mathyshosin.github.io/bongo-site/guides/exercices-poids-du-corps-debutant/
+URL : https://bongoapp.fr/guides/exercices-poids-du-corps-debutant/
 
 Les 10 meilleurs exercices au poids du corps pour débuter la musculation à la maison, avec la bonne technique, la version facile et la version difficile de chacun.
 
@@ -425,3 +425,298 @@ Questions fréquentes :
   Mieux vaut 3 séries proches de votre maximum, 3 fois par semaine, que 100 pompes tous les jours. Le muscle progresse pendant le repos.
 - Peut-on faire les exercices tous les jours ?
   On peut bouger tous les jours, mais un même muscle a besoin d'environ 48 heures pour récupérer. Alternez le haut et le bas du corps, ou gardez des jours de repos.
+
+# Programme prise de masse débutant : le plan complet sur 12 semaines
+URL : https://bongoapp.fr/guides/programme-prise-de-masse-debutant/
+
+Le programme de prise de masse pour débutant sur 12 semaines, à la maison : séances semaine par semaine, progression, alimentation et repères pour savoir si ça marche.
+
+En bref :
+- 12 semaines : 4 semaines pour apprendre, 4 pour progresser, 4 pour intensifier.
+- 3 séances par semaine au début, 4 à partir de la semaine 5.
+- Chaque semaine : +1 à 2 répétitions ou une variante plus dure.
+- Objectif balance : +0,25 à +0,5 kg par semaine, soit 3 à 6 kg en 12 semaines.
+
+## Semaines 1 à 4 : apprendre les mouvements
+
+Trois séances par semaine (par exemple lundi, mercredi, vendredi), en circuit sur tout le corps : squats, pompes (version facile si besoin), rowing sous une table, fentes arrière et gainage. 3 tours, 8 à 12 répétitions par exercice, 60 à 90 secondes de repos.
+
+Le but de ce premier mois n'est pas de vous épuiser : c'est d'apprendre la bonne technique et de créer l'habitude.
+
+## Semaines 5 à 8 : passer à 4 séances
+
+ | | Jour | Séance | Exemple d'exercices
+
+ | Lundi | Haut du corps · poussée | Pompes, dips entre deux chaises, pompes piquées
+
+ | Mardi | Bas du corps | Squats, squat bulgare, pont fessier, mollets
+
+ | Jeudi | Haut du corps · tirage | Rowing sous une table, tractions si barre, superman
+
+ | Samedi | Corps entier | Fentes, pompes, rowing, gainage latéral
+
+3 à 4 séries par exercice, la dernière répétition doit être difficile.
+
+## Semaines 9 à 12 : intensifier
+
+- Passez aux variantes difficiles : pompes pieds surélevés, squat bulgare, pont fessier sur une jambe.
+
+- Ralentissez la descente : 3 secondes vers le bas.
+
+- Ajoutez une 4e série sur les exercices qui progressent le moins.
+
+- Utilisez un sac à dos chargé de livres comme lest.
+
+## L'alimentation pendant les 12 semaines
+
+- Calories : 300 à 500 kcal de plus que vos dépenses (voir le guide des calories).
+
+- Protéines : environ 1,6 g par kilo, sur 3 à 5 repas (voir le guide des protéines).
+
+- Sommeil : 7 à 9 heures. C'est pendant le repos que le muscle se construit.
+
+## Comment savoir si le programme marche
+
+ | | Repère | À la semaine 4 | À la semaine 12
+
+ | Poids | +1 à +2 kg | +3 à +6 kg
+
+ | Pompes d'affilée | +3 à +5 | souvent le double du départ
+
+ | Tour de bras | peu de changement | +1 à +2 cm
+
+Si le poids ne monte pas pendant deux semaines, mangez un peu plus. Si la force stagne, dormez plus et vérifiez que vos séries sont vraiment difficiles.
+
+BONGO déroule ce type de programme pour vous : il choisit la séance du jour, adapte la difficulté et suit votre poids chaque semaine.
+
+Questions fréquentes :
+- Combien de séances par semaine pour un débutant en prise de masse ?
+  Trois séances par semaine pendant le premier mois, puis quatre si la récupération suit. Plus n'est pas forcément mieux : le muscle progresse pendant le repos.
+- Combien de kilos peut-on prendre en 3 mois ?
+  Environ 3 à 6 kg pour un débutant avec un léger surplus calorique, dont une bonne partie de muscle si l'entraînement est régulier.
+- Faut-il changer de programme toutes les semaines ?
+  Non. Gardez les mêmes exercices et rendez-les un peu plus difficiles chaque semaine. Changer sans arrêt empêche de mesurer ses progrès.
+
+# 10 repas de prise de masse pas chers et rapides (moins de 2 €)
+URL : https://bongoapp.fr/guides/repas-prise-de-masse-pas-cher/
+
+10 idées de repas pour la prise de masse, pas chers, rapides et riches en protéines : pâtes au thon, riz aux œufs, porridge, chili de lentilles… avec protéines, calories et prix.
+
+En bref :
+- La formule gagnante : un féculent + une protéine + une matière grasse.
+- Chaque repas ci-dessous coûte entre 0,70 et 1,80 € et apporte 22 à 40 g de protéines.
+- Préparez-en en grande quantité : la plupart se gardent 3 jours au frigo.
+- Valeurs approximatives, calculées à partir de la table Ciqual de l'ANSES.
+
+## Les 10 repas
+
+ | | Repas | Ingrédients | Protéines | Calories | Prix
+
+ | Pâtes au thon | 120 g de pâtes crues, 1 boîte de thon, huile d'olive, sauce tomate | ≈ 40 g | ≈ 700 kcal | ≈ 1,80 €
+
+ | Riz aux œufs | 100 g de riz cru, 3 œufs, légumes surgelés, huile | ≈ 26 g | ≈ 700 kcal | ≈ 1,10 €
+
+ | Porridge du costaud | 80 g de flocons d'avoine, 300 ml de lait, banane, beurre de cacahuète | ≈ 25 g | ≈ 650 kcal | ≈ 0,80 €
+
+ | Chili de lentilles | 80 g de lentilles sèches, riz, tomates, épices | ≈ 24 g | ≈ 600 kcal | ≈ 0,70 €
+
+ | Omelette pommes de terre | 4 œufs, 250 g de pommes de terre, fromage râpé | ≈ 36 g | ≈ 680 kcal | ≈ 1,60 €
+
+ | Semoule pois chiches | 100 g de semoule crue, ½ boîte de pois chiches, huile, légumes | ≈ 20 g | ≈ 650 kcal | ≈ 0,80 €
+
+ | Wrap œufs-fromage | 2 tortillas, 3 œufs brouillés, fromage râpé, salade | ≈ 34 g | ≈ 700 kcal | ≈ 1,40 €
+
+ | Bol fromage blanc | 250 g de fromage blanc, flocons d'avoine, miel, fruit | ≈ 28 g | ≈ 500 kcal | ≈ 1 €
+
+ | Pâtes œufs lardons | 120 g de pâtes, 2 œufs, 75 g de lardons, parmesan | ≈ 40 g | ≈ 900 kcal | ≈ 1,60 €
+
+ | Tartines du grimpeur | 3 tranches de pain, beurre de cacahuète, banane, verre de lait | ≈ 24 g | ≈ 680 kcal | ≈ 1 €
+
+## Trois astuces pour que ça tienne
+
+- Cuisinez deux fois par semaine : une grande casserole de riz, de pâtes ou de lentilles pour 3 jours.
+
+- Gardez toujours des œufs, du thon en boîte, des flocons d'avoine et du fromage blanc : de quoi faire un repas en 5 minutes.
+
+- Un filet d'huile sur chaque assiette : 90 kcal de plus sans effort.
+
+Pour la liste de courses complète de la semaine, voir la prise de masse avec 25 € par semaine. Dans BONGO, ces recettes se notent en une phrase et l'app compte les protéines pour vous.
+
+Questions fréquentes :
+- Quel est le repas de prise de masse le moins cher ?
+  Le chili de lentilles et le porridge aux flocons d'avoine : moins de 1 € par portion pour environ 25 g de protéines et 600 à 650 kcal.
+- Combien de repas par jour pour une prise de masse ?
+  Trois repas et une ou deux collations. Manger 4 à 5 fois par jour aide à atteindre ses calories sans avoir à finir des assiettes énormes.
+- Peut-on préparer ses repas à l'avance ?
+  Oui. Riz, pâtes, lentilles et poulet cuit se gardent 3 jours au réfrigérateur dans une boîte fermée.
+
+# Combien de temps pour prendre du muscle (et prendre 5 kg) ?
+URL : https://bongoapp.fr/guides/combien-de-temps-pour-prendre-du-muscle/
+
+Combien de temps faut-il pour voir ses muscles grossir, prendre 5 kg ou se transformer ? Les délais réalistes pour un débutant, semaine par semaine, et ce qui accélère vraiment.
+
+En bref :
+- 2 à 4 semaines : vous devenez plus fort (le système nerveux apprend).
+- 8 à 12 semaines : les changements deviennent visibles.
+- 5 kg : comptez 3 à 6 mois avec un léger surplus.
+- La première année, un débutant peut gagner environ 0,5 à 1 kg de muscle par mois.
+
+## Le calendrier réaliste d'un débutant
+
+ | | Moment | Ce qui se passe
+
+ | Semaines 1 à 4 | La force monte vite : le corps apprend à recruter ses muscles. Peu de changement visible.
+
+ | Semaines 4 à 8 | Les muscles se remplissent, les vêtements tombent différemment, la balance monte de 1 à 3 kg.
+
+ | Semaines 8 à 12 | Les changements sont visibles sur les photos : épaules, bras, poitrine, cuisses.
+
+ | 6 mois | Transformation nette pour un débutant régulier : souvent +5 à +8 kg.
+
+ | 1 an | Les gains ralentissent : c'est normal, il faut augmenter la difficulté.
+
+## Combien de temps pour prendre 5 kg ?
+
+Avec un surplus de 300 à 500 kcal par jour, on prend en moyenne 0,25 à 0,5 kg par semaine : 5 kg prennent donc 10 à 20 semaines, soit 3 à 5 mois. Aller plus vite est possible en mangeant beaucoup plus, mais une plus grande part de la prise sera du gras.
+
+## Ce qui accélère vraiment
+
+- La régularité : 3 séances chaque semaine valent mieux que 6 séances une semaine sur deux.
+
+- La progression : faire un peu plus que la dernière fois (répétitions, variante, séries).
+
+- Le surplus calorique : sans lui, le poids ne monte pas.
+
+- Les protéines : environ 1,6 g par kilo et par jour.
+
+- Le sommeil : 7 à 9 heures par nuit.
+
+## Pourquoi on a l'impression que rien ne bouge
+
+On se voit tous les jours : les petits changements passent inaperçus. Prenez une photo et une pesée par semaine, dans la même lumière, et comparez au bout d'un mois. BONGO garde vos pesées et vos photos avant/après pour que vous voyiez la progression.
+
+Questions fréquentes :
+- Combien de temps pour voir des résultats en musculation ?
+  La force augmente dès 2 à 4 semaines. Les changements visibles arrivent en général après 8 à 12 semaines d'entraînement régulier avec une alimentation en léger surplus.
+- Peut-on prendre 10 kg en 6 mois ?
+  C'est possible pour un débutant très maigre qui mange beaucoup, mais une partie sera du gras. Un objectif de 5 à 8 kg en 6 mois est plus réaliste pour rester sec.
+- Pourquoi je ne vois pas de résultats après 1 mois ?
+  Un mois, c'est surtout de la force et de l'eau. Vérifiez votre poids sur 4 semaines : s'il ne monte pas, il faut manger davantage.
+
+# Quelle application pour prendre de la masse ? Le guide pour bien choisir
+URL : https://bongoapp.fr/guides/application-prise-de-masse/
+
+Comment choisir une application de prise de masse : les critères qui comptent (entraînement, alimentation, budget, motivation), les types d'apps existants et pour qui BONGO est fait.
+
+En bref :
+- Une bonne app de prise de masse réunit l'entraînement, l'alimentation et le suivi du poids.
+- Les compteurs de calories classiques visent souvent la perte de poids et demandent de tout peser.
+- Les apps de musculation de salle supposent d'avoir des machines et des haltères.
+- BONGO est pensé pour prendre de la masse à la maison et avec un petit budget, en français.
+
+## Les 5 critères qui comptent
+
+- L'entraînement est-il adapté à votre situation ? Sans salle, il faut des séances au poids du corps qui progressent.
+
+- Noter ses repas est-il rapide ? Si c'est pénible, on arrête au bout d'une semaine.
+
+- L'app pousse-t-elle à manger plus ? Beaucoup d'apps sont pensées pour maigrir et affichent des alertes quand on dépasse.
+
+- Le budget est-il pris en compte ? Pour un étudiant, la liste de courses compte autant que le programme.
+
+- Donne-t-elle envie de revenir ? Série, objectifs, progrès visibles : la régularité fait tout.
+
+## Les grandes familles d'applications
+
+ | | Type d'app | Exemples connus | Points forts | Limites pour une prise de masse maison
+
+ | Compteurs de calories | MyFitnessPal, Yazio | Grandes bases d'aliments | Souvent orientés perte de poids, pesée des aliments, pas d'entraînement guidé
+
+ | Carnets de musculation | Strong, Hevy | Suivi précis des charges | Pensés pour la salle, pas d'alimentation
+
+ | Coachs vidéo | Applis de fitness généralistes | Séances guidées | Rarement centrés sur la prise de masse et le budget
+
+ | App tout-en-un prise de masse | BONGO | Séances maison, repas en une phrase, courses selon le budget, motivation | iPhone uniquement pour l'instant, en français
+
+## Pour qui BONGO est fait
+
+BONGO s'adresse à ceux qui veulent prendre du muscle sans salle de sport et sans exploser leur budget, surtout les étudiants et les débutants :
+
+- des séances guidées sans matériel de 15 à 45 minutes, montrées par Bongo, un gorille coach animé ;
+
+- les repas notés en une phrase (« riz, poulet, brocolis ») : l'app compte les protéines et les calories, même pour un plat qu'elle ne connaît pas ;
+
+- une liste de courses calculée selon le budget de la semaine ;
+
+- une série quotidienne, des missions et une courbe de poids pour rester motivé.
+
+L'app est gratuite. L'abonnement optionnel BONGO+ (avec essai gratuit pour les comptes éligibles) débloque les séances illimitées, la liste de courses complète et le scanner de codes-barres.
+
+Questions fréquentes :
+- Quelle est la meilleure application pour prendre de la masse à la maison ?
+  Celle qui combine des séances au poids du corps qui progressent, un suivi des repas rapide et un suivi du poids. BONGO a été conçue exactement pour ça, pour les débutants qui s'entraînent sans salle.
+- Existe-t-il une application de prise de masse gratuite ?
+  Oui. BONGO est gratuite sur iPhone, avec le suivi des repas et des protéines, 2 séances guidées par semaine, la série et la courbe de poids. BONGO+ est optionnel.
+- BONGO est-elle disponible sur Android ?
+  Pas encore : BONGO est disponible sur iPhone. La version Android est prévue.
+
+# Prix des protéines en 2026 : combien coûtent 20 g de protéines selon l'aliment
+URL : https://bongoapp.fr/guides/prix-des-proteines/
+
+Combien coûtent 20 g de protéines en France en 2026 ? Le comparatif aliment par aliment (lentilles, œufs, poulet, whey, thon…) pour une prise de masse au meilleur prix.
+
+En bref :
+- Les légumineuses sèches sont imbattables : environ 0,30 € pour 20 g de protéines.
+- Flocons d'avoine, lait et fromage blanc : environ 0,60 €.
+- Œufs, thon, steak haché, poulet : environ 0,80 à 1 €.
+- La whey se situe vers 0,70 € : pratique, mais pas la moins chère.
+
+## Le comparatif
+
+Estimations BONGO à partir de prix courants en supermarché discount en France (octobre 2026) et des teneurs en protéines de la table Ciqual. Les prix varient selon les enseignes et les promotions : c'est l'ordre de grandeur qui compte.
+
+ | | Aliment | Format et prix indicatif | Protéines du paquet | Prix pour 20 g
+
+ | Flocons d'avoine | 1 kg · ≈ 1,50 € | ≈ 130 g | ≈ 0,23 €
+
+ | Lentilles sèches | 500 g · ≈ 1,60 € | ≈ 120 g | ≈ 0,27 €
+
+ | Pois chiches secs | 500 g · ≈ 1,40 € | ≈ 95 g | ≈ 0,29 €
+
+ | Lait demi-écrémé | 1 L · ≈ 1 € | ≈ 33 g | ≈ 0,61 €
+
+ | Fromage blanc | 1 kg · ≈ 2,50 € | ≈ 80 g | ≈ 0,63 €
+
+ | Whey (protéine en poudre) | 1 kg · ≈ 25 € | ≈ 750 g | ≈ 0,67 €
+
+ | Œufs | 12 œufs · ≈ 3,20 € | ≈ 78 g | ≈ 0,82 €
+
+ | Steak haché 5 % | 4 × 100 g · ≈ 3,50 € | ≈ 80 g | ≈ 0,88 €
+
+ | Thon en boîte | 3 boîtes · ≈ 4 € | ≈ 90 g | ≈ 0,89 €
+
+ | Blanc de poulet | 1 kg · ≈ 11 € | ≈ 230 g | ≈ 0,96 €
+
+ | Tofu | 400 g · ≈ 2,50 € | ≈ 48 g | ≈ 1,04 €
+
+## Comment lire ce tableau
+
+- Les protéines végétales (avoine, lentilles, pois chiches) sont les moins chères mais moins complètes : associez-les à des céréales ou à des produits laitiers dans la journée.
+
+- Les œufs et le fromage blanc offrent le meilleur compromis entre prix, qualité et praticité.
+
+- La whey n'est pas indispensable : elle dépanne quand on a du mal à atteindre ses protéines avec l'alimentation.
+
+## Exemple : 100 g de protéines par jour pour environ 3,50 €
+
+80 g de flocons d'avoine et 300 ml de lait (≈ 20 g), 3 œufs (≈ 19 g), une assiette de lentilles (≈ 22 g), un bol de fromage blanc (≈ 20 g) et une boîte de thon (≈ 28 g) : environ 110 g de protéines pour à peu près 3,40 €.
+
+BONGO construit votre liste de courses avec ces aliments, selon votre budget et vos besoins en protéines.
+
+Questions fréquentes :
+- Quelle est la source de protéines la moins chère ?
+  Les légumineuses sèches (lentilles, pois chiches) et les flocons d'avoine, autour de 0,25 à 0,30 € pour 20 g de protéines. Parmi les protéines animales, les œufs et le fromage blanc sont les plus économiques.
+- La whey est-elle rentable ?
+  Elle revient à environ 0,70 € pour 20 g de protéines : moins cher que le poulet ou le thon, plus cher que les lentilles, le lait ou le fromage blanc.
+- Combien coûte une alimentation riche en protéines par jour ?
+  On peut atteindre 100 à 110 g de protéines par jour pour environ 3,50 € en misant sur les flocons d'avoine, les œufs, les lentilles, le fromage blanc et le thon.

@@ -107,3 +107,11 @@ td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space:
   th, td { padding: 9px 11px; }
   .fil { font-size: 13px; }
 }
+
+/* Réponse courte (reprise telle quelle par les moteurs et les IA) et sources */
+.reponse { font-size: 19px; line-height: 1.6; font-weight: 600; background: var(--carte); border: 1px solid var(--bord); border-left: 5px solid var(--vert); border-radius: 16px; padding: 16px 20px; margin-top: 8px; }
+.reponse strong { color: var(--vert-fonce); }
+.sources { margin-top: 36px; }
+.sources h2 { font-size: 24px; }
+.sources ol { font-size: 15px; display: grid; gap: 6px; padding-left: 22px; }
+.sources a { font-weight: 600; word-break: break-word; }
