@@ -1,0 +1,109 @@
+/* Guides BONGO : même univers que l'accueil (crème, vert, Baloo 2 + Nunito),
+   mise en page de lecture (≈ 68 caractères), réponses courtes en tête. */
+:root {
+  --creme: #FBF9F1;
+  --creme-2: #F3EEE1;
+  --carte: #FFFFFF;
+  --encre: #233522;
+  --encre-doux: #4F5C4D;
+  --vert: #58C536;
+  --vert-fonce: #3B8F2A;
+  --foret: #1F3A1E;
+  --vert-pale: #EEF3DF;
+  --or: #B07F00;
+  --or-pale: #FFF4D6;
+  --bord: rgba(35, 53, 34, 0.10);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { overflow-x: clip; }
+body {
+  background: var(--creme); color: var(--encre);
+  font-family: 'Nunito', system-ui, -apple-system, sans-serif; font-size: 18px; line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--vert-fonce); font-weight: 700; }
+h1, h2, h3 { font-family: 'Baloo 2', system-ui, sans-serif; line-height: 1.08; letter-spacing: -0.01em; text-wrap: balance; }
+
+.barre {
+  position: sticky; top: 0; z-index: 10; background: rgba(251, 249, 241, 0.92);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--bord);
+}
+.barre-in { max-width: 1080px; margin: 0 auto; padding: 10px max(16px, env(safe-area-inset-left, 0px)); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.marque { display: flex; align-items: center; gap: 9px; text-decoration: none; color: var(--encre); }
+.marque img { width: 32px; height: 32px; border-radius: 9px; }
+.marque span { font-family: 'Baloo 2'; font-weight: 800; font-size: 22px; }
+.marque b { color: var(--vert); }
+.bouton {
+  display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-family: 'Baloo 2'; font-weight: 800;
+  background: var(--vert); color: #fff; padding: 10px 18px; border-radius: 14px; box-shadow: 0 4px 0 var(--vert-fonce); font-size: 16px;
+}
+
+.page { max-width: 760px; margin: 0 auto; padding: 28px max(16px, env(safe-area-inset-left, 0px)) 80px; }
+.fil { font-size: 14px; color: var(--encre-doux); margin-bottom: 18px; }
+.fil a { color: var(--encre-doux); font-weight: 600; text-decoration: none; }
+.fil a:hover { text-decoration: underline; }
+.sur { font-weight: 800; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--vert-fonce); }
+h1 { font-size: clamp(36px, 6vw, 52px); font-weight: 800; margin: 10px 0 14px; }
+.chapo { font-size: 20px; color: var(--encre-doux); font-weight: 600; }
+.meta { font-size: 14px; color: var(--encre-doux); margin-top: 12px; }
+
+.en-bref { background: var(--foret); color: #EEF3E6; border-radius: 22px; padding: 22px 24px; margin: 28px 0; }
+.en-bref h2 { margin: 0 0 10px; font-size: 15px; font-family: 'Nunito'; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #9BE57A; margin-bottom: 10px; }
+.en-bref ul { padding-left: 20px; display: grid; gap: 6px; font-weight: 600; }
+.en-bref strong { color: #FFFFFF; }
+
+article h2 { font-size: clamp(26px, 4vw, 34px); font-weight: 800; margin: 40px 0 12px; }
+article h3 { font-size: 22px; font-weight: 800; margin: 26px 0 8px; }
+article p { margin: 12px 0; }
+article ul, article ol { margin: 12px 0; padding-left: 24px; display: grid; gap: 6px; }
+article li::marker { color: var(--vert-fonce); font-weight: 800; }
+
+.tableau { overflow-x: auto; margin: 18px 0; border-radius: 16px; border: 1px solid var(--bord); background: var(--carte); }
+table { width: 100%; border-collapse: collapse; font-size: 16px; }
+th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--bord); }
+th { background: var(--vert-pale); font-weight: 800; }
+tr:last-child td { border-bottom: 0; }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.encadre { background: var(--or-pale); border-radius: 18px; padding: 16px 20px; margin: 20px 0; font-weight: 600; }
+.astuce { background: var(--vert-pale); border-radius: 18px; padding: 16px 20px; margin: 20px 0; font-weight: 600; }
+
+.cta { background: var(--carte); border: 1px solid var(--bord); border-radius: 26px; padding: 24px; margin: 40px 0; display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center; box-shadow: 0 14px 36px rgba(35, 53, 34, 0.08); }
+.cta img { width: 96px; }
+.cta h2 { font-size: 26px; margin: 0 0 6px; }
+.cta p { margin: 0 0 14px; color: var(--encre-doux); font-weight: 600; }
+
+.faq details { background: var(--carte); border: 1px solid var(--bord); border-radius: 16px; padding: 14px 18px; margin: 10px 0; }
+.faq summary { cursor: pointer; font-family: 'Baloo 2'; font-weight: 800; font-size: 19px; }
+.faq details p { margin: 8px 0 0; }
+
+.autres { margin-top: 40px; }
+.autres h2 { font-size: 26px; margin-bottom: 12px; }
+.autres ul { list-style: none; padding: 0; display: grid; gap: 10px; }
+.autres a { display: block; background: var(--carte); border: 1px solid var(--bord); border-radius: 16px; padding: 14px 18px; text-decoration: none; color: var(--encre); }
+.autres a span { display: block; font-size: 15px; font-weight: 600; color: var(--encre-doux); }
+
+.avertissement { font-size: 14px; color: var(--encre-doux); border-top: 1px solid var(--bord); margin-top: 40px; padding-top: 16px; }
+
+.pied { border-top: 1px solid var(--bord); }
+.pied-in { max-width: 1080px; margin: 0 auto; padding: 24px max(16px, env(safe-area-inset-left, 0px)); display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 15px; color: var(--encre-doux); }
+.pied-in a { color: var(--encre-doux); font-weight: 600; }
+
+/* Sommaire des guides */
+.liste-guides { list-style: none; padding: 0; display: grid; gap: 14px; margin-top: 24px; }
+.liste-guides a { display: grid; grid-template-columns: 64px 1fr; gap: 16px; align-items: center; background: var(--carte); border: 1px solid var(--bord); border-radius: 20px; padding: 16px; text-decoration: none; color: var(--encre); }
+.liste-guides img { width: 64px; height: 64px; }
+.liste-guides b { font-family: 'Baloo 2'; font-size: 22px; line-height: 1.15; display: block; }
+.liste-guides span { font-size: 15px; font-weight: 600; color: var(--encre-doux); }
+
+:focus-visible { outline: 3px solid var(--vert); outline-offset: 2px; }
+@media (max-width: 520px) {
+  body { font-size: 17px; }
+  .cta { grid-template-columns: 1fr; text-align: left; }
+  .cta img { width: 80px; }
+  .barre .bouton { padding: 8px 12px; font-size: 14px; }
+  table { font-size: 14.5px; line-height: 1.4; min-width: 520px; }
+  th, td { padding: 9px 11px; }
+  .fil { font-size: 13px; }
+}

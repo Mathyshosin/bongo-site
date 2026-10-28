@@ -1,0 +1,28 @@
+# BONGO
+
+> BONGO est une app iPhone gratuite (avec abonnement optionnel BONGO+) pour prendre de la masse musculaire à la maison, sans salle de sport et avec un petit budget. Elle s'adresse surtout aux étudiants et aux débutants en France.
+
+BONGO réunit en une seule app :
+- des séances guidées au poids du corps, sans matériel, de 15 à 45 minutes, montrées par Bongo, un gorille coach animé ;
+- le suivi des repas en écrivant simplement ce qu'on a mangé (« riz, poulet, brocolis ») : l'app compte les protéines et les calories, même pour un plat qu'elle ne connaît pas ;
+- une liste de courses calculée selon le budget de la semaine (dès environ 20 à 25 €) ;
+- une série quotidienne, des missions, des sacs de récompenses et une courbe de poids pour rester motivé.
+
+Gratuit : suivi des repas et des protéines, 2 séances guidées par semaine, série et missions, courbe de poids, bilan de la semaine. BONGO+ (essai gratuit pour les comptes éligibles) : séances illimitées, liste de courses complète, scanner de codes-barres, carte joueur, photos avant/après.
+
+- Télécharger : https://apps.apple.com/fr/app/bongo-prise-de-masse/id6798278399
+- Site : https://mathyshosin.github.io/bongo-site/
+- Langue : français
+- Plateforme : iPhone (iOS 16.4 ou plus récent)
+
+## Guides
+- [Prendre de la masse sans salle : le programme complet à la maison](https://mathyshosin.github.io/bongo-site/guides/prise-de-masse-sans-salle/): Oui, on peut prendre du muscle sans salle de sport. Le programme maison au poids du corps, 3 à 4 séances par semaine, et comment progresser sans matériel.
+- [Prise de masse petit budget : la liste de courses à 25 € par semaine](https://mathyshosin.github.io/bongo-site/guides/prise-de-masse-petit-budget/): Prendre de la masse quand on est étudiant et fauché : la liste de courses à 25 € par semaine, les aliments les plus rentables en protéines et une journée type.
+- [Combien de protéines par jour pour prendre du muscle ?](https://mathyshosin.github.io/bongo-site/guides/combien-de-proteines-par-jour/): Pour prendre du muscle, visez environ 1,6 g de protéines par kilo de poids de corps et par jour (jusqu'à 2,2 g). Le tableau par poids, les meilleures sources et comment les répartir.
+- [Combien de calories pour prendre du poids (et du muscle) ?](https://mathyshosin.github.io/bongo-site/guides/combien-de-calories-pour-prendre-du-poids/): Pour prendre du poids proprement, mangez 300 à 500 kcal de plus que vos dépenses. La méthode simple pour calculer vos besoins, et comment ajuster selon la balance.
+- [Je mange beaucoup mais je ne grossis pas : que faire ?](https://mathyshosin.github.io/bongo-site/guides/je-mange-mais-je-ne-grossis-pas/): Vous avez l'impression de manger beaucoup sans prendre un gramme ? Les vraies raisons (et ce n'est pas un métabolisme « bizarre »), plus 8 astuces concrètes pour enfin prendre du poids.
+- [Exercices au poids du corps pour débutant : les 10 essentiels](https://mathyshosin.github.io/bongo-site/guides/exercices-poids-du-corps-debutant/): Les 10 meilleurs exercices au poids du corps pour débuter la musculation à la maison, avec la bonne technique, la version facile et la version difficile de chacun.
+
+## Optional
+- [Politique de confidentialité](https://mathyshosin.github.io/bongo-site/confidentialite.html)
+- [Texte complet des guides](https://mathyshosin.github.io/bongo-site/llms-full.txt)
