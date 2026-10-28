@@ -314,7 +314,7 @@ def page_a_propos():
         <tr><th>Langue</th><td>Français</td></tr>
         <tr><th>Prix</th><td>Gratuit, abonnement BONGO+ optionnel</td></tr>
         <tr><th>Conçue en</th><td>France</td></tr>
-        <tr><th>Contact</th><td>Mathyshosin@gmail.com</td></tr>
+        <tr><th>Contact</th><td>bongomasseapp@gmail.com</td></tr>
       </tbody></table></div>
     </article>
 {cta(prefixe)}
