@@ -1,7 +1,7 @@
 # Génère les guides SEO de BONGO + les fichiers pour les moteurs et les IA.
 # Usage (depuis la racine du site) :  python3 _outils/generer.py
 # Changer de domaine plus tard = changer BASE ci-dessous, relancer, pousser.
-import html, importlib.util, json, os, re, sys
+import html, importlib.util, json, math, os, re, sys
 from datetime import date, datetime
 from zoneinfo import ZoneInfo
 
@@ -82,6 +82,7 @@ def pied(prefixe):
     return f"""  <footer class="pied"><div class="pied-in">
     <span>© 2026 BONGO · fait en France</span>
     <a href="{prefixe}">Accueil</a>
+    <a href="{prefixe}simulateur/">Le simulateur</a>
     <a href="{prefixe}blog/">Le blog</a>
     <a href="{prefixe}guides/">Tous les guides</a>
     <a href="{prefixe}a-propos/">À propos</a>
@@ -707,6 +708,91 @@ def maj_accueil(publies):
         print("écrit index.html")
 
 
+# ---------- Simulateur : le calcul se fait dans simulateur/simulateur.js, avec les mêmes repères ----------
+def semaines_sim(poids, objectif, rythme):
+    return math.ceil(math.log(objectif / poids) / math.log(1 + rythme / 100))
+
+
+def bloc_simulateur(prefixe, methode):
+    return f"""<div class="sim" id="simulateur-app" data-simulateur data-prefixe="{prefixe}" data-store="{APP_STORE}" data-methode="{methode}"><noscript><p>Le simulateur a besoin de JavaScript. En attendant, retiens ce repère : compte 0,25 à 0,5 % de ton poids par semaine.</p></noscript></div>
+"""
+
+
+def page_simulateur():
+    prefixe = "../"
+    url = BASE + "simulateur/"
+    court, long = semaines_sim(60, 65, 0.5), semaines_sim(60, 65, 0.25)
+    mois_court, mois_long = round(court / 4.345), round(long / 4.345)
+    reponse = f"À un rythme raisonnable de 0,25 à 0,5 % du poids par semaine, prendre 5 kg en partant de 60 kg demande environ {court} à {long} semaines, soit {mois_court} à {mois_long} mois. Le simulateur calcule ta date selon ton poids, ton objectif, ton appétit et tes séances."
+    lignes = "\n".join(
+        f'<tr><td>{p} kg → {p + g} kg</td><td class="n">{semaines_sim(p, p + g, 0.5)} semaines</td><td class="n">{semaines_sim(p, p + g, 0.25)} semaines</td></tr>'
+        for p, g in [(50, 5), (60, 5), (70, 5), (60, 10), (70, 10)]
+    )
+    faq = [
+        ("Combien de temps pour prendre 5 kg ?", f"En partant de 60 kg, compte environ {court} à {long} semaines à un rythme de 0,25 à 0,5 % du poids par semaine. Le résultat réel varie selon la personne, ce que tu manges et ta régularité."),
+        ("Pourquoi le simulateur ne prend-il pas de poids plus vite ?", "Viser plus vite ajoute surtout de la graisse, sans construire nettement plus de muscle. Le simulateur reste donc dans une fourchette modérée, même avec un gros appétit."),
+        ("BONGO fait-il vraiment arriver plus vite ?", "Le corps ne va pas plus vite grâce à une app. La comparaison montre l'effet de la régularité : BONGO aide à tenir son plan, mais les courbes sont des simulations, pas des résultats mesurés sur ses utilisateurs."),
+        ("Mes données sont-elles enregistrées ?", "Non. Tout se calcule dans ton navigateur : ton poids et tes réponses ne sont ni envoyés ni enregistrés."),
+        ("Le simulateur convient-il à tout le monde ?", "Non. Il donne des repères pour des adultes en bonne santé. En cas de maigreur marquée, de perte de poids inexpliquée, de grossesse, de maladie, de difficultés avec l'alimentation, ou si tu as moins de 18 ans, demande conseil à un professionnel de santé."),
+    ]
+    faq_html = "\n".join(f"        <details><summary>{html.escape(q)}</summary><p>{html.escape(r)}</p></details>" for q, r in faq)
+    nom, lien = SOURCES_BLOG["iraki2019"]
+    jsonld = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {"@type": "WebApplication", "@id": url + "#simulateur", "name": "Simulateur de prise de masse BONGO", "url": url, "applicationCategory": "HealthApplication", "operatingSystem": "Tous", "inLanguage": "fr-FR", "description": reponse, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@id": BASE + "#organisation"}},
+            {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": r}} for q, r in faq]},
+            {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "BONGO", "item": BASE}, {"@type": "ListItem", "position": 2, "name": "Simulateur", "item": url}]},
+        ],
+    }
+    tete = entete("Simulateur de prise de masse : ta date d'arrivée | BONGO", f"Combien de temps pour atteindre ton poids ? 4 questions et le simulateur gratuit calcule ta timeline. Exemple : 5 kg en {court} à {long} semaines à partir de 60 kg.", url, jsonld, prefixe, BASE + "img/og/simulateur.png")
+    tete = tete.replace("</head>", f'  <link rel="stylesheet" href="simulateur.css">\n</head>')
+    return (
+        tete
+        + f"""  <main class="page">
+    <nav class="fil" aria-label="Fil d'Ariane"><a href="{prefixe}">BONGO</a> › Simulateur</nav>
+    <article>
+      <p class="sur">Outil gratuit</p>
+      <h1>Simulateur de prise de masse : combien de temps pour atteindre ton objectif ?</h1>
+      <p class="reponse"><strong>Réponse courte :</strong> {html.escape(reponse)}</p>
+    </article>
+    {bloc_simulateur(prefixe, "#methode")}    <p class="sim-confiance">Rien n'est envoyé ni enregistré : tout se calcule dans ton navigateur.</p>
+    <article>
+      <h2 id="methode">Comment c'est calculé ?</h2>
+      <p>Le simulateur part d'un repère publié pour une prise de masse modérée : 0,25 à 0,5 % du poids par semaine (Iraki et al., 2019). Ton poids progresse de ce pourcentage chaque semaine jusqu'à ton objectif.</p>
+      <ul>
+        <li><strong>Ton appétit règle le rythme de départ :</strong> 0,35 % pour un petit appétit, 0,45 % pour un appétit normal, 0,5 % pour un gros appétit.</li>
+        <li><strong>Tes séances l'ajustent :</strong> 0,05 % de moins avec 0 ou 1 séance, 0,05 % de plus à partir de 3 séances. Le rythme reste toujours entre 0,25 et 0,5 %.</li>
+        <li><strong>Sans plan, un jour sur deux :</strong> ce scénario divise le rythme par deux. C'est une hypothèse d'illustration : les autres jours, tu manges juste à ton équilibre.</li>
+      </ul>
+      <p>Ces réglages sont nos choix, pas des résultats d'étude. Ils servent à donner un ordre de grandeur. Ta vraie courbe montera moins régulièrement, et une partie du poids pris n'est pas du muscle.</p>
+      <h2>Combien de temps selon ton point de départ ?</h2>
+      <div class="tableau"><table>
+      <thead><tr><th>Objectif</th><th class="n">À 0,5 % par semaine</th><th class="n">À 0,25 % par semaine</th></tr></thead>
+      <tbody>
+{lignes}
+      </tbody></table></div>
+      <h2>Pourquoi la régularité change tout ?</h2>
+      <p>Un surplus de calories qui n'existe qu'un jour sur deux donne une courbe deux fois plus lente. Pour y voir plus clair, regarde <a href="{prefixe}guides/combien-de-calories-pour-prendre-du-poids/">combien de calories viser</a> et <a href="{prefixe}guides/je-mange-mais-je-ne-grossis-pas/">pourquoi on peut manger sans grossir</a>. Si tu as un petit appétit, commence par le <a href="{prefixe}blog/gainer-maison-recette/">gainer maison</a>.</p>
+{cta(prefixe)}      <section class="faq">
+        <h2>Questions fréquentes</h2>
+{faq_html}
+      </section>
+      <section class="sources">
+        <h2>Source</h2>
+        <ol>
+          <li><a href="{html.escape(lien)}" rel="noopener">{html.escape(nom)}</a></li>
+        </ol>
+      </section>
+    </article>
+    <p class="avertissement">Ce simulateur donne des repères généraux pour des adultes en bonne santé, pas un avis médical ni une promesse de résultat.</p>
+  </main>
+  <script src="simulateur.js" defer></script>
+"""
+        + pied(prefixe)
+    )
+
+
 def insecables(contenu):
     # « 1 € », « 20 g », « 500 kcal » ne se coupent jamais en fin de ligne
     return re.sub(r"(\d) (€|g|kg|kcal|ml|L|%|cm|min|mois|semaines|jours)(?=[\s.,;:)<!?]|$)", "\\1\u00a0\\2", contenu)
@@ -733,6 +819,8 @@ def main():
     ecrire("guides/index.html", page_sommaire())
     ecrire("a-propos/index.html", page_a_propos())
     ecrire("404.html", page_404())
+    image_partage(os.path.join(RACINE, "img", "og", "simulateur.png"), "Quand atteindras-tu ton objectif ?", "cible")
+    ecrire("simulateur/index.html", page_simulateur())
 
     # Blog : toutes les images d'avance, mais seulement les pages déjà arrivées à leur date
     for a in tous_les_articles():
@@ -748,7 +836,7 @@ def main():
 
     # Plan du site : chaque page garde sa vraie date, Google se méfie des dates qui changent tous les jours
     dernier = publies[-1]["date"].isoformat() if publies else MAJ
-    urls = [(BASE, dernier, "1.0"), (BASE + "blog/", dernier, "0.9"), (BASE + "guides/", MAJ, "0.8"), (BASE + "a-propos/", "2026-11-02", "0.5")]
+    urls = [(BASE, dernier, "1.0"), (BASE + "blog/", dernier, "0.9"), (BASE + "guides/", MAJ, "0.8"), (BASE + "simulateur/", "2026-11-02", "0.9"), (BASE + "a-propos/", "2026-11-02", "0.5")]
     urls += [(f"{BASE}guides/{g['slug']}/", MAJ, "0.8") for g in GUIDES]
     urls += [(f"{BASE}blog/{cle}/", max(a["date"] for a in publies if a["categorie"] == cle).isoformat(), "0.6") for cle in categories_ouvertes(publies)]
     urls += [(f"{BASE}blog/{a['slug']}/", a["date"].isoformat(), "0.7") for a in publies]
@@ -805,6 +893,9 @@ Gratuit : suivi des repas et des protéines, 2 séances guidées par semaine, s�
 
 ## Blog
 {liens_blog}
+
+## Outils
+- [Simulateur de prise de masse]({BASE}simulateur/): calcule une date d'arrivée selon le poids, l'objectif, l'appétit et les séances, avec un rythme de 0,25 à 0,5 % du poids par semaine. Gratuit, sans compte, aucune donnée envoyée. Les courbes sont des simulations, pas des résultats mesurés sur des utilisateurs.
 
 ## À propos
 - [À propos de BONGO]({BASE}a-propos/): qui fait BONGO, pour qui, ce que fait l'app, fiche d'identité.

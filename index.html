@@ -28,6 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="simulateur/simulateur.css">
   <style>
     :root {
       --creme: #FBF9F1;
@@ -173,6 +174,7 @@
 
     .etapes { text-align: center; }
     .etapes h2 { max-width: 16ch; margin: 0 auto; }
+    .sim-intro { max-width: 46ch; margin: 16px auto 0; color: var(--encre-doux); font-size: 19px; font-weight: 600; }
     .grille-etapes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 50px; text-align: left; }
     .etape { background: #fff; border: 1px solid var(--bord); border-radius: 28px; padding: 28px; box-shadow: 0 10px 30px rgba(35,53,34,0.05); }
     .etape .tete { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 22px; }
@@ -325,6 +327,7 @@
     <div class="liens">
       <a href="#comment">Comment ça marche</a>
       <a href="#seances">L'app</a>
+      <a href="#simulateur">Simulateur</a>
       <a href="#plus">BONGO+</a>
       <a href="blog/">Blog</a>
       <a href="guides/">Guides</a>
@@ -394,6 +397,17 @@
           <p>Une séance, un repas noté, une pesée. Tu vois ta courbe monter, semaine après semaine.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- SIMULATEUR -->
+  <section class="etapes" id="simulateur">
+    <div class="conteneur">
+      <p class="surtitre apparait">Ta timeline</p>
+      <h2 class="apparait">Quand atteindras-tu ton objectif ?</h2>
+      <p class="sim-intro apparait">4 questions, 30 secondes, et Bongo te montre ta courbe, avec et sans plan.</p>
+      <div class="sim" id="simulateur-app" data-simulateur data-prefixe="" data-store="https://apps.apple.com/fr/app/bongo-prise-de-masse/id6798278399" data-methode="simulateur/#methode"><noscript><p>Le simulateur a besoin de JavaScript. En attendant, retiens ce repère : compte 0,25 à 0,5 % de ton poids par semaine.</p></noscript></div>
+      <p class="sim-confiance">Rien n'est envoyé ni enregistré : tout se calcule sur ton téléphone ou ton ordinateur.</p>
     </div>
   </section>
 
@@ -669,6 +683,7 @@
           <h4>L'app</h4>
           <a href="#comment">Comment ça marche</a>
           <a href="#seances">Séances</a>
+          <a href="#simulateur">Simulateur</a>
           <a href="#tenues">Récompenses</a>
           <a href="#plus">BONGO+</a>
         </div>
@@ -703,6 +718,7 @@
     <div class="geant" aria-hidden="true">BONGO</div>
   </footer>
 
+  <script src="simulateur/simulateur.js" defer></script>
   <script>
     const obs = new IntersectionObserver((entrees) => {
       entrees.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('vu'); obs.unobserve(e.target); } });

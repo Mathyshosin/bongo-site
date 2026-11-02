@@ -46,6 +46,9 @@ Gratuit : suivi des repas et des protéines, 2 séances guidées par semaine, s�
 - [Gainer maison : la recette à 670 kcal pour moins de 1 €](https://bongoapp.fr/blog/gainer-maison-recette/): La recette du gainer maison : lait, avoine, banane et beurre de cacahuète. 670 kcal et 26 g de protéines pour moins de 1 €, prêt en 3 minutes au mixeur.
 - [Comment grossir quand on est maigre : le plan simple en 4 étapes](https://bongoapp.fr/blog/comment-grossir-quand-on-est-maigre/): Pour grossir quand on est maigre : mesurer, ajouter 300 à 500 kcal, faire de la musculation, ajuster. Le plan en 4 étapes, et quand voir un médecin.
 
+## Outils
+- [Simulateur de prise de masse](https://bongoapp.fr/simulateur/): calcule une date d'arrivée selon le poids, l'objectif, l'appétit et les séances, avec un rythme de 0,25 à 0,5 % du poids par semaine. Gratuit, sans compte, aucune donnée envoyée. Les courbes sont des simulations, pas des résultats mesurés sur des utilisateurs.
+
 ## À propos
 - [À propos de BONGO](https://bongoapp.fr/a-propos/): qui fait BONGO, pour qui, ce que fait l'app, fiche d'identité.
 
