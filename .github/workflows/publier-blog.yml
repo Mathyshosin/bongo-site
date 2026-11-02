@@ -1,0 +1,48 @@
+# Publie chaque matin l'article du jour du blog BONGO (aucun service payant, aucune clé d'IA) :
+# les articles sont déjà écrits dans _outils/articles, leur date vient de _outils/blog_calendrier.py.
+name: Publier l'article du jour
+on:
+  schedule:
+    - cron: '23 5 * * *' # vers 6 h 23 (hiver) ou 7 h 23 (été), heure de Paris
+  workflow_dispatch: {}
+permissions:
+  contents: write
+  issues: write
+  pages: write
+concurrency:
+  group: publier-blog
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Contrôler les articles
+        run: python3 _outils/verifier_blog.py
+      - name: Générer le site
+        run: python3 _outils/generer.py
+      - name: Mettre en ligne s'il y a du nouveau
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau aujourd'hui."
+            exit 0
+          fi
+          NOUVEAUX=$(git diff --cached --name-only --diff-filter=A -- 'blog/*index.html')
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Blog : publication du $(TZ=Europe/Paris date +%d/%m/%Y)"
+          git push
+          # Un commit fait par ce jeton peut ne pas relancer GitHub Pages : on le demande clairement
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Pages se déploiera tout seul."
+          echo "$NOUVEAUX" | python3 _outils/indexnow.py || echo "IndexNow indisponible, pas grave : le sitemap fera le travail."
+      - name: Prévenir quand le stock est bas
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          RESTE=$(python3 _outils/blog_stock.py)
+          echo "Articles en stock : $RESTE"
+          if [ "$RESTE" -le 7 ] && [ -z "$(gh issue list --state open --search 'Stock du blog' --json number --jq '.[].number')" ]; then
+            gh issue create --title "Stock du blog : plus que $RESTE articles" --body "Le blog BONGO n'a plus que $RESTE articles d'avance. Demande à Claude : « refais 30 articles pour le blog »."
+          fi

@@ -115,3 +115,31 @@ td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space:
 .sources h2 { font-size: 24px; }
 .sources ol { font-size: 15px; display: grid; gap: 6px; padding-left: 22px; }
 .sources a { font-weight: 600; word-break: break-word; }
+
+/* Blog : liens d'en-tête, rubriques, fiche recette, encart app avec capture */
+.barre-in .barre-liens { display: flex; gap: 16px; margin-left: auto; font-size: 16px; }
+.barre-liens a { color: var(--encre); text-decoration: none; font-weight: 800; }
+.barre-liens a:hover { color: var(--vert-fonce); }
+.pastilles { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.pastilles a { background: var(--carte); border: 1px solid var(--bord); border-radius: 999px; padding: 6px 14px; font-size: 15px; text-decoration: none; color: var(--encre); }
+.pastilles a[aria-current] { background: var(--foret); border-color: var(--foret); color: #fff; }
+.liste-guides small { display: block; font-size: 13px; font-weight: 800; color: var(--vert-fonce); margin-bottom: 2px; }
+
+.recette { background: var(--carte); border: 1px solid var(--bord); border-radius: 22px; padding: 22px 24px; margin: 28px 0; }
+article .recette h2 { margin: 0 0 14px; font-size: 28px; }
+.recette-chiffres { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.recette-chiffres div { background: var(--vert-pale); border-radius: 14px; padding: 10px 8px; text-align: center; }
+.recette-chiffres dt { font-size: 13px; font-weight: 700; color: var(--encre-doux); }
+.recette-chiffres dd { font-family: 'Baloo 2'; font-weight: 800; font-size: 20px; line-height: 1.2; }
+.recette-note { font-size: 14px; color: var(--encre-doux); }
+
+.cta-app { grid-template-columns: 130px 1fr; }
+.cta.cta-app img { width: 130px; border-radius: 18px; box-shadow: 0 8px 22px rgba(35, 53, 34, 0.18); }
+@media (max-width: 520px) {
+  .barre-in .barre-liens { gap: 10px; font-size: 14px; }
+  .marque span { display: none; }
+  .recette { padding: 18px; }
+  .recette-chiffres { grid-template-columns: repeat(2, 1fr); }
+  .cta-app { grid-template-columns: 1fr; }
+  .cta.cta-app img { width: 130px; }
+}

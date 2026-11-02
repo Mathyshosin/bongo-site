@@ -1,4 +1,4 @@
-# BONGO — texte complet des guides
+# BONGO — texte complet des guides et du blog
 
 Source : https://bongoapp.fr/ · App : https://apps.apple.com/fr/app/bongo-prise-de-masse/id6798278399
 
@@ -720,3 +720,279 @@ Questions fréquentes :
   Elle revient à environ 0,70 € pour 20 g de protéines : moins cher que le poulet ou le thon, plus cher que les lentilles, le lait ou le fromage blanc.
 - Combien coûte une alimentation riche en protéines par jour ?
   On peut atteindre 100 à 110 g de protéines par jour pour environ 3,50 € en misant sur les flocons d'avoine, les œufs, les lentilles, le fromage blanc et le thon.
+
+# Comment grossir quand on est maigre : le plan simple en 4 étapes
+URL : https://bongoapp.fr/blog/comment-grossir-quand-on-est-maigre/
+Publié le 2026-11-02
+
+Pour grossir quand on est maigre, ajoute 300 à 500 kcal par jour à ce que tu manges déjà, vise environ 1,6 g de protéines par kilo, fais 3 séances de musculation par semaine et contrôle ton poids. Une prise de 0,25 à 0,5 kg par semaine est un bon repère. Ajuste toutes les 2 à 3 semaines.
+
+En bref :
+- 4 étapes : mesurer, ajouter des calories, s'entraîner, ajuster.
+- Repère de départ : 300 à 500 kcal de plus par jour et 0,25 à 0,5 kg par semaine.
+- Environ 1,6 g de protéines par kilo et par jour : un bon repère, car les besoins varient.
+- Une perte de poids sans raison, des troubles digestifs ou une peur de manger méritent un avis médical.
+
+## Pourquoi est-ce si dur de grossir quand on est maigre ?
+
+Parce que ton poids suit ta moyenne de calories sur plusieurs jours, et que cette moyenne est souvent plus basse qu'on ne le croit. Grossir quand on est maigre n'est pas une question de volonté. Le problème vient en général de quelques causes très banales :
+
+- Des journées en dents de scie. Un gros repas le samedi ne compense pas un petit-déjeuner sauté et un déjeuner léger trois jours de suite.
+
+- Une faim qui s'éteint vite. Tu te sens calé tôt, donc tu laisses la fin de l'assiette sans y penser.
+
+- Beaucoup de mouvement. Trajets à pied, escaliers, sport, boulot debout : tout ça dépense de l'énergie.
+
+- Une estimation à l'œil. Un repas qui paraît énorme peut apporter moins de calories qu'on l'imagine.
+
+Le détail de ces causes est dans notre guide je mange beaucoup mais je ne grossis pas. Ici, on passe au plan.
+
+## Étape 1 : à quoi ressemble ton point de départ ?
+
+Il te faut deux chiffres : ton poids moyen et ce que tu manges vraiment. Pèse-toi plusieurs matins dans la semaine et fais la moyenne. Note aussi tes repas pendant 3 à 7 jours, sans rien changer. Tu verras vite les trous : le repas sauté, la journée à 2 repas, la collation qui n'existe pas.
+
+Pas besoin de balance de cuisine. Dans BONGO, tu écris ton repas en une phrase et l'app compte les protéines et les calories, même pour un plat inconnu. C'est une estimation, et c'est suffisant pour repérer une tendance.
+
+## Étape 2 : combien de calories ajouter ?
+
+Commence par 300 à 500 kcal de plus par jour. Une revue sur la prise de masse en musculation parle de 10 à 20 % de calories en plus (Iraki et al., 2019), ce qui donne 250 à 500 kcal pour quelqu'un qui dépense 2 500 kcal. Cette revue concerne des pratiquants de bodybuilding : prends-la comme un ordre de grandeur, pas comme une règle pour toi.
+
+Le plus simple est d'ajouter une seule chose à ta journée, plutôt que de tout changer. Voici quatre ajouts faciles :
+
+ | | Ajout | Calories | Protéines | Prix
+
+ | 300 ml de lait, 30 g de beurre de cacahuète et 1 banane | 410 kcal | 19 g | ≈ 0,74 €
+
+ | 60 g de flocons d'avoine, 200 ml de lait, 1 cuillère à café de miel | 350 kcal | 14 g | ≈ 0,39 €
+
+ | 200 g de fromage blanc, 40 g de flocons, 20 g d'amandes | 420 kcal | 25 g | ≈ 0,80 €
+
+ | 2 œufs et 100 g de pain | 410 kcal | 22 g | ≈ 0,83 €
+
+Valeurs calculées à partir de repères arrondis d'après la table Ciqual, prix indicatifs en supermarché discount. Si manger plus est le vrai blocage, lis nos 10 techniques quand on n'a pas faim. Pour choisir tes produits, regarde la liste des aliments pour grossir.
+
+## Étape 3 : comment faire pour que ce soit surtout du muscle ?
+
+Entraîne-toi et mange assez de protéines. C'est l'entraînement qui aide à orienter les calories en plus vers le muscle. Trois séances par semaine, avec des séries difficiles, suffisent pour démarrer. Une séance de 20 minutes à la maison peut faire l'affaire au début.
+
+Côté protéines, une grande méta-analyse de 49 études montre qu'au-delà d'environ 1,6 g par kilo et par jour, le gain supplémentaire de muscle plafonne en moyenne (Morton et al., 2018). À 60 kg, ça fait environ 96 g par jour. À 70 kg, environ 112 g. Les besoins varient d'une personne à l'autre, donc garde ce chiffre comme un repère.
+
+## Étape 4 : quand et comment ajuster ?
+
+Regarde ta moyenne de poids toutes les 2 à 3 semaines, puis décide.
+
+- Moins de 0,25 kg par semaine : ajoute 100 à 200 kcal par jour.
+
+- Entre 0,25 et 0,5 kg par semaine : ne change rien, ça marche.
+
+- Plus de 0,5 kg par semaine sur plusieurs semaines : enlève 100 à 200 kcal par jour.
+
+Le poids bouge d'un jour à l'autre pour plein de raisons qui n'ont rien à voir avec le muscle. On explique comment lire ces variations dans se peser en prise de masse. La courbe de poids de BONGO et le bilan du dimanche servent à ça : regarder la tendance plutôt que la pesée du jour.
+
+Si une semaine déraille, ne compense pas le lundi en te forçant. Reprends simplement ton rythme normal. Ce qui compte, c'est la moyenne sur plusieurs semaines.
+
+## Quand faut-il voir un médecin ?
+
+Parles-en à un médecin si ta maigreur s'accompagne d'autre chose, ou si ton poids baisse sans que tu saches pourquoi. Seul un professionnel de santé peut chercher une cause. Consulte notamment dans ces cas :
+
+- Tu perds du poids sans raison, sans avoir changé ton alimentation ni ton activité.
+
+- Tu as des troubles digestifs qui durent : douleurs, diarrhées, ballonnements importants, nausées.
+
+- Tu es très fatigué depuis longtemps, ou tu as d'autres symptômes qui t'inquiètent.
+
+- Manger est devenu difficile ou angoissant : peur de certains aliments, culpabilité, envie de tout contrôler, vomissements. Un trouble alimentaire peut toucher tout le monde, quel que soit le poids, et ça se soigne mieux quand on en parle tôt.
+
+- Le poids ne bouge pas malgré plusieurs mois de vrais efforts bien suivis.
+
+Ce plan s'adresse aux adultes. Si tu as moins de 18 ans, parles-en d'abord à un médecin ou à un adulte de confiance : ton corps est encore en croissance et les repères ne sont pas les mêmes.
+
+Questions fréquentes :
+- Combien de temps pour grossir quand on est maigre ?
+  Avec 0,25 à 0,5 kg par semaine, prendre 5 kg demande environ 10 à 20 semaines. La tendance devient nette au bout de 2 à 3 semaines, à condition de rester régulier.
+- Faut-il manger n'importe quoi pour prendre du poids ?
+  Non. Des aliments riches en calories mais simples, comme le lait, l'avoine, les œufs, le beurre de cacahuète et l'huile, font très bien le travail, sans passer par la malbouffe. Les protéines et l'entraînement aident à orienter la prise vers le muscle.
+- Est-ce que j'ai un problème de métabolisme ?
+  Seul un médecin peut le dire. Dans beaucoup de cas, ajouter régulièrement quelques centaines de calories suffit à faire bouger le poids. Si ce n'est pas le cas après plusieurs mois, ou si tu as d'autres symptômes, parles-en à un professionnel.
+- Faut-il des compléments pour grossir ?
+  Non, ils ne sont pas nécessaires. Un verre maison avec du lait, de l'avoine et une banane apporte déjà beaucoup de calories pour un prix bas.
+
+# Gainer maison : la recette à 670 kcal pour moins de 1 €
+URL : https://bongoapp.fr/blog/gainer-maison-recette/
+Publié le 2026-11-02
+
+Un gainer maison se prépare en mixant 300 ml de lait, 60 g de flocons d'avoine, une banane, 30 g de beurre de cacahuète et une cuillère de miel. Tu obtiens environ 670 kcal et 26 g de protéines pour moins de 1 €, sans acheter de poudre.
+
+En bref :
+- 670 kcal et 26 g de protéines dans un seul verre, soit l'équivalent d'un vrai repas.
+- Moins de 1 € par portion avec des produits de supermarché.
+- Boire ses calories aide quand on n'a plus faim : un liquide cale souvent moins qu'une assiette.
+- Il remplace un petit repas ou s'ajoute à ta journée, il ne fait pas prendre de poids tout seul.
+
+## La recette
+
+ Calories670 kcal
+
+ Protéines26 g
+
+ Prix≈ 0,93 €
+
+ Temps3 min
+
+ Par portion · recette pour 1 portion · glucides 83 g, lipides 24 g
+
+### Ingrédients
+
+ - 300 ml de lait demi-écrémé (un grand verre et demi)
+
+ - 60 g de flocons d'avoine (une grosse poignée)
+
+ - 1 banane moyenne sans la peau
+
+ - 30 g de beurre de cacahuète (une grosse cuillère à soupe)
+
+ - 1 cuillère à café de miel
+
+### Préparation
+
+ - Mets le lait et les flocons d'avoine dans le mixeur et laisse reposer 1 minute pour que l'avoine ramollisse.
+
+ - Ajoute la banane coupée en morceaux, le beurre de cacahuète et le miel.
+
+ - Mixe 30 à 45 secondes. Si c'est trop épais, ajoute un peu de lait. Bois tout de suite ou garde au frigo jusqu'au lendemain.
+
+## Pourquoi faire son gainer maison plutôt que d'en acheter un ?
+
+Un gainer vendu en magasin est surtout un mélange de glucides et de protéines en poudre. Rien que tu ne puisses faire avec des aliments courants. Le gainer maison a trois avantages : tu sais ce qu'il y a dedans, tu règles le goût, et le prix reste bas.
+
+Surtout, pour prendre du poids, il faut manger plus que ce que tu dépenses. Une revue écrite pour le bodybuilding conseille un surplus d'environ 10 à 20 % (Iraki et al., 2019). Notre repère, plus simple, est de 300 à 500 kcal de plus par jour. Quand on n'a plus faim, ajouter une assiette devient une corvée, alors qu'un verre passe souvent mieux. Ça peut aider ceux qui mangent beaucoup mais ne grossissent pas.
+
+## Quand boire ton gainer maison ?
+
+Au moment où ça te dérange le moins. Il n'existe pas d'heure magique : pour le muscle, c'est surtout le total de protéines de la journée qui compte, bien plus que le moment où tu les prends (Schoenfeld et al., 2013).
+
+- Le matin, si tu n'arrives pas à manger au réveil : voir aussi nos idées de petit-déjeuner pour grossir.
+
+- L'après-midi, entre le déjeuner et le dîner : il laisse le temps d'avoir faim le soir.
+
+- Après ta séance, si ça t'arrange. C'est pratique, pas obligatoire.
+
+## 4 variantes selon ce que tu as dans le placard
+
+ | | Variante | Ce que tu changes | Effet
+
+ | Chocolat | Ajoute 1 cuillère à soupe de cacao non sucré | Goût milkshake, presque pas de calories en plus
+
+ | Plus de protéines | Remplace 100 ml de lait par 100 g de fromage blanc | Environ 5 g de protéines en plus
+
+ | Plus de calories | Ajoute 20 g d'amandes ou une cuillère à soupe d'huile de colza (10 g) | Environ 90 à 120 kcal en plus
+
+ | Sans lactose | Prends du lait sans lactose | Valeurs presque identiques
+
+Les valeurs de la recette sont calculées à partir de repères arrondis d'après la table Ciqual. Elles varient un peu selon les marques.
+
+## Combien de gainers par jour ?
+
+Un seul suffit en général. Si ton poids ne bouge pas après 2 à 3 semaines, ajoute environ 200 kcal ailleurs avant d'en boire un deuxième : un repas plus copieux ou une collation font aussi l'affaire. L'idée est de viser une prise lente, autour de 0,25 à 0,5 kg par semaine, et d'ajuster en regardant ce que dit la balance.
+
+Pour savoir ce que ce verre apporte, note-le dans BONGO : tu écris « gainer maison, lait, avoine, banane » et l'app compte les calories et les protéines, sans rien peser.
+
+Pas de mixeur ? Écrase la banane à la fourchette, mélange-la avec les flocons, le beurre de cacahuète et le miel dans un bol, puis ajoute le lait petit à petit. Ça se mange à la cuillère, avec les mêmes calories.
+
+Questions fréquentes :
+- Un gainer maison fait-il grossir ?
+  Il aide à prendre du poids seulement s'il te fait manger plus de calories que tu n'en dépenses sur la journée. Avec des séances de musculation et assez de protéines, une partie de la prise pourra être du muscle.
+- Peut-on préparer son gainer la veille ?
+  Oui, il se garde au frigo jusqu'au lendemain dans une bouteille fermée. Il épaissit à cause de l'avoine : secoue-le et ajoute un peu de lait si besoin.
+- Faut-il ajouter de la whey dans un gainer maison ?
+  Non, ce n'est pas nécessaire : le verre apporte déjà environ 26 g de protéines. La whey peut aider seulement si tu n'atteins pas ton total de protéines avec tes repas.
+- Peut-on remplacer le beurre de cacahuète ?
+  Oui, par de la purée d'amande ou une poignée d'amandes mixées. Les calories restent proches, le prix augmente un peu.
+
+# Une séance de 20 minutes à la maison suffit-elle pour prendre du muscle ?
+URL : https://bongoapp.fr/blog/seance-20-minutes-maison/
+Publié le 2026-11-02
+
+Oui, pour un débutant, une séance de 20 minutes peut suffire à prendre du muscle si elle est répétée 3 à 4 fois par semaine et si les séries s'arrêtent près de l'échec. La durée compte moins que l'effort, la régularité et la progression d'une semaine à l'autre.
+
+En bref :
+- Le muscle réagit à l'effort, pas au chrono : des séries difficiles comptent plus que le temps passé.
+- 3 à 4 séances par semaine permettent de compenser une séance courte.
+- Termine chaque série à 1 ou 2 répétitions de l'échec.
+- Quand tout devient facile, passe à une variante plus dure ou rallonge la séance.
+
+## Pourquoi une séance de 20 minutes peut marcher
+
+La recherche suggère que le nombre de séries sur la semaine joue un rôle important dans la prise de muscle : plus de volume donne en général plus de résultats (Schoenfeld et al., 2017). Une séance de 20 minutes n'est donc pas magique à elle seule. Elle marche parce qu'elle est facile à répéter, et qu'en la faisant 3 ou 4 fois par semaine, le total grimpe vite.
+
+Autre bonne nouvelle : tu n'as pas besoin de charges lourdes. Des études montrent que des charges légères et lourdes donnent une prise de muscle comparable quand les séries vont jusqu'à l'échec (Schoenfeld et al., 2017 ; Lopez et al., 2021). Une petite étude sur 18 jeunes hommes a même trouvé des gains similaires entre les pompes et un développé couché léger (Kikuchi et Nakazato, 2017). Ici, on s'arrête 1 ou 2 répétitions avant l'échec : c'est un choix prudent pour garder une technique propre quand on débute.
+
+## La séance complète de 20 minutes, sans matériel
+
+Enchaîne 3 tours. Repose-toi environ 30 secondes entre chaque exercice : les muscles changent d'un exercice à l'autre, donc ça suffit en général. Prévois 2 minutes d'échauffement avant : marche sur place, rotations des bras, quelques squats sans forcer. Ça fait une vingtaine de minutes au total. Si tu as besoin de plus de repos, prends-le, quitte à ne faire que 2 tours.
+
+ | | Exercice | Muscles | Répétitions
+
+ | Squats | Cuisses, fessiers | 12 à 20
+
+ | Pompes (sur les genoux si besoin) | Pecs, épaules, triceps | 6 à 15
+
+ | Rowing sous une table solide | Dos, biceps | 6 à 12
+
+ | Fentes arrière | Cuisses, fessiers | 8 à 12 par jambe
+
+ | Gainage | Abdos | 30 à 45 secondes
+
+Vérifie que ta table supporte ton poids avant le rowing. Si tu as un doute, n'y va pas : notre article sur le dos sans matériel donne le test de solidité et d'autres exercices.
+
+## Les 3 règles pour que ces 20 minutes comptent
+
+- Va près de tes limites. À la fin d'une série, tu ne dois pouvoir faire qu'1 ou 2 répétitions de plus avec une technique propre. Si tu pourrais en faire 10, la série est trop facile.
+
+- Note ce que tu fais. Chaque semaine, vise une répétition de plus ou une variante plus dure. C'est ce qui remplace les poids qu'on ajoute en salle. Pour les pompes, suis notre progression de zéro à 20 pompes.
+
+- Répète. Le bon rythme dépend de ton emploi du temps : on en parle dans combien de séances par semaine.
+
+## Comment adapter la séance à ton niveau ?
+
+Garde la même structure et change seulement la difficulté de chaque exercice. Si tu ne fais pas le minimum de répétitions du tableau, prends la version facile. Si tu dépasses largement le maximum, passe à la version difficile.
+
+ | | Exercice | Version facile | Version difficile
+
+ | Squats | S'asseoir et se relever d'une chaise | Descente lente sur 3 secondes
+
+ | Pompes | Mains sur une table ou un lit | Pieds surélevés sur une chaise stable
+
+ | Rowing sous une table | Genoux pliés, pieds au sol | Jambes tendues
+
+ | Fentes arrière | Moins d'amplitude, une main sur un mur | Pied arrière posé sur une chaise calée contre un mur
+
+ | Gainage | Sur les genoux | Lever une jambe, puis changer
+
+## Les erreurs qui rendent 20 minutes inutiles
+
+- Enchaîner sans forcer. Une séance qui ne fait que transpirer travaille surtout le cardio. Garde le repos entre les exercices pour pouvoir faire des séries vraiment dures.
+
+- Refaire exactement la même chose pendant des mois. Sans progression, tu finis par stagner.
+
+- Bâcler la technique pour gagner des répétitions. Une répétition propre vaut mieux que trois à moitié faites. En cas de douleur vive, arrête l'exercice.
+
+- Juger trop tôt. Les changements visibles prennent du temps. Regarde d'abord tes répétitions : si elles montent, tu avances.
+
+## Quand faut-il faire plus de 20 minutes ?
+
+Quand tu arrives au bout des 3 tours sans difficulté, ajoute un quatrième tour ou choisis des variantes plus dures. La séance n'est qu'une partie du plan : sans un léger surplus de calories et assez de protéines, le muscle aura du mal à se construire, même avec un entraînement parfait.
+
+Si 20 minutes te paraissent encore trop longues, commence plus petit. Dans BONGO, la première séance dure 7 minutes : Bongo te montre chaque mouvement, puis les séances suivantes s'adaptent à ta forme du jour. L'important, c'est de commencer et de revenir.
+
+Pas motivé ce soir ? Fais seulement le premier tour. Une petite séance vaut mieux qu'une séance sautée, et il arrive souvent qu'on continue une fois lancé.
+
+Questions fréquentes :
+- Combien de fois par semaine faire une séance de 20 minutes ?
+  Pour un débutant, 3 à 4 fois par semaine est un bon repère, en gardant si possible un jour de repos entre deux séances très dures sur les mêmes muscles.
+- Peut-on faire cette séance tous les jours ?
+  C'est possible si l'effort reste modéré, mais le muscle a besoin de récupérer. En débutant, garde des jours de repos : tu progresseras plus sereinement.
+- Faut-il s'échauffer pour une séance courte ?
+  Oui, 2 minutes suffisent : marche sur place, rotations des bras et quelques squats sans forcer. Cela prépare les articulations et rend les premières séries plus confortables.
+- En combien de temps verra-t-on des résultats ?
+  La force progresse souvent en quelques semaines. Les changements visibles demandent généralement plus de temps, à condition de manger assez et de rester régulier.

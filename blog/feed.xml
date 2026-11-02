@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Le blog BONGO</title>
+    <link>https://bongoapp.fr/blog/</link>
+    <description>Recettes, nutrition et séances sans matériel pour prendre de la masse à la maison avec un petit budget.</description>
+    <language>fr-FR</language>
+    <item>
+      <title>Une séance de 20 minutes à la maison suffit-elle pour prendre du muscle ?</title>
+      <link>https://bongoapp.fr/blog/seance-20-minutes-maison/</link>
+      <guid>https://bongoapp.fr/blog/seance-20-minutes-maison/</guid>
+      <pubDate>Mon, 02 Nov 2026 06:00:00 +0100</pubDate>
+      <description>Oui, pour un débutant, une séance de 20 minutes peut suffire à prendre du muscle si elle est répétée 3 à 4 fois par semaine et si les séries s&#x27;arrêtent près de l&#x27;échec. La durée compte moins que l&#x27;effort, la régularité et la progression d&#x27;une semaine à l&#x27;autre.</description>
+    </item>
+    <item>
+      <title>Gainer maison : la recette à 670 kcal pour moins de 1 €</title>
+      <link>https://bongoapp.fr/blog/gainer-maison-recette/</link>
+      <guid>https://bongoapp.fr/blog/gainer-maison-recette/</guid>
+      <pubDate>Mon, 02 Nov 2026 06:00:00 +0100</pubDate>
+      <description>Un gainer maison se prépare en mixant 300 ml de lait, 60 g de flocons d&#x27;avoine, une banane, 30 g de beurre de cacahuète et une cuillère de miel. Tu obtiens environ 670 kcal et 26 g de protéines pour moins de 1 €, sans acheter de poudre.</description>
+    </item>
+    <item>
+      <title>Comment grossir quand on est maigre : le plan simple en 4 étapes</title>
+      <link>https://bongoapp.fr/blog/comment-grossir-quand-on-est-maigre/</link>
+      <guid>https://bongoapp.fr/blog/comment-grossir-quand-on-est-maigre/</guid>
+      <pubDate>Mon, 02 Nov 2026 06:00:00 +0100</pubDate>
+      <description>Pour grossir quand on est maigre, ajoute 300 à 500 kcal par jour à ce que tu manges déjà, vise environ 1,6 g de protéines par kilo, fais 3 séances de musculation par semaine et contrôle ton poids. Une prise de 0,25 à 0,5 kg par semaine est un bon repère. Ajuste toutes les 2 à 3 semaines.</description>
+    </item>
+  </channel>
+</rss>
