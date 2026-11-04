@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>BONGO Admin</title>
+<link rel="icon" href="../favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --fond:#F5F3E9; --carte:#FFFFFF; --encre:#17201A; --encre2:#56615A; --encre3:#7A857E;
+  --trait:#E4E2D6; --vert:#1F8A4C; --vert-pale:#E2F2E8; --alerte:#9A5B00; --alerte-fond:#FBF0DC; --danger:#B3261E;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --fond:#0F1511; --carte:#17201A; --encre:#EEF2EE; --encre2:#AEB8B1; --encre3:#8B968F;
+    --trait:#2A352E; --vert:#2FA866; --vert-pale:#1D3326; --alerte:#F1B65C; --alerte-fond:#33270F; --danger:#F2857D;
+  }
+}
+:root[data-theme="dark"] {
+  --fond:#0F1511; --carte:#17201A; --encre:#EEF2EE; --encre2:#AEB8B1; --encre3:#8B968F;
+  --trait:#2A352E; --vert:#2FA866; --vert-pale:#1D3326; --alerte:#F1B65C; --alerte-fond:#33270F; --danger:#F2857D;
+}
+* { box-sizing:border-box; }
+body { margin:0; background:var(--fond); color:var(--encre); font:500 15px/1.45 Nunito,system-ui,sans-serif; }
+h1,h2 { font-family:'Baloo 2',system-ui,sans-serif; line-height:1.1; margin:0; }
+h1 { font-size:24px; }
+h2 { font-size:22px; margin:34px 0 4px; }
+.page { max-width:1120px; margin:0 auto; padding:16px 16px 60px; }
+.tete { display:flex; flex-wrap:wrap; gap:10px 16px; align-items:center; justify-content:space-between; }
+.maj { color:var(--encre3); font-size:13px; }
+.filtres { display:flex; gap:8px; align-items:center; }
+button { font:700 14px Nunito,system-ui,sans-serif; color:var(--encre); background:var(--carte); border:1px solid var(--trait); border-radius:10px; padding:7px 12px; cursor:pointer; min-height:36px; }
+button[aria-pressed="true"] { background:var(--vert); border-color:var(--vert); color:#fff; }
+.intro { color:var(--encre2); margin:0 0 14px; max-width:68ch; }
+.grille { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr)); }
+.tuiles { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); }
+.carte { background:var(--carte); border:1px solid var(--trait); border-radius:14px; padding:14px; min-width:0; }
+.tuile .libelle { color:var(--encre2); font-size:13px; font-weight:700; }
+.tuile .valeur { font:800 30px/1.15 'Baloo 2',system-ui,sans-serif; margin-top:2px; font-variant-numeric:tabular-nums; }
+.tuile .note { color:var(--encre3); font-size:12px; }
+.carte h3 { margin:0 0 2px; font-size:15px; font-weight:800; }
+.carte .sous { color:var(--encre3); font-size:12px; margin:0 0 8px; }
+.vide { color:var(--encre3); font-size:14px; padding:18px 0; text-align:center; }
+.erreur { color:var(--danger); font-size:13px; }
+svg { display:block; width:100%; height:auto; overflow:visible; }
+.bande { background:var(--alerte-fond); color:var(--alerte); border-radius:12px; padding:10px 14px; font-weight:700; margin:12px 0; }
+.sources { display:flex; flex-wrap:wrap; gap:6px 14px; margin:12px 0 0; font-size:13px; color:var(--encre2); }
+.sources b { font-weight:800; }
+.barre-ligne { display:grid; grid-template-columns:minmax(90px,38%) 1fr 76px; gap:8px; align-items:center; padding:3px 0; font-size:13px; }
+.barre-ligne .nom { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:var(--encre2); }
+.barre-fond { height:10px; }
+.barre-remplie { height:10px; background:var(--vert); border-radius:0 4px 4px 0; min-width:2px; }
+.barre-ligne .val { text-align:right; font-variant-numeric:tabular-nums; font-weight:700; }
+.bulle { position:fixed; z-index:10; pointer-events:none; background:var(--encre); color:var(--fond); font-size:13px; font-weight:700; padding:5px 9px; border-radius:8px; white-space:nowrap; transform:translate(-50%,-120%); }
+details { margin-top:8px; font-size:13px; color:var(--encre2); }
+summary { cursor:pointer; min-height:28px; }
+table { width:100%; border-collapse:collapse; font-size:13px; font-variant-numeric:tabular-nums; }
+th,td { text-align:right; padding:5px 6px; border-bottom:1px solid var(--trait); white-space:nowrap; }
+th:first-child,td:first-child { text-align:left; white-space:normal; }
+.defile { overflow-x:auto; max-height:240px; }
+.connexion { max-width:380px; margin:12vh auto 0; }
+.connexion input { width:100%; font:600 16px Nunito,system-ui,sans-serif; padding:11px; margin:12px 0; border-radius:10px; border:1px solid var(--trait); background:var(--fond); color:var(--encre); }
+.connexion button { width:100%; background:var(--vert); border-color:var(--vert); color:#fff; }
+</style>
+</head>
+<body>
+<div id="app" class="page"></div>
+<div id="bulle" class="bulle" hidden></div>
+<script>
+const FONCTION = 'https://fbwmwsblwfymwuuzwpzy.supabase.co/functions/v1/admin-stats';
+const ETAPES_ONBOARDING = ["ouverture", "prenom", "pourquoi", "corps", "galere", "promesse", "essaye", "preuve", "objectif", "projection", "metabolisme", "appetit", "budget", "rythme", "niveau", "materiel", "pacte", "rappels", "forge"];
+const NOMS_ENTONNOIR = [
+  ['ouverture', 'App ouverte'], ['onboarding_fini', 'Questionnaire terminé'],
+  ['seance_lancee', 'Séance lancée'], ['seance_finie', 'Séance terminée'], ['repas_note', 'Repas noté'],
+  ['paywall_vu', 'Écran BONGO+ vu'], ['achat_lance', 'Achat lancé'], ['achat_ok', 'Achat réussi'],
+];
+const app = document.getElementById('app');
+const bulle = document.getElementById('bulle');
+const DEMO = new URLSearchParams(location.search).get('demo') === '1';
+const lire = (c) => { try { return sessionStorage.getItem(c); } catch { return null; } };
+const ecrire = (c, v) => { try { v === null ? sessionStorage.removeItem(c) : sessionStorage.setItem(c, v); } catch {} };
+let donnees = null;
+let periode = 30;
+let enCharge = false;
+const esc = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+const nb = (v, d = 0) => v === null || v === undefined || Number.isNaN(v) ? '—' : Number(v).toLocaleString('fr-FR', { maximumFractionDigits: d, minimumFractionDigits: d });
+const euros = (v) => v === null || v === undefined || Number.isNaN(v) ? '—' : Number(v).toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' });
+const dateCourte = (j) => { const [, m, d] = j.split('-'); return `${d}/${m}`; };
+const iso = (d) => d.toISOString().slice(0, 10);
+const debutPeriode = () => iso(new Date(Date.now() - (periode - 1) * 86400000));
+const dansPeriode = (l) => (l ?? []).filter((x) => x.jour >= debutPeriode());
+const somme = (l, c) => l.reduce((t, x) => t + (Number(x[c]) || 0), 0);
+
+function tuile(libelle, valeur, note = '') {
+  return `<div class="carte tuile"><div class="libelle">${esc(libelle)}</div><div class="valeur">${esc(valeur)}</div>${note ? `<div class="note">${esc(note)}</div>` : ''}</div>`;
+}
+function tableau(lignes, nomValeur, format) {
+  return `<details><summary>Voir le tableau</summary><div class="defile"><table><tr><th>Jour</th><th>${esc(nomValeur)}</th></tr>${[...lignes].reverse().map((p) => `<tr><td>${dateCourte(p.jour)}</td><td>${esc(format(p.valeur))}</td></tr>`).join('')}</table></div></details>`;
+}
+let idGraph = 0;
+// Une seule série par graphique, donc une seule couleur et pas de légende : le titre la nomme
+function graphique(titre, sous, points, { type = 'barres', format = (v) => nb(v), etat } = {}) {
+  const tete = `<h3>${esc(titre)}</h3><p class="sous">${esc(sous)}</p>`;
+  if (etat) return `<div class="carte">${tete}${etat}</div>`;
+  if (!points.length || points.every((p) => !p.valeur)) return `<div class="carte">${tete}<div class="vide">Pas encore de données sur cette période</div></div>`;
+  const id = `g${++idGraph}`;
+  const L = 640, H = 200, G = 34, D = 6, Ha = 10, Ba = 24;
+  const max = Math.max(...points.map((p) => p.valeur)) || 1;
+  const ech = Math.pow(10, Math.floor(Math.log10(max)));
+  const pas = [1, 2, 5, 10].map((m) => m * ech).find((s) => max / s <= 4) || ech;
+  const haut = Math.ceil(max / pas) * pas;
+  const y = (v) => Ha + (H - Ha - Ba) * (1 - v / haut);
+  const lg = L - G - D;
+  const xc = (i) => G + lg * (points.length === 1 ? 0.5 : (type === 'barres' ? (i + 0.5) / points.length : i / (points.length - 1)));
+  let grille = '';
+  for (let v = 0; v <= haut + 1e-9; v += pas) grille += `<line x1="${G}" x2="${L - D}" y1="${y(v)}" y2="${y(v)}" stroke="var(--trait)"/><text x="${G - 6}" y="${y(v) + 4}" text-anchor="end" font-size="12" fill="var(--encre3)">${nb(v, v % 1 ? 1 : 0)}</text>`;
+  const etiq = [0, Math.floor((points.length - 1) / 2), points.length - 1].filter((v, i, t) => t.indexOf(v) === i)
+    .map((i) => `<text x="${xc(i)}" y="${H - 6}" text-anchor="${i === 0 && type !== 'barres' ? 'start' : i === points.length - 1 && type !== 'barres' ? 'end' : 'middle'}" font-size="12" fill="var(--encre3)">${dateCourte(points[i].jour)}</text>`).join('');
+  let marques = '';
+  if (type === 'barres') {
+    const lb = Math.max(2, Math.min(18, lg / points.length - 2));
+    marques = points.map((p, i) => {
+      const h = Math.max(p.valeur ? 2 : 0, y(0) - y(p.valeur)), x = xc(i) - lb / 2, r = Math.min(4, lb / 2, h);
+      return h ? `<path d="M${x} ${y(0)}v${-(h - r)}q0 ${-r} ${r} ${-r}h${lb - 2 * r}q${r} 0 ${r} ${r}v${h - r}z" fill="var(--vert)"/>` : '';
+    }).join('');
+  } else {
+    marques = `<polyline points="${points.map((p, i) => `${xc(i)},${y(p.valeur)}`).join(' ')}" fill="none" stroke="var(--vert)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`
+      + `<circle cx="${xc(points.length - 1)}" cy="${y(points.at(-1).valeur)}" r="4" fill="var(--vert)" stroke="var(--carte)" stroke-width="2"/>`;
+  }
+  const dernier = points.at(-1);
+  const resume = `${titre}, du ${dateCourte(points[0].jour)} au ${dateCourte(dernier.jour)}. Maximum ${format(max)}, dernier jour ${format(dernier.valeur)}.`;
+  setTimeout(() => brancherSurvol(id, points, xc, L, format), 0);
+  return `<div class="carte">${tete}<svg id="${id}" viewBox="0 0 ${L} ${H}" role="img" aria-label="${esc(resume)}">${grille}${etiq}${marques}<line class="repere" y1="${Ha}" y2="${y(0)}" stroke="var(--encre3)" visibility="hidden"/></svg>${tableau(points, titre, format)}</div>`;
+}
+function brancherSurvol(id, points, xc, L, format) {
+  const svg = document.getElementById(id);
+  if (!svg) return;
+  const repere = svg.querySelector('.repere');
+  const bouge = (e) => {
+    const r = svg.getBoundingClientRect();
+    const xs = ((e.clientX - r.left) / r.width) * L;
+    let i = 0, ecart = Infinity;
+    points.forEach((_, k) => { const d = Math.abs(xc(k) - xs); if (d < ecart) { ecart = d; i = k; } });
+    repere.setAttribute('x1', xc(i)); repere.setAttribute('x2', xc(i)); repere.setAttribute('visibility', 'visible');
+    bulle.hidden = false;
+    bulle.textContent = `${dateCourte(points[i].jour)} : ${format(points[i].valeur)}`;
+    bulle.style.left = `${Math.min(innerWidth - 70, Math.max(70, r.left + (xc(i) / L) * r.width))}px`;
+    bulle.style.top = `${r.top + 8}px`;
+  };
+  const sort = () => { repere.setAttribute('visibility', 'hidden'); bulle.hidden = true; };
+  svg.addEventListener('pointermove', bouge);
+  svg.addEventListener('pointerdown', bouge);
+  svg.addEventListener('pointerleave', sort);
+}
+function barres(titre, sous, lignes, format = (v) => nb(v)) {
+  const tete = `<h3>${esc(titre)}</h3><p class="sous">${esc(sous)}</p>`;
+  if (!lignes.length || lignes.every((l) => !l.valeur)) return `<div class="carte">${tete}<div class="vide">Pas encore de données</div></div>`;
+  const max = Math.max(...lignes.map((l) => l.valeur)) || 1;
+  return `<div class="carte">${tete}${lignes.map((l) => `<div class="barre-ligne" title="${esc(l.nom)} : ${esc(l.texte ?? format(l.valeur))}"><div class="nom">${esc(l.nom)}</div><div class="barre-fond"><div class="barre-remplie" style="width:${(l.valeur / max) * 100}%"></div></div><div class="val">${esc(l.texte ?? format(l.valeur))}</div></div>`).join('')}</div>`;
+}
+const depuisObjet = (o) => Object.entries(o ?? {}).map(([nom, valeur]) => ({ nom, valeur })).sort((a, b) => b.valeur - a.valeur);
+const NOMS_ONGLETS = { accueil: 'Accueil', repas: 'Repas', sport: 'Sport', courses: 'Courses', profil: 'Profil' };
+const etatSource = (s, nom) => !s ? `<div class="vide">${nom} : indisponible</div>` : s.branche === false ? `<div class="vide">${nom} pas encore branché</div>` : s.erreur ? `<div class="erreur">${esc(nom)} : ${esc(s.erreur)}</div>` : '';
+const pastille = (nom, s, ok) => `<span><b>${s?.erreur ? '✕' : ok ? '✓' : '○'} ${esc(nom)}</b> ${s?.erreur ? 'en erreur' : ok ? 'connecté' : 'pas branché'}</span>`;
+
+function metrique(rc, id) { return (rc?.metriques ?? []).find((m) => m.id === id); }
+function pointsRc(rc, nom) { return dansPeriode(rc?.graphiques?.[nom]?.points); }
+
+function afficher() {
+  const { interne: i, revenuecat: rc, apple, meta } = donnees;
+  const u = i?.usage ?? {};
+  const c = i?.comptes ?? {};
+  const instal = dansPeriode(apple?.par_jour).map((p) => ({ jour: p.jour, valeur: p.installations }));
+  const totInstal = apple?.branche && !apple.erreur ? somme(instal, 'valeur') : null;
+  const pubJours = dansPeriode(meta?.par_jour);
+  const depense = meta?.branche && !meta.erreur ? somme(pubJours, 'depense') : null;
+  const clics = somme(pubJours, 'clics');
+  const usageJours = dansPeriode(u.par_jour);
+  const serieU = (k) => usageJours.map((p) => ({ jour: p.jour, valeur: Number(p[k]) || 0 }));
+  const comptesJours = dansPeriode(c.par_jour).map((p) => ({ jour: p.jour, valeur: p.nouveaux }));
+  const evenementsPresents = (u.appareils_total ?? 0) > 0;
+  const ent = NOMS_ENTONNOIR.map(([id, nom]) => ({ nom, valeur: u.entonnoir?.[id] ?? 0 }));
+  const onbMax = Math.max(0, ...Object.values(u.onboarding ?? {}));
+  const onb = ETAPES_ONBOARDING.filter((e) => u.onboarding?.[e] !== undefined).map((e) => ({ nom: e[0].toUpperCase() + e.slice(1), valeur: u.onboarding[e], texte: `${nb(u.onboarding[e])} · ${nb((u.onboarding[e] / onbMax) * 100)} %` }));
+  const reten = (u.retention ?? []).map((r) => tuile(`Revenus à J+${r.jour_n}`, r.cohorte ? `${nb((r.revenus / r.cohorte) * 100)} %` : '—', r.cohorte ? `${nb(r.revenus)} sur ${nb(r.cohorte)}${r.cohorte < 30 ? ' · trop peu pour conclure' : ''}` : 'Pas encore assez de recul')).join('');
+  const rcEtat = etatSource(rc, 'RevenueCat');
+  const ascEtat = etatSource(apple, 'App Store Connect');
+  const metaEtat = etatSource(meta, 'Meta');
+  const metasRc = (rc?.metriques ?? []).map((m) => tuile(m.nom ?? m.id, m.unite === '$' || m.unite === '€' || /mrr|revenue/i.test(m.id) ? euros(m.valeur) : nb(m.valeur), m.periode === 'P28D' ? '28 derniers jours' : '')).join('');
+  const parPub = meta?.par_pub ?? [];
+  app.innerHTML = `
+    <div class="tete">
+      <div><h1>BONGO Admin</h1><div class="maj">${donnees.genere ? `Mis à jour le ${new Date(donnees.genere).toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' })}` : ''}</div></div>
+      <div class="filtres">
+        ${[7, 30, 90].map((p) => `<button data-p="${p}" aria-pressed="${p === periode}">${p} j</button>`).join('')}
+        <button id="actu">${enCharge ? '…' : 'Actualiser'}</button>
+      </div>
+    </div>
+    ${DEMO ? '<div class="bande">⚠️ Démo : tous les chiffres de cette page sont inventés.</div>' : ''}
+    ${i?.erreur ? `<div class="bande">Base de données : ${esc(i.erreur)}</div>` : ''}
+    <div class="sources">
+      ${pastille('App', i, evenementsPresents)} ${pastille('Apple', apple, apple?.branche && !apple.erreur)}
+      ${pastille('RevenueCat', rc, rc?.branche && !rc.erreur)} ${pastille('Meta', meta, meta?.branche && !meta.erreur)}
+    </div>
+
+    <h2>L'essentiel</h2>
+    <p class="intro">Sur les ${periode} derniers jours, sauf mention contraire.</p>
+    <div class="tuiles">
+      ${tuile('Installations', nb(totInstal), 'Apple · 1 à 2 jours de retard')}
+      ${tuile('Actifs aujourd’hui', evenementsPresents ? nb(u.actifs_1j) : '—', 'Téléphones')}
+      ${tuile('Actifs sur 7 jours', evenementsPresents ? nb(u.actifs_7j) : '—', 'Téléphones')}
+      ${tuile('Actifs sur 30 jours', evenementsPresents ? nb(u.actifs_30j) : '—', 'Téléphones')}
+      ${tuile('Comptes créés', nb(c.total), 'Depuis le début')}
+      ${tuile('Dépensé en pub', euros(depense), 'Meta')}
+      ${tuile('Coût par installation', depense !== null && totInstal ? euros(depense / totInstal) : '—', 'Pub ÷ toutes les installations')}
+    </div>
+
+    <h2>Argent</h2>
+    <p class="intro">RevenueCat. Les revenus sont avant ou après commission selon ce qu'il renvoie, à vérifier sur ton premier chiffre réel.</p>
+    ${rcEtat ? `<div class="carte">${rcEtat}</div>` : `<div class="tuiles">${metasRc}</div>`}
+    <div class="grille" style="margin-top:12px">
+      ${graphique('Revenus par jour', 'En euros', pointsRc(rc, 'revenue'), { format: euros, etat: rcEtat })}
+      ${graphique('Nouveaux essais par jour', 'Essais gratuits démarrés', pointsRc(rc, 'trials_new'), { etat: rcEtat })}
+      ${graphique('Nouveaux abonnés par jour', 'Abonnements payants démarrés', pointsRc(rc, 'actives_new'), { etat: rcEtat })}
+      ${graphique('Nouveaux clients par jour', 'Premiers lancements vus par RevenueCat', pointsRc(rc, 'customers_new'), { etat: rcEtat })}
+    </div>
+
+    <h2>D'où viennent les gens</h2>
+    <p class="intro">Les installations comptent toutes les sources. Comparer leur courbe à celle de la pub donne une idée de l'effet réel de la pub.</p>
+    <div class="grille">
+      ${graphique('Installations par jour', 'App Store Connect', instal, { etat: ascEtat })}
+      ${graphique('Dépense pub par jour', 'Compte BONGO - Pub', pubJours.map((p) => ({ jour: p.jour, valeur: p.depense })), { format: euros, etat: metaEtat })}
+      ${graphique('Clics sur le lien par jour', `${nb(clics)} clics sur la période`, pubJours.map((p) => ({ jour: p.jour, valeur: p.clics })), { etat: metaEtat })}
+      <div class="carte"><h3>Détail par pub</h3><p class="sous">Depuis 60 jours</p>${metaEtat || (parPub.length ? `<div class="defile"><table><tr><th>Pub</th><th>Dépensé</th><th>Clics</th><th>Coût/clic</th></tr>${parPub.map((p) => `<tr><td>${esc(p.pub)}</td><td>${euros(p.depense)}</td><td>${nb(p.clics)}</td><td>${p.clics ? euros(p.depense / p.clics) : '—'}</td></tr>`).join('')}</table></div>` : '<div class="vide">Pas encore de données</div>')}</div>
+      ${barres('Installations par pays', 'Depuis 60 jours', depuisObjet(apple?.pays).slice(0, 8))}
+    </div>
+
+    <h2>Ce qu'ils font dans l'app</h2>
+    <p class="intro">Téléphones anonymes, à partir de la mise à jour de mesure seulement. Ceux qui ont refusé les statistiques ne sont pas comptés.</p>
+    <div class="grille">
+      ${graphique('Téléphones actifs par jour', 'Ont ouvert l’app ce jour-là', serieU('actifs'), { type: 'ligne' })}
+      ${graphique('Nouveaux téléphones par jour', 'Première ouverture mesurée', serieU('nouveaux'))}
+      ${graphique('Séances terminées par jour', 'Guidées, libres et découverte', serieU('seances'))}
+      ${graphique('Repas notés par jour', 'Le nombre seulement, jamais le contenu', serieU('repas'))}
+      ${graphique('Pesées par jour', 'Le nombre seulement, jamais le poids', serieU('pesees'))}
+      ${barres('Le parcours', 'Téléphones ayant fait chaque action au moins une fois', ent)}
+      ${barres('Questionnaire : où ils partent', '% de ceux qui ont vu la 1re étape', onb)}
+      ${barres('Onglets les plus ouverts', 'Nombre d’ouvertures', depuisObjet(u.onglets).map((o) => ({ ...o, nom: NOMS_ONGLETS[o.nom] ?? o.nom })))}
+      ${barres('Ce qui amène sur BONGO+', 'Origine de l’écran d’abonnement', depuisObjet(u.paywall))}
+      ${barres('Versions utilisées', 'Téléphones sur 30 jours', depuisObjet(u.versions))}
+    </div>
+
+    <h2>Est-ce qu'ils reviennent ?</h2>
+    <p class="intro">Part des nouveaux téléphones qui rouvrent l'app exactement N jours après leur première ouverture.</p>
+    <div class="tuiles">${reten}</div>
+
+    <h2>Communauté</h2>
+    <p class="intro">Uniquement les personnes avec un compte. Beaucoup utilisent BONGO sans compte.</p>
+    <div class="tuiles">
+      ${tuile('Comptes actifs sur 7 jours', nb(c.actifs_7j))}
+      ${tuile('Série moyenne', nb(c.serie_moyenne, 1), 'Comptes actifs sur 30 jours')}
+      ${tuile('Plus longue série', nb(c.serie_max))}
+      ${tuile('Amitiés', nb(c.amities), 'Demandes comprises')}
+    </div>
+    <div class="grille" style="margin-top:12px">
+      ${graphique('Comptes créés par jour', 'Supabase', comptesJours)}
+      ${barres('Joueurs par palier', 'Tous les comptes', depuisObjet(c.paliers))}
+    </div>
+    <p class="maj" style="margin-top:28px"><button id="sortir">Se déconnecter</button></p>`;
+  app.querySelectorAll('[data-p]').forEach((b) => b.addEventListener('click', () => { periode = Number(b.dataset.p); afficher(); }));
+  document.getElementById('actu').addEventListener('click', charger);
+  document.getElementById('sortir').addEventListener('click', () => { ecrire('admin_mdp', null); donnees = null; connexion(); });
+}
+
+function connexion(message = '') {
+  app.innerHTML = `<form class="carte connexion"><h1>BONGO Admin</h1>${message ? `<p class="erreur">${esc(message)}</p>` : ''}<label for="mdp" class="sous">Mot de passe</label><input id="mdp" type="password" autocomplete="current-password" required><button>Entrer</button></form>`;
+  app.querySelector('form').addEventListener('submit', (e) => { e.preventDefault(); ecrire('admin_mdp', document.getElementById('mdp').value); charger(); });
+  document.getElementById('mdp').focus();
+}
+
+async function charger() {
+  if (enCharge) return;
+  if (DEMO) { donnees = demo(); afficher(); return; }
+  const mdp = lire('admin_mdp');
+  if (!mdp) return connexion();
+  enCharge = true;
+  if (donnees) afficher(); else app.innerHTML = '<div class="vide">Chargement des chiffres…</div>';
+  try {
+    const r = await fetch(FONCTION, { method: 'POST', headers: { 'x-admin': mdp } });
+    if (r.status === 401) { ecrire('admin_mdp', null); enCharge = false; return connexion('Mot de passe incorrect.'); }
+    if (r.status === 429) { ecrire('admin_mdp', null); enCharge = false; return connexion('Trop d’essais ratés. Réessaie dans 15 minutes.'); }
+    if (!r.ok) throw new Error(`Serveur : erreur ${r.status}`);
+    donnees = await r.json();
+    donnees.genere = new Date().toISOString();
+    enCharge = false;
+    afficher();
+  } catch (e) {
+    enCharge = false;
+    if (donnees) afficher();
+    else app.innerHTML = `<div class="carte connexion"><p class="erreur">${esc(e.message)}</p><button id="re">Réessayer</button></div>`, document.getElementById('re').addEventListener('click', charger);
+  }
+}
+
+function demo() {
+  const jours = Array.from({ length: 90 }, (_, k) => iso(new Date(Date.now() - (89 - k) * 86400000)));
+  const a = (s, f) => jours.map((jour, k) => ({ jour, [s]: Math.max(0, Math.round(f(k))) }));
+  const ond = (b, v, k) => b + v * Math.sin(k / 4) + (k % 7 === 5 ? v : 0) + k * b / 120;
+  const gr = (f) => ({ points: jours.map((jour, k) => ({ jour, valeur: Math.max(0, Math.round(f(k))) })) });
+  return {
+    genere: new Date().toISOString(),
+    interne: {
+      usage: {
+        par_jour: jours.map((jour, k) => ({ jour, actifs: Math.round(ond(40, 8, k)), nouveaux: Math.round(ond(6, 3, k)), seances: Math.round(ond(14, 4, k)), repas: Math.round(ond(30, 6, k)), pesees: Math.round(ond(5, 2, k)) })),
+        actifs_1j: 72, actifs_7j: 240, actifs_30j: 610, appareils_total: 930,
+        entonnoir: { ouverture: 610, onboarding_fini: 402, seance_lancee: 290, seance_finie: 214, repas_note: 188, paywall_vu: 351, achat_lance: 38, achat_ok: 21 },
+        onboarding: Object.fromEntries(ETAPES_ONBOARDING.map((e, k) => [e, Math.round(560 * Math.pow(0.965, k))])),
+        onglets: { accueil: 2100, repas: 1500, sport: 980, courses: 310, profil: 420 },
+        paywall: { onboarding: 220, seances: 74, premiereseance: 61, profil: 20, verrou: 44 },
+        versions: { '1.4.3': 520, '1.4.2': 90 },
+        retention: [{ jour_n: 1, cohorte: 900, revenus: 300 }, { jour_n: 3, cohorte: 860, revenus: 170 }, { jour_n: 7, cohorte: 790, revenus: 110 }, { jour_n: 14, cohorte: 620, revenus: 60 }, { jour_n: 30, cohorte: 18, revenus: 3 }],
+      },
+      comptes: { total: 214, actifs_7j: 58, serie_moyenne: 3.4, serie_max: 41, amities: 37, paliers: { bois: 120, bronze: 60, argent: 24, or: 10 }, par_jour: jours.map((jour, k) => ({ jour, nouveaux: Math.round(ond(2, 1.5, k)) })) },
+    },
+    revenuecat: {
+      branche: true,
+      metriques: [{ id: 'active_trials', nom: 'Essais en cours', valeur: 26 }, { id: 'active_subscriptions', nom: 'Abonnés payants', valeur: 41 }, { id: 'mrr', nom: 'Revenu mensuel récurrent', valeur: 92.4 }, { id: 'revenue', nom: 'Revenus sur 28 jours', valeur: 138.5, periode: 'P28D' }, { id: 'new_customers', nom: 'Nouveaux clients', valeur: 280, periode: 'P28D' }],
+      graphiques: { revenue: gr((k) => ond(5, 3, k)), trials_new: gr((k) => ond(2, 1, k)), actives_new: gr((k) => ond(1, 1, k)), customers_new: gr((k) => ond(8, 3, k)) },
+    },
+    apple: { branche: true, par_jour: a('installations', (k) => ond(7, 3, k)), pays: { FR: 1200, BE: 90, CH: 60, CA: 40 } },
+    meta: {
+      branche: true,
+      par_jour: jours.map((jour, k) => ({ jour, depense: k > 60 ? ond(9, 1, 0) : 0, clics: k > 60 ? Math.round(ond(18, 4, k)) : 0, impressions: 0 })),
+      par_pub: [{ pub: 'Mange plus 18 s', depense: 120.4, clics: 290, impressions: 30000 }, { pub: '4 excuses 22 s', depense: 141.2, clics: 266, impressions: 34000 }],
+    },
+  };
+}
+charger();
+</script>
+</body>
+</html>
