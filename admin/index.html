@@ -172,7 +172,7 @@ function metrique(rc, id) { return (rc?.metriques ?? []).find((m) => m.id === id
 function pointsRc(rc, nom) { return dansPeriode(rc?.graphiques?.[nom]?.points); }
 
 function afficher() {
-  const { interne: i, revenuecat: rc, apple, meta } = donnees;
+  const { interne: i, revenuecat: rc, apple, meta, organique: org } = donnees;
   const u = i?.usage ?? {};
   const c = i?.comptes ?? {};
   const instal = dansPeriode(apple?.par_jour).map((p) => ({ jour: p.jour, valeur: p.installations }));
@@ -193,6 +193,14 @@ function afficher() {
   const metaEtat = etatSource(meta, 'Meta');
   const metasRc = (rc?.metriques ?? []).map((m) => tuile(NOMS_METRIQUES[m.id] ?? m.nom ?? m.id, m.unite === '$' || m.unite === '€' || /mrr|revenue/i.test(m.id) ? euros(m.valeur) : nb(m.valeur), m.periode === 'P28D' ? '28 derniers jours' : '')).join('');
   const parPub = meta?.par_pub ?? [];
+  const orgEtat = etatSource(org, 'Vues organiques');
+  const orgOk = org?.branche && !org.erreur;
+  const pubs = org?.publications ?? [];
+  const parJourPub = {};
+  dansPeriode(pubs).forEach((p) => { parJourPub[p.jour] = (parJourPub[p.jour] ?? 0) + (Number(p.vues) || 0); });
+  const vuesParDate = Object.keys(parJourPub).sort().map((jour) => ({ jour, valeur: parJourPub[jour] }));
+  const releves = dansPeriode(org?.releves).map((r) => ({ jour: r.jour, valeur: r.vues }));
+  const lienSur = (u) => /^https:\/\/(www\.)?(instagram|facebook)\.com\//.test(String(u ?? ''));
   app.innerHTML = `
     <div class="tete">
       <div><h1>BONGO Admin</h1><div class="maj">${donnees.genere ? `Mis à jour le ${new Date(donnees.genere).toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' })}` : ''}</div></div>
@@ -205,7 +213,7 @@ function afficher() {
     ${i?.erreur ? `<div class="bande">Base de données : ${esc(i.erreur)}</div>` : ''}
     <div class="sources">
       ${pastille('App', i, evenementsPresents)} ${pastille('Apple', apple, apple?.branche && !apple.erreur)}
-      ${pastille('RevenueCat', rc, rc?.branche && !rc.erreur)} ${pastille('Meta', meta, meta?.branche && !meta.erreur)}
+      ${pastille('RevenueCat', rc, rc?.branche && !rc.erreur)} ${pastille('Meta', meta, meta?.branche && !meta.erreur)} ${pastille('Vues organiques', org, org?.branche && !org.erreur)}
     </div>
 
     <h2>L'essentiel</h2>
@@ -239,6 +247,19 @@ function afficher() {
       <div class="carte"><h3>Détail par pub</h3><p class="sous">Depuis 60 jours</p>${metaEtat || (parPub.length ? `<div class="defile"><table><tr><th>Pub</th><th>Dépensé</th><th>Clics</th><th>Coût/clic</th></tr>${parPub.map((p) => `<tr><td>${esc(p.pub)}</td><td>${euros(p.depense)}</td><td>${nb(p.clics)}</td><td>${p.clics ? euros(p.depense / p.clics) : '—'}</td></tr>`).join('')}</table></div>` : '<div class="vide">Pas encore de données</div>')}</div>
       ${barres('Installations par pays', 'Depuis 60 jours', depuisObjet(apple?.pays).slice(0, 8))}
     </div>
+
+    <h2>Vues organiques</h2>
+    <p class="intro">Les vues de tes publications Instagram et Facebook, sans les vidéos de pub. Une publication que tu sponsorises directement peut compter ses vues payées ici.</p>
+    ${orgEtat ? `<div class="carte">${orgEtat}</div>` : `<div class="tuiles">
+      ${tuile('Vues cumulées', orgOk ? nb((org.instagram ?? 0) + (org.facebook ?? 0)) : '—', 'Toutes les publications')}
+      ${tuile('Instagram', orgOk ? nb(org.instagram) : '—', `${nb(pubs.filter((p) => p.reseau === 'Instagram').length)} publications`)}
+      ${tuile('Facebook', orgOk ? nb(org.facebook) : '—', `${nb(pubs.filter((p) => p.reseau === 'Facebook').length)} publications`)}
+    </div>
+    <div class="grille" style="margin-top:12px">
+      ${graphique('Vues cumulées dans le temps', releves.length < 2 ? 'La courbe se construit à partir d’aujourd’hui, un relevé par jour de visite' : 'Un relevé par jour de visite', releves.length < 2 ? [] : releves, { type: 'ligne' })}
+      ${graphique('Vues par date de publication', 'Sur la période choisie', vuesParDate)}
+      <div class="carte"><h3>Publications</h3><p class="sous">Les plus récentes d’abord</p>${pubs.length ? `<div class="defile"><table><tr><th>Publication</th><th>Réseau</th><th>Date</th><th>Vues</th></tr>${pubs.slice(0, 30).map((p) => `<tr><td>${lienSur(p.lien) ? `<a href="${esc(p.lien)}" target="_blank" rel="noopener noreferrer">${esc(p.texte || 'Sans texte')}</a>` : esc(p.texte || 'Sans texte')}</td><td>${esc(p.reseau)}</td><td>${dateCourte(p.jour)}</td><td>${nb(p.vues)}</td></tr>`).join('')}</table></div>` : '<div class="vide">Pas encore de publication</div>'}</div>
+    </div>`}
 
     <h2>Ce qu'ils font dans l'app</h2>
     <p class="intro">Téléphones anonymes, à partir de la mise à jour de mesure seulement. Ceux qui ont refusé les statistiques ne sont pas comptés.</p>
@@ -331,6 +352,7 @@ function demo() {
       metriques: [{ id: 'active_trials', nom: 'Essais en cours', valeur: 26 }, { id: 'active_subscriptions', nom: 'Abonnés payants', valeur: 41 }, { id: 'mrr', nom: 'Revenu mensuel récurrent', valeur: 92.4 }, { id: 'revenue', nom: 'Revenus sur 28 jours', valeur: 138.5, periode: 'P28D' }, { id: 'new_customers', nom: 'Nouveaux clients', valeur: 280, periode: 'P28D' }],
       graphiques: { revenue: gr((k) => ond(5, 3, k)), trials_new: gr((k) => ond(2, 1, k)), actives_new: gr((k) => ond(1, 1, k)), customers_new: gr((k) => ond(8, 3, k)) },
     },
+    organique: { branche: true, instagram: 8650, facebook: 2360, releves: jours.slice(-20).map((jour, k) => ({ jour, vues: 7000 + k * 210 })), publications: jours.slice(-6).reverse().map((jour, k) => ({ reseau: k % 2 ? 'Facebook' : 'Instagram', jour, texte: `Publication de démonstration ${k + 1}`, vues: 120 + k * 35 })) },
     apple: { branche: true, par_jour: a('installations', (k) => ond(7, 3, k)), pays: { FR: 1200, BE: 90, CH: 60, CA: 40 } },
     meta: {
       branche: true,
