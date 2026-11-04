@@ -163,6 +163,7 @@ function barres(titre, sous, lignes, format = (v) => nb(v)) {
   return `<div class="carte">${tete}${lignes.map((l) => `<div class="barre-ligne" title="${esc(l.nom)} : ${esc(l.texte ?? format(l.valeur))}"><div class="nom">${esc(l.nom)}</div><div class="barre-fond"><div class="barre-remplie" style="width:${(l.valeur / max) * 100}%"></div></div><div class="val">${esc(l.texte ?? format(l.valeur))}</div></div>`).join('')}</div>`;
 }
 const depuisObjet = (o) => Object.entries(o ?? {}).map(([nom, valeur]) => ({ nom, valeur })).sort((a, b) => b.valeur - a.valeur);
+const NOMS_METRIQUES = { active_trials: 'Essais en cours', active_subscriptions: 'Abonnés payants', mrr: 'Revenu mensuel récurrent', revenue: 'Revenus', new_customers: 'Nouveaux clients', active_users: 'Utilisateurs actifs (RevenueCat)' };
 const NOMS_ONGLETS = { accueil: 'Accueil', repas: 'Repas', sport: 'Sport', courses: 'Courses', profil: 'Profil' };
 const etatSource = (s, nom) => !s ? `<div class="vide">${nom} : indisponible</div>` : s.branche === false ? `<div class="vide">${nom} pas encore branché</div>` : s.erreur ? `<div class="erreur">${esc(nom)} : ${esc(s.erreur)}</div>` : '';
 const pastille = (nom, s, ok) => `<span><b>${s?.erreur ? '✕' : ok ? '✓' : '○'} ${esc(nom)}</b> ${s?.erreur ? 'en erreur' : ok ? 'connecté' : 'pas branché'}</span>`;
@@ -190,7 +191,7 @@ function afficher() {
   const rcEtat = etatSource(rc, 'RevenueCat');
   const ascEtat = etatSource(apple, 'App Store Connect');
   const metaEtat = etatSource(meta, 'Meta');
-  const metasRc = (rc?.metriques ?? []).map((m) => tuile(m.nom ?? m.id, m.unite === '$' || m.unite === '€' || /mrr|revenue/i.test(m.id) ? euros(m.valeur) : nb(m.valeur), m.periode === 'P28D' ? '28 derniers jours' : '')).join('');
+  const metasRc = (rc?.metriques ?? []).map((m) => tuile(NOMS_METRIQUES[m.id] ?? m.nom ?? m.id, m.unite === '$' || m.unite === '€' || /mrr|revenue/i.test(m.id) ? euros(m.valeur) : nb(m.valeur), m.periode === 'P28D' ? '28 derniers jours' : '')).join('');
   const parPub = meta?.par_pub ?? [];
   app.innerHTML = `
     <div class="tete">
