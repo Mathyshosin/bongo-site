@@ -98,18 +98,20 @@ const somme = (l, c) => l.reduce((t, x) => t + (Number(x[c]) || 0), 0);
 function tuile(libelle, valeur, note = '') {
   return `<div class="carte tuile"><div class="libelle">${esc(libelle)}</div><div class="valeur">${esc(valeur)}</div>${note ? `<div class="note">${esc(note)}</div>` : ''}</div>`;
 }
-function tableau(lignes, nomValeur, format) {
-  return `<details><summary>Voir le tableau</summary><div class="defile"><table><tr><th>Jour</th><th>${esc(nomValeur)}</th></tr>${[...lignes].reverse().map((p) => `<tr><td>${dateCourte(p.jour)}</td><td>${esc(format(p.valeur))}</td></tr>`).join('')}</table></div></details>`;
+function tableau(lignes, nomValeur, format, lab = (p) => dateCourte(p.jour), ordre = 'recent') {
+  const l = ordre === 'recent' ? [...lignes].reverse() : lignes;
+  return `<details><summary>Voir le tableau</summary><div class="defile"><table><tr><th>${ordre === 'recent' ? 'Jour' : 'Après'}</th><th>${esc(nomValeur)}</th></tr>${l.map((p) => `<tr><td>${esc(lab(p))}</td><td>${esc(format(p.valeur))}</td></tr>`).join('')}</table></div></details>`;
 }
 let idGraph = 0;
 // Une seule série par graphique, donc une seule couleur et pas de légende : le titre la nomme
-function graphique(titre, sous, points, { type = 'barres', format = (v) => nb(v), etat } = {}) {
+function graphique(titre, sous, points, { type = 'barres', format = (v) => nb(v), etat, etiquette, max: maxFixe } = {}) {
+  const lab = etiquette ?? ((p) => dateCourte(p.jour));
   const tete = `<h3>${esc(titre)}</h3><p class="sous">${esc(sous)}</p>`;
   if (etat) return `<div class="carte">${tete}${etat}</div>`;
   if (!points.length || points.every((p) => !p.valeur)) return `<div class="carte">${tete}<div class="vide">Pas encore de données sur cette période</div></div>`;
   const id = `g${++idGraph}`;
   const L = 640, H = 200, G = 34, D = 6, Ha = 10, Ba = 24;
-  const max = Math.max(...points.map((p) => p.valeur)) || 1;
+  const max = maxFixe ?? (Math.max(...points.map((p) => p.valeur)) || 1);
   const ech = Math.pow(10, Math.floor(Math.log10(max)));
   const pas = [1, 2, 5, 10].map((m) => m * ech).find((s) => max / s <= 4) || ech;
   const haut = Math.ceil(max / pas) * pas;
@@ -119,7 +121,7 @@ function graphique(titre, sous, points, { type = 'barres', format = (v) => nb(v)
   let grille = '';
   for (let v = 0; v <= haut + 1e-9; v += pas) grille += `<line x1="${G}" x2="${L - D}" y1="${y(v)}" y2="${y(v)}" stroke="var(--trait)"/><text x="${G - 6}" y="${y(v) + 4}" text-anchor="end" font-size="12" fill="var(--encre3)">${nb(v, v % 1 ? 1 : 0)}</text>`;
   const etiq = [0, Math.floor((points.length - 1) / 2), points.length - 1].filter((v, i, t) => t.indexOf(v) === i)
-    .map((i) => `<text x="${xc(i)}" y="${H - 6}" text-anchor="${i === 0 && type !== 'barres' ? 'start' : i === points.length - 1 && type !== 'barres' ? 'end' : 'middle'}" font-size="12" fill="var(--encre3)">${dateCourte(points[i].jour)}</text>`).join('');
+    .map((i) => `<text x="${xc(i)}" y="${H - 6}" text-anchor="${i === 0 && type !== 'barres' ? 'start' : i === points.length - 1 && type !== 'barres' ? 'end' : 'middle'}" font-size="12" fill="var(--encre3)">${esc(lab(points[i]))}</text>`).join('');
   let marques = '';
   if (type === 'barres') {
     const lb = Math.max(2, Math.min(18, lg / points.length - 2));
@@ -132,11 +134,11 @@ function graphique(titre, sous, points, { type = 'barres', format = (v) => nb(v)
       + `<circle cx="${xc(points.length - 1)}" cy="${y(points.at(-1).valeur)}" r="4" fill="var(--vert)" stroke="var(--carte)" stroke-width="2"/>`;
   }
   const dernier = points.at(-1);
-  const resume = `${titre}, du ${dateCourte(points[0].jour)} au ${dateCourte(dernier.jour)}. Maximum ${format(max)}, dernier jour ${format(dernier.valeur)}.`;
-  setTimeout(() => brancherSurvol(id, points, xc, L, format), 0);
-  return `<div class="carte">${tete}<svg id="${id}" viewBox="0 0 ${L} ${H}" role="img" aria-label="${esc(resume)}">${grille}${etiq}${marques}<line class="repere" y1="${Ha}" y2="${y(0)}" stroke="var(--encre3)" visibility="hidden"/></svg>${tableau(points, titre, format)}</div>`;
+  const resume = `${titre}, de ${lab(points[0])} à ${lab(dernier)}. Maximum ${format(max)}, dernier point ${format(dernier.valeur)}.`;
+  setTimeout(() => brancherSurvol(id, points, xc, L, format, lab), 0);
+  return `<div class="carte">${tete}<svg id="${id}" viewBox="0 0 ${L} ${H}" role="img" aria-label="${esc(resume)}">${grille}${etiq}${marques}<line class="repere" y1="${Ha}" y2="${y(0)}" stroke="var(--encre3)" visibility="hidden"/></svg>${tableau(points, titre, format, lab, etiquette ? 'ordre' : 'recent')}</div>`;
 }
-function brancherSurvol(id, points, xc, L, format) {
+function brancherSurvol(id, points, xc, L, format, lab = (p) => dateCourte(p.jour)) {
   const svg = document.getElementById(id);
   if (!svg) return;
   const repere = svg.querySelector('.repere');
@@ -147,7 +149,7 @@ function brancherSurvol(id, points, xc, L, format) {
     points.forEach((_, k) => { const d = Math.abs(xc(k) - xs); if (d < ecart) { ecart = d; i = k; } });
     repere.setAttribute('x1', xc(i)); repere.setAttribute('x2', xc(i)); repere.setAttribute('visibility', 'visible');
     bulle.hidden = false;
-    bulle.textContent = `${dateCourte(points[i].jour)} : ${format(points[i].valeur)}`;
+    bulle.textContent = `${lab(points[i])} : ${format(points[i].valeur)}`;
     bulle.style.left = `${Math.min(innerWidth - 70, Math.max(70, r.left + (xc(i) / L) * r.width))}px`;
     bulle.style.top = `${r.top + 8}px`;
   };
@@ -164,6 +166,8 @@ function barres(titre, sous, lignes, format = (v) => nb(v)) {
 }
 const depuisObjet = (o) => Object.entries(o ?? {}).map(([nom, valeur]) => ({ nom, valeur })).sort((a, b) => b.valeur - a.valeur);
 const NOMS_METRIQUES = { active_trials: 'Essais en cours', active_subscriptions: 'Abonnés payants', mrr: 'Revenu mensuel récurrent', revenue: 'Revenus', new_customers: 'Nouveaux clients', active_users: 'Utilisateurs actifs (RevenueCat)' };
+const NOMS_PAGES = { cartejoueur: 'Ma carte', collection: 'Collection', badges: 'Badges', calendrier: 'Calendrier', amis: 'Classement & amis', reglages: 'Réglages', compte: 'Compte' };
+const NOMS_PAYWALL = { onboarding: 'Fin du questionnaire', relance: 'Offre 3,99 € (La Légende)', verrou: 'Fonction verrouillée', profil: 'Profil', seances: 'Séances illimitées', scanner: 'Scanner', courses: 'Courses', serie: 'Série' };
 const NOMS_ONGLETS = { accueil: 'Accueil', repas: 'Repas', sport: 'Sport', courses: 'Courses', profil: 'Profil' };
 const etatSource = (s, nom) => !s ? `<div class="vide">${nom} : indisponible</div>` : s.branche === false ? `<div class="vide">${nom} pas encore branché</div>` : s.erreur ? `<div class="erreur">${esc(nom)} : ${esc(s.erreur)}</div>` : '';
 const pastille = (nom, s, ok) => `<span><b>${s?.erreur ? '✕' : ok ? '✓' : '○'} ${esc(nom)}</b> ${s?.erreur ? 'en erreur' : ok ? 'connecté' : 'pas branché'}</span>`;
@@ -188,6 +192,20 @@ function afficher() {
   const onbMax = Math.max(0, ...Object.values(u.onboarding ?? {}));
   const onb = ETAPES_ONBOARDING.filter((e) => u.onboarding?.[e] !== undefined).map((e) => ({ nom: e[0].toUpperCase() + e.slice(1), valeur: u.onboarding[e], texte: `${nb(u.onboarding[e])} · ${nb((u.onboarding[e] / onbMax) * 100)} %` }));
   const reten = (u.retention ?? []).map((r) => tuile(`Revenus à J+${r.jour_n}`, r.cohorte ? `${nb((r.revenus / r.cohorte) * 100)} %` : '—', r.cohorte ? `${nb(r.revenus)} sur ${nb(r.cohorte)}${r.cohorte < 30 ? ' · trop peu pour conclure' : ''}` : 'Pas encore assez de recul')).join('');
+  const pct = (a, b) => (b ? `${nb((a / b) * 100)} %` : '—');
+  const peu = (n) => (n < 30 ? ' · trop peu pour conclure' : '');
+  const courbe = (u.courbe ?? []).filter((r) => r.cohorte > 0).map((r) => ({ n: r.n, valeur: (r.revenus / r.cohorte) * 100, cohorte: r.cohorte }));
+  const ab = u.abandon ?? {};
+  const abTotal = Object.values(ab).reduce((t, v) => t + v, 0);
+  const abLignes = Array.from({ length: 15 }, (_, k) => ({ nom: k === 0 ? 'Jamais revenus' : k === 14 ? 'J+14 et plus' : `J+${k}`, valeur: ab[k] ?? 0 }))
+    .map((l) => ({ ...l, texte: `${nb(l.valeur)} · ${pct(l.valeur, abTotal)}` }));
+  const conv = Object.entries(u.conversion ?? {}).map(([o, v]) => ({ o, ...v })).sort((a, b) => b.vus - a.vus);
+  const se = u.sessions ?? {};
+  const rep = se.repartition ?? {};
+  const NOMS_DUREES = [['moins_1', 'Moins d’1 min'], ['1_3', '1 à 3 min'], ['3_10', '3 à 10 min'], ['10_30', '10 à 30 min'], ['plus_30', '30 min et plus']];
+  const suivi = u.suivi ?? {};
+  const acceptes = suivi.reponses?.granted ?? 0;
+  const repondu = Object.values(suivi.reponses ?? {}).reduce((t, v) => t + v, 0);
   const rcEtat = etatSource(rc, 'RevenueCat');
   const ascEtat = etatSource(apple, 'App Store Connect');
   const metaEtat = etatSource(meta, 'Meta');
@@ -273,12 +291,41 @@ function afficher() {
       ${barres('Questionnaire : où ils partent', '% de ceux qui ont vu la 1re étape', onb)}
       ${barres('Onglets les plus ouverts', 'Nombre d’ouvertures', depuisObjet(u.onglets).map((o) => ({ ...o, nom: NOMS_ONGLETS[o.nom] ?? o.nom })))}
       ${barres('Ce qui amène sur BONGO+', 'Origine de l’écran d’abonnement', depuisObjet(u.paywall))}
+      ${barres('Pages les plus ouvertes', 'Sous-pages du Profil, nombre d’ouvertures', depuisObjet(u.pages).map((o) => ({ ...o, nom: NOMS_PAGES[o.nom] ?? o.nom })))}
       ${barres('Versions utilisées', 'Téléphones sur 30 jours', depuisObjet(u.versions))}
     </div>
 
     <h2>Est-ce qu'ils reviennent ?</h2>
     <p class="intro">Part des nouveaux téléphones qui rouvrent l'app exactement N jours après leur première ouverture.</p>
     <div class="tuiles">${reten}</div>
+    <div class="grille" style="margin-top:12px">
+      ${graphique('Courbe de rétention', 'Part des téléphones qui ouvrent l’app N jours après la première fois', courbe, { type: 'ligne', format: (v) => `${nb(v)} %`, etiquette: (p) => `J+${p.n}`, max: 100 })}
+      ${barres('À partir de quand ils lâchent', `Dernier jour où l’app a été ouverte, ${nb(abTotal)} téléphones installés depuis 14 jours ou plus${peu(abTotal)}`, abTotal ? abLignes : [])}
+    </div>
+
+    <h2>Temps passé dans l'app</h2>
+    <p class="intro">Une session = du moment où l’app passe au premier plan jusqu’à ce qu’on la quitte. Plafonnée à 3 h, les sessions de moins de 5 secondes ne comptent pas.</p>
+    <div class="tuiles">
+      ${tuile('Session médiane', se.nb ? `${nb(se.mediane, 1)} min` : '—', se.nb ? `La moitié des sessions dure moins${peu(se.nb)}` : 'Arrive avec la prochaine mise à jour')}
+      ${tuile('Session moyenne', se.nb ? `${nb(se.moyenne, 1)} min` : '—')}
+      ${tuile('Par jour d’utilisation', se.par_jour_actif ? `${nb(se.par_jour_actif, 1)} min` : '—', 'Temps total d’un téléphone les jours où il ouvre l’app')}
+      ${tuile('Sessions mesurées', nb(se.nb ?? 0))}
+    </div>
+    <div class="grille" style="margin-top:12px">
+      ${barres('Durée des sessions', 'Nombre de sessions', se.nb ? NOMS_DUREES.map(([k, nom]) => ({ nom, valeur: rep[k] ?? 0, texte: `${nb(rep[k] ?? 0)} · ${pct(rep[k] ?? 0, se.nb)}` })) : [])}
+    </div>
+
+    <h2>Conversion par paywall</h2>
+    <p class="intro">Un achat est attribué au dernier écran BONGO+ vu avant lui. « Vus » = téléphones différents. Les achats d’avant le 07/11 ne sont pas attribués.</p>
+    <div class="carte">${conv.length ? `<div class="defile" style="max-height:none"><table><tr><th>Écran</th><th>Vus</th><th>Achats</th><th>Conversion</th></tr>${conv.map((l) => `<tr><td>${esc(NOMS_PAYWALL[l.o] ?? l.o)}</td><td>${nb(l.vus)}</td><td>${nb(l.achats)}</td><td>${pct(l.achats, l.vus)}</td></tr>`).join('')}</table></div>` : '<div class="vide">Pas encore de données</div>'}</div>
+
+    <h2>Demande de suivi (pub)</h2>
+    <p class="intro">Le petit pop-up puis la fenêtre d’Apple, après la première séance. Sans « Autoriser », Meta ne reçoit rien.</p>
+    <div class="tuiles">
+      ${tuile('Ont vu la demande', nb(suivi.vus ?? 0), suivi.vus ? '' : 'Arrive avec la version 1.4.4')}
+      ${tuile('Ont accepté', nb(acceptes))}
+      ${tuile('Taux d’acceptation', pct(acceptes, repondu), repondu ? `Sur ${nb(repondu)} réponses${peu(repondu)}` : '')}
+    </div>
 
     <h2>Communauté</h2>
     <p class="intro">Uniquement les personnes avec un compte. Beaucoup utilisent BONGO sans compte.</p>
@@ -343,6 +390,12 @@ function demo() {
         onglets: { accueil: 2100, repas: 1500, sport: 980, courses: 310, profil: 420 },
         paywall: { onboarding: 220, seances: 74, premiereseance: 61, profil: 20, verrou: 44 },
         versions: { '1.4.3': 520, '1.4.2': 90 },
+        courbe: Array.from({ length: 31 }, (_, n) => ({ n, cohorte: 900 - n * 10, revenus: Math.round((900 - n * 10) * (n ? 0.12 + 0.3 * Math.exp(-n / 3) : 1)) })),
+        abandon: { 0: 310, 1: 120, 2: 70, 3: 45, 4: 30, 5: 22, 6: 18, 7: 15, 8: 10, 9: 9, 10: 8, 11: 6, 12: 5, 13: 4, 14: 120 },
+        conversion: { onboarding: { vus: 300, achats: 9 }, relance: { vus: 120, achats: 7 }, verrou: { vus: 44, achats: 3 }, profil: { vus: 20, achats: 1 } },
+        sessions: { nb: 2400, moyenne: 4.6, mediane: 2, par_jour_actif: 7.8, repartition: { moins_1: 520, '1_3': 900, '3_10': 680, '10_30': 250, plus_30: 50 } },
+        suivi: { vus: 260, reponses: { granted: 70, denied: 180 } },
+        pages: { cartejoueur: 310, collection: 160, amis: 90, calendrier: 70, reglages: 40 },
         retention: [{ jour_n: 1, cohorte: 900, revenus: 300 }, { jour_n: 3, cohorte: 860, revenus: 170 }, { jour_n: 7, cohorte: 790, revenus: 110 }, { jour_n: 14, cohorte: 620, revenus: 60 }, { jour_n: 30, cohorte: 18, revenus: 3 }],
       },
       comptes: { total: 214, actifs_7j: 58, serie_moyenne: 3.4, serie_max: 41, amities: 37, paliers: { bois: 120, bronze: 60, argent: 24, or: 10 }, par_jour: jours.map((jour, k) => ({ jour, nouveaux: Math.round(ond(2, 1.5, k)) })) },
