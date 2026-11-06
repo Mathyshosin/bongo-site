@@ -1288,3 +1288,115 @@ Questions fréquentes :
   Non, les flocons d'avoine classiques suffisent. Les flocons fins cuisent un peu plus vite, les gros restent plus fermes. Les valeurs sont proches.
 - Ce porridge fait-il grossir ?
   Il aide à prendre du poids s'il te fait manger plus que tu ne dépenses sur la journée. S'il remplace simplement un autre repas aussi copieux, ton poids ne bougera pas forcément.
+
+# Se peser en prise de masse : à quelle fréquence et comment lire la balance
+URL : https://bongoapp.fr/blog/se-peser-prise-de-masse/
+Publié le 2026-11-06
+
+En prise de masse, se peser 2 à 3 fois par semaine suffit, le matin après être allé aux toilettes et avant de manger. Compare les moyennes de chaque semaine, pas les pesées une par une. Vise 0,25 à 0,5 kg de plus par semaine et n'ajuste tes calories qu'après 2 à 3 semaines.
+
+En bref :
+- 2 à 3 pesées par semaine, le matin et dans les mêmes conditions, suffisent.
+- Compare les moyennes de la semaine, jamais deux jours entre eux.
+- Quelques centaines de grammes d'écart d'un jour à l'autre, c'est normal.
+- Change tes calories de 100 à 200 kcal seulement après 2 à 3 semaines de tendance claire.
+
+## À quelle fréquence se peser en prise de masse ?
+
+Deux à trois fois par semaine, c'est le bon compromis. Une seule pesée par semaine est risquée : si elle tombe un jour où tu retiens de l'eau, tu crois avoir pris un kilo en sept jours. Plus de pesées donnent une moyenne plus fiable. Te peser chaque matin marche aussi, à condition que le chiffre ne te gâche pas la journée.
+
+Le plus important est de te peser dans les mêmes conditions à chaque fois :
+
+- le matin, après être allé aux toilettes ;
+
+- avant de manger et de boire ;
+
+- avec la même tenue, ou sans vêtements ;
+
+- sur la même balance, posée au même endroit, sur un sol dur.
+
+## Pourquoi ton poids change d'un jour à l'autre ?
+
+Parce que la balance mesure tout ton corps : eau, contenu de l'intestin, muscle, gras. D'un jour à l'autre, c'est surtout l'eau et la digestion qui bougent. Quelques centaines de grammes d'écart n'ont rien d'anormal, et même un kilo peut arriver.
+
+Voici ce qui fait souvent varier le chiffre sans que ton muscle ou ton gras aient changé :
+
+- un repas plus salé ou plus riche en glucides la veille ;
+
+- un repas pris tard le soir ;
+
+- la digestion et le transit ;
+
+- une séance dure la veille ;
+
+- le cycle menstruel chez les femmes.
+
+Une petite hausse d'un matin n'est donc en général pas du gras, et une petite baisse pas du muscle perdu. C'est du bruit. Pour voir à travers ce bruit, il faut une moyenne.
+
+## Comment calculer la moyenne de la semaine ?
+
+Additionne tes pesées de la semaine et divise par le nombre de pesées. Puis compare avec la moyenne de la semaine d'avant. Voici un exemple inventé pour montrer le principe, avec une pesée chaque matin :
+
+ | | Jour | Semaine 1 | Semaine 2
+
+ | Lundi | 68,4 kg | 68,7 kg
+
+ | Mardi | 68,9 kg | 68,5 kg
+
+ | Mercredi | 68,2 kg | 69,1 kg
+
+ | Jeudi | 68,6 kg | 68,8 kg
+
+ | Vendredi | 69,0 kg | 68,6 kg
+
+ | Samedi | 68,3 kg | 69,2 kg
+
+ | Dimanche | 68,5 kg | 68,9 kg
+
+ | Moyenne | 68,6 kg | 68,8 kg
+
+Regarde le mercredi et le jeudi de la semaine 1 : 0,4 kg d'écart en une journée. Du mardi au mercredi, le poids perd même 0,7 kg. Pourtant, entre les deux semaines, la moyenne monte d'environ 0,3 kg (68,56 puis 68,83 kg avant arrondi). C'est dans le repère, et c'est le seul chiffre qui compte ici.
+
+La courbe de poids de BONGO te montre cette tendance sans sortir la calculette, et le bilan du dimanche résume ta semaine. Tu peux aussi le faire sur une simple note de téléphone.
+
+## Quand ajuster tes calories ?
+
+Attends 2 à 3 semaines de tendance avant de changer quoi que ce soit. Une semaine isolée peut tromper. Notre repère de 0,25 à 0,5 kg par semaine va à peu près avec un surplus de 300 à 500 kcal par jour, sans être une règle tirée d'une étude.
+
+ | | Ta moyenne sur 2 à 3 semaines | Ce que tu fais
+
+ | Le poids ne bouge pas ou baisse | Ajoute 200 kcal par jour, puis regarde à nouveau dans 2 à 3 semaines
+
+ | Moins de 0,25 kg par semaine | Ajoute 100 à 200 kcal par jour
+
+ | 0,25 à 0,5 kg par semaine | Ne change rien
+
+ | Plus de 0,5 kg par semaine | Enlève 100 à 200 kcal par jour
+
+Pourquoi ne pas se fier à une formule une fois pour toutes ? Parce qu'il n'existe pas de surplus idéal validé : le surplus exact nécessaire pour construire du muscle reste inconnu, et les besoins changent selon l'expérience d'entraînement de chacun (Slater et al., 2019). Une revue pour pratiquants de bodybuilding donne un rythme plus lent, 0,25 à 0,5 % du poids par semaine pour les débutants et intermédiaires (Iraki et al., 2019). À 68 kg, ça fait environ 170 à 340 g. Ces chiffres sont des points de départ. C'est ta propre courbe qui te dit quoi faire.
+
+Si tu veux corriger ta moyenne sans tout peser en cuisine, lis notre article pour compter ses calories sans balance. Si la balance monte vite et que ça t'inquiète, lis notre article sur la prise de gras.
+
+## Pourquoi ne pas se focaliser sur la balance ?
+
+Parce qu'elle ne dit qu'une partie de l'histoire. Elle ne fait pas la différence entre l'eau, le muscle et le gras. Regarde aussi d'autres signes, plus lents mais plus parlants :
+
+- tu fais plus de répétitions ou une variante plus dure qu'il y a un mois ;
+
+- tes t-shirts serrent aux épaules ;
+
+- une photo prise dans la même lumière, une fois par mois, montre un changement.
+
+Pour savoir à quel moment tout ça devient visible, notre guide détaille combien de temps il faut pour prendre du muscle. Et si le poids reste bloqué, repars du plan pour grossir quand on est maigre.
+
+Si te peser te stresse ou te fait sauter des repas, espace les pesées ou arrête un moment. Si le chiffre prend trop de place dans ta tête, parles-en à un médecin : le but est de progresser, pas de vivre avec une balance.
+
+Questions fréquentes :
+- Faut-il se peser tous les jours en prise de masse ?
+  Ce n'est pas nécessaire. Deux à trois pesées par semaine donnent déjà une bonne moyenne. Une pesée quotidienne convient seulement si elle ne te stresse pas et si tu regardes la moyenne plutôt que le chiffre du matin.
+- Pourquoi j'ai pris 1 kg en une nuit ?
+  Ce n'est pas 1 kg de gras ni de muscle. L'eau, le sel, les glucides et la digestion peuvent expliquer ce genre d'écart. Regarde la moyenne de la semaine avant de conclure.
+- Quelle balance choisir ?
+  Une balance simple suffit. Elle n'a pas besoin de donner un pourcentage de gras. Ce qui compte, c'est de garder la même et de la poser au même endroit.
+- Mon poids stagne depuis une semaine, que faire ?
+  Rien pour l'instant. Attends 2 à 3 semaines de moyennes. Si la tendance reste plate, ajoute environ 200 kcal par jour.
