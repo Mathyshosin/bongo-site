@@ -1400,3 +1400,89 @@ Questions fréquentes :
   Une balance simple suffit. Elle n'a pas besoin de donner un pourcentage de gras. Ce qui compte, c'est de garder la même et de la poser au même endroit.
 - Mon poids stagne depuis une semaine, que faire ?
   Rien pour l'instant. Attends 2 à 3 semaines de moyennes. Si la tendance reste plate, ajoute environ 200 kcal par jour.
+
+# 3000 calories par jour : la journée type à moins de 6 €, et pour qui c'est adapté
+URL : https://bongoapp.fr/blog/journee-3000-calories/
+Publié le 2026-11-07
+
+Manger 3000 calories par jour coûte moins de 6 € avec des aliments simples, répartis en 5 prises pour 145 g de protéines. Ce total convient plutôt à un homme d'environ 70 à 80 kg, actif. Pour beaucoup d'autres profils, il dépasse notre repère de 300 à 500 kcal de surplus : calcule tes besoins avant.
+
+En bref :
+- Environ 3 000 kcal et 145 g de protéines pour moins de 6 € avec des produits de supermarché discount.
+- Ce chiffre ne vaut pas pour tout le monde : selon le profil, il représente un surplus de 200 à 1 000 kcal.
+- Le repère utile reste tes dépenses + 300 à 500 kcal, puis ajuster avec la balance.
+- Monte par paliers de 200 kcal plutôt que d'un seul coup.
+
+## À quoi ressemble une journée à 3000 calories par jour ?
+
+À cinq prises simples, sans plat compliqué. Le tableau suit une journée complète à environ 3 000 kcal, calculée d'après la table Ciqual avec des prix indicatifs de supermarché discount. Les quantités de riz, de pâtes et de flocons sont données crues.
+
+ | | Repas | Contenu | Calories | Protéines | Prix
+
+ | Petit-déj | 80 g de flocons, 300 ml de lait, 1 banane, 30 g de beurre de cacahuète | 710 kcal | 29 g | ≈ 0,86 €
+
+ | Déjeuner | 120 g de riz, 3 œufs, 150 g de légumes surgelés, 15 g d'huile | 830 kcal | 32 g | ≈ 1,43 €
+
+ | Goûter | 200 g de fromage blanc, 70 g de pain, 15 g de beurre de cacahuète | 430 kcal | 26 g | ≈ 0,83 €
+
+ | Dîner | 120 g de pâtes, 1 boîte de thon, 150 g de tomates, 15 g d'huile, 30 g d'emmental | 830 kcal | 49 g | ≈ 1,86 €
+
+ | Le soir | 250 ml de lait, 1 banane | 200 kcal | 9 g | ≈ 0,45 €
+
+ | Total | | 3 000 kcal | 145 g | ≈ 5,43 €
+
+Ce menu dépasse volontairement le repère de protéines. Une méta-analyse situe vers 1,6 g par kilo et par jour le niveau au-delà duquel on ne gagne plus de muscle en plus, en moyenne (Morton et al., 2018). À 70 kg, ça fait environ 112 g. Si le thon pèse sur ton budget, tu peux donc le remplacer : avec 60 g de lentilles sèches à sa place, tu économises environ 0,90 €, tu ajoutes 90 kcal et tu perds 11 g de protéines.
+
+## Pour qui 3000 calories par jour sont-elles adaptées ?
+
+Pour certains profils seulement. La bonne question n'est pas « combien manger pour grossir », mais « combien je dépense ». Le tableau ci-dessous donne des estimations pour des adultes actifs, avec la formule de Mifflin (Mifflin et al., 1990) multipliée par 1,5, un coefficient courant pour une personne qui s'entraîne 3 à 4 fois par semaine. Ce sont des points de départ, pas des mesures.
+
+ | | Profil | Dépenses estimées | Objectif avec +300 à +500 kcal | 3 000 kcal, c'est
+
+ | Femme, 20 ans, 55 kg, 1,65 m | ≈ 1 980 kcal | ≈ 2 280 à 2 480 kcal | Trop élevé
+
+ | Femme, 22 ans, 65 kg, 1,70 m | ≈ 2 160 kcal | ≈ 2 460 à 2 660 kcal | Trop élevé
+
+ | Homme, 20 ans, 60 kg, 1,75 m | ≈ 2 400 kcal | ≈ 2 700 à 2 900 kcal | Un peu trop élevé
+
+ | Homme, 20 ans, 70 kg, 1,80 m | ≈ 2 600 kcal | ≈ 2 900 à 3 100 kcal | Adapté
+
+ | Homme, 22 ans, 80 kg, 1,85 m | ≈ 2 780 kcal | ≈ 3 080 à 3 280 kcal | Un bon début, à ajuster
+
+Ton cas peut s'en écarter : un travail physique ou beaucoup de marche font monter les dépenses, une journée assise les fait baisser. Pour faire le calcul avec tes propres chiffres, suis notre guide pour savoir combien de calories manger. Ces repères concernent les adultes. Avant 18 ans, enceinte, ou avec un problème de santé, demande conseil à un médecin ou à un diététicien.
+
+## Que se passe-t-il si tu manges trop au-dessus de tes besoins ?
+
+Tu prends plus vite du poids, mais pas forcément plus de muscle. Une étude chez 39 jeunes athlètes de haut niveau qui s'entraînaient en force a comparé un groupe qui suivait un plan de repas, et mangeait environ 620 kcal de plus par jour, à un groupe qui mangeait librement. Le gain de masse maigre n'a pas été différent entre les deux, alors que la masse grasse a nettement plus augmenté dans le premier groupe (Garthe et al., 2013). Une revue sur la prise de masse conseille plutôt un surplus modéré, de 10 à 20 % (Iraki et al., 2019).
+
+Ces travaux portent sur des athlètes et des pratiquants de bodybuilding, pas sur des débutants. Ils invitent tout de même à ne pas confondre « manger plus » et « manger beaucoup trop ». On y revient dans notre article sur le gras pris en prise de masse.
+
+## Comment atteindre 3 000 kcal si tu n'as pas faim ?
+
+En ajoutant des aliments denses et en augmentant par paliers. Passer de 2 200 à 3 000 kcal du jour au lendemain, c'est difficile à tenir.
+
+- Note d'abord ta vraie moyenne pendant 3 à 5 jours. Dans BONGO, tu écris tes repas en une phrase et l'app compte les calories et les protéines, sans rien peser.
+
+- Ajoute 200 kcal par jour pendant 2 semaines, par exemple une tartine et une cuillère de beurre de cacahuète.
+
+- Regarde ta courbe de poids. Si tu prends 0,25 à 0,5 kg par semaine, ne change rien, même si tu n'es pas à 3 000 kcal.
+
+- Si rien ne bouge après 2 semaines, ajoute encore 200 kcal. Si tu prends plus de 0,5 kg par semaine, retire 200 kcal.
+
+Le plus difficile reste souvent le matin. Si tu bloques à ce moment-là, regarde nos 5 petits-déjeuners pour grossir. Pour étaler l'effort sur la semaine, le meal prep en 5 boîtes t'évite aussi de cuisiner chaque soir.
+
+## Combien ça coûte sur une semaine ?
+
+Environ 38 € pour 7 jours identiques. C'est au-dessus de notre liste de courses à 25 € par semaine, qui vise environ 2 500 kcal. L'écart s'explique par le volume en plus et par le thon. Pour faire baisser la note, remplace le thon comme indiqué plus haut, achète tes œufs et tes flocons par grands formats et garde les protéines les plus chères pour un seul repas.
+
+Un filet d'huile de 10 g ajoute environ 90 kcal pour 3 centimes. C'est souvent le moyen le plus simple de finir une journée juste en dessous de ton objectif.
+
+Questions fréquentes :
+- Est-ce que manger 3000 calories par jour fait forcément grossir ?
+  Non. Tout dépend de tes dépenses. Si tu dépenses déjà autour de 3 000 kcal, ton poids bougera peu. Si tu en dépenses 2 000, tu risques de prendre du poids vite, avec une part de gras plus importante.
+- Combien de repas pour arriver à 3000 calories ?
+  Trois repas et une ou deux collations marchent bien, comme dans ce menu. Répartir évite d'avoir à finir des assiettes énormes.
+- Faut-il manger 3000 calories les jours sans séance ?
+  Rester proche de ta moyenne suffit. Ce qui compte, c'est ce que montre ta courbe de poids sur plusieurs semaines, pas un chiffre parfait chaque jour.
+- Une femme peut-elle viser 3000 calories ?
+  Rarement au début : selon les estimations de ce tableau, ce total dépasse de plusieurs centaines de calories l'objectif de la plupart des jeunes femmes. Pars plutôt de tes dépenses et ajoute 300 à 500 kcal.
