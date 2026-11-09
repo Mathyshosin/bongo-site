@@ -43,6 +43,7 @@ button[aria-pressed="true"] { background:var(--vert); border-color:var(--vert); 
 .tuile .valeur { font:800 30px/1.15 'Baloo 2',system-ui,sans-serif; margin-top:2px; font-variant-numeric:tabular-nums; }
 .tuile .note { color:var(--encre3); font-size:12px; }
 .carte h3 { margin:0 0 2px; font-size:15px; font-weight:800; }
+table.messages th, table.messages td { text-align:left; vertical-align:top; }
 .carte .sous { color:var(--encre3); font-size:12px; margin:0 0 8px; }
 .vide { color:var(--encre3); font-size:14px; padding:18px 0; text-align:center; }
 .erreur { color:var(--danger); font-size:13px; }
@@ -167,7 +168,7 @@ function barres(titre, sous, lignes, format = (v) => nb(v)) {
 const depuisObjet = (o) => Object.entries(o ?? {}).map(([nom, valeur]) => ({ nom, valeur })).sort((a, b) => b.valeur - a.valeur);
 const NOMS_METRIQUES = { active_trials: 'Essais en cours', active_subscriptions: 'Abonnés payants', mrr: 'Revenu mensuel récurrent', revenue: 'Revenus', new_customers: 'Nouveaux clients', active_users: 'Utilisateurs actifs (RevenueCat)' };
 const NOMS_PAGES = { cartejoueur: 'Ma carte', collection: 'Collection', badges: 'Badges', calendrier: 'Calendrier', amis: 'Classement & amis', reglages: 'Réglages', compte: 'Compte' };
-const NOMS_PAYWALL = { onboarding: 'Fin du questionnaire', relance: 'Offre 3,99 € (La Légende)', verrou: 'Fonction verrouillée', profil: 'Profil', seances: 'Séances illimitées', scanner: 'Scanner', courses: 'Courses', serie: 'Série' };
+const NOMS_PAYWALL = { onboarding: 'Fin du questionnaire', relance: 'Offre 3,99 € (La Légende)', relance_j0: 'Offre 3,99 € au 1er refus', premiereSeance: 'Après la 1re séance', verrou: 'Fonction verrouillée', profil: 'Profil', seances: 'Séances illimitées', scanner: 'Scanner', courses: 'Courses', serie: 'Série' };
 const NOMS_ONGLETS = { accueil: 'Accueil', repas: 'Repas', sport: 'Sport', courses: 'Courses', profil: 'Profil' };
 const etatSource = (s, nom) => !s ? `<div class="vide">${nom} : indisponible</div>` : s.branche === false ? `<div class="vide">${nom} pas encore branché</div>` : s.erreur ? `<div class="erreur">${esc(nom)} : ${esc(s.erreur)}</div>` : '';
 const pastille = (nom, s, ok) => `<span><b>${s?.erreur ? '✕' : ok ? '✓' : '○'} ${esc(nom)}</b> ${s?.erreur ? 'en erreur' : ok ? 'connecté' : 'pas branché'}</span>`;
@@ -208,6 +209,14 @@ function afficher() {
   const bloques = suivi.reponses?.bloque_iphone ?? 0;
   const repondu = Object.entries(suivi.reponses ?? {}).filter(([k]) => k !== 'bloque_iphone').reduce((t, [, v]) => t + v, 0);
   const nt = u.notifs ?? {};
+  const refus = u.refus ?? {};
+  const NOMS_REFUS = [['trop_cher', 'C’est trop cher'], ['tester', 'Je veux d’abord tester'], ['pas_convaincu', 'Pas convaincu'], ['plus_tard', 'Pas maintenant'], ['passe', 'A passé la question']];
+  const refusTotal = Object.values(refus).reduce((t, v) => t + v, 0);
+  const s1 = u.semaine1 ?? {};
+  const rt = u.retours ?? {};
+  const retoursVus = Object.values(rt.vus ?? {}).reduce((t, v) => t + v, 0);
+  const NOMS_ABSENCE = { '3_6j': '3 à 6 j', '7_13j': '7 à 13 j', '14j_plus': '14 j et +' };
+  const msgs = i?.messages ?? [];
   const notifOui = nt.reponses?.oui ?? 0, notifNon = nt.reponses?.non ?? 0;
   const NOMS_NOTIFS = { d1: 'J+1 « Jour 2 »', d2: 'J+2 « kg à prendre »', d3: 'J+3 série', d4: 'J+4 sac', d5: 'J+5', d6: 'J+6 « presque une semaine »', d7: 'J+7 bilan', quotidien: 'Rappel du jour', seance: 'Jour de séance', serie: 'Série en cours', serie_retour: 'Série à récupérer', sac: 'Sac prêt', reparation: 'Sauvetage de série' };
   const rcEtat = etatSource(rc, 'RevenueCat');
@@ -333,6 +342,34 @@ function afficher() {
       ${barres('Rappels qui font revenir', 'Nombre de taps par type de message', depuisObjet(nt.ouvertes).map((o) => ({ ...o, nom: NOMS_NOTIFS[o.nom] ?? o.nom })))}
     </div>
 
+    <h2>Pourquoi ils ne paient pas</h2>
+    <p class="intro">La question « Qu’est-ce qui te retient ? », posée une seule fois quand quelqu’un ferme BONGO+ sans acheter. Téléphones différents.</p>
+    <div class="grille">
+      ${barres('Réponses', refusTotal ? `${nb(refusTotal)} réponses${peu(refusTotal)}` : 'Arrive avec la mise à jour du 10/11', NOMS_REFUS.map(([k, nom]) => ({ nom, valeur: refus[k] ?? 0, texte: `${nb(refus[k] ?? 0)} · ${pct(refus[k] ?? 0, refusTotal)}` })))}
+    </div>
+
+    <h2>Première semaine guidée</h2>
+    <p class="intro">La frise de 7 cases sur l’accueil des nouveaux. Une case = une journée validée. 5 cases = un skin offert. Téléphones ayant atteint chaque palier.</p>
+    <div class="tuiles">
+      ${tuile('Ont commencé la frise', nb(s1.cases_1 ?? 0), 'Au moins 1 case cochée')}
+      ${tuile('Ont gagné le skin', nb(s1.cases_5 ?? 0), (s1.cases_1 ?? 0) ? `${pct(s1.cases_5 ?? 0, s1.cases_1)} de ceux qui ont commencé` : '')}
+      ${tuile('Cadeaux récupérés', nb(s1.cadeau ?? 0))}
+    </div>
+    <div class="grille" style="margin-top:12px">
+      ${barres('Cases cochées', 'Téléphones arrivés à chaque case', [1, 2, 3, 4, 5, 6, 7].map((n) => ({ nom: `${n} case${n > 1 ? 's' : ''}`, valeur: s1[`cases_${n}`] ?? 0 })))}
+    </div>
+
+    <h2>« Te revoilà »</h2>
+    <p class="intro">L’écran d’accueil sans reproche, après 3 jours ou plus sans ouvrir l’app, qui propose la séance de 4 minutes.</p>
+    <div class="tuiles">
+      ${tuile('Écrans vus', nb(retoursVus), retoursVus ? Object.entries(rt.vus ?? {}).map(([k, v]) => `${NOMS_ABSENCE[k] ?? k} : ${nb(v)}`).join(' · ') : '')}
+      ${tuile('Séances relancées', nb(rt.seances ?? 0), retoursVus ? `${pct(rt.seances ?? 0, retoursVus)} des écrans vus` : '')}
+    </div>
+
+    <h2>Messages à Bongo</h2>
+    <p class="intro">Envoyés depuis Profil › « Écris à Bongo ». Les 100 derniers.</p>
+    <div class="carte">${msgs.length ? `<div class="defile" style="max-height:420px"><table class="messages"><tr><th>Date</th><th>Message</th><th>Contact</th></tr>${msgs.map((m) => `<tr><td style="white-space:nowrap">${esc(new Date(m.cree).toLocaleString('fr-FR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }))}</td><td style="white-space:pre-wrap;min-width:220px">${esc(m.texte)}</td><td>${esc(m.contact ?? '—')}</td></tr>`).join('')}</table></div>` : '<div class="vide">Aucun message pour l’instant</div>'}</div>
+
     <h2>Demande de suivi (pub)</h2>
     <p class="intro">Le petit pop-up puis la fenêtre d’Apple, après la première séance. Sans « Autoriser », Meta ne reçoit rien.</p>
     <div class="tuiles">
@@ -411,9 +448,13 @@ function demo() {
         sessions: { nb: 2400, moyenne: 4.6, mediane: 2, par_jour_actif: 7.8, repartition: { moins_1: 520, '1_3': 900, '3_10': 680, '10_30': 250, plus_30: 50 } },
         suivi: { vus: 260, reponses: { granted: 70, denied: 180, bloque_iphone: 95 } },
         notifs: { reponses: { oui: 140, non: 90 }, ouvertes: { d1: 48, d2: 30, d3: 26, quotidien: 40, seance: 22, serie: 18 } },
+        refus: { trop_cher: 41, tester: 28, pas_convaincu: 17, plus_tard: 22, passe: 30 },
+        semaine1: { cases_1: 120, cases_2: 84, cases_3: 61, cases_4: 44, cases_5: 33, cases_6: 20, cases_7: 11, cadeau: 29 },
+        retours: { vus: { '3_6j': 40, '7_13j': 22, '14j_plus': 15 }, seances: 19 },
         pages: { cartejoueur: 310, collection: 160, amis: 90, calendrier: 70, reglages: 40 },
         retention: [{ jour_n: 1, cohorte: 900, revenus: 300 }, { jour_n: 3, cohorte: 860, revenus: 170 }, { jour_n: 7, cohorte: 790, revenus: 110 }, { jour_n: 14, cohorte: 620, revenus: 60 }, { jour_n: 30, cohorte: 18, revenus: 3 }],
       },
+      messages: [{ cree: new Date().toISOString(), texte: 'Super app ! Ce serait top d’avoir des séances avec élastiques.', contact: null }, { cree: new Date(Date.now() - 86400000).toISOString(), texte: 'Le scanner ne trouve pas mon yaourt.', contact: 'exemple@mail.fr' }],
       comptes: { total: 214, actifs_7j: 58, serie_moyenne: 3.4, serie_max: 41, amities: 37, paliers: { bois: 120, bronze: 60, argent: 24, or: 10 }, par_jour: jours.map((jour, k) => ({ jour, nouveaux: Math.round(ond(2, 1.5, k)) })) },
     },
     revenuecat: {
