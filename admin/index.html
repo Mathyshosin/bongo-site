@@ -206,6 +206,9 @@ function afficher() {
   const suivi = u.suivi ?? {};
   const acceptes = suivi.reponses?.granted ?? 0;
   const repondu = Object.values(suivi.reponses ?? {}).reduce((t, v) => t + v, 0);
+  const nt = u.notifs ?? {};
+  const notifOui = nt.reponses?.oui ?? 0, notifNon = nt.reponses?.non ?? 0;
+  const NOMS_NOTIFS = { d1: 'J+1 « Jour 2 »', d2: 'J+2 « kg à prendre »', d3: 'J+3 série', d4: 'J+4 sac', d5: 'J+5', d6: 'J+6 « presque une semaine »', d7: 'J+7 bilan', quotidien: 'Rappel du jour', seance: 'Jour de séance', serie: 'Série en cours', serie_retour: 'Série à récupérer', sac: 'Sac prêt', reparation: 'Sauvetage de série' };
   const rcEtat = etatSource(rc, 'RevenueCat');
   const ascEtat = etatSource(apple, 'App Store Connect');
   const metaEtat = etatSource(meta, 'Meta');
@@ -319,6 +322,16 @@ function afficher() {
     <p class="intro">Un achat est attribué au dernier écran BONGO+ vu avant lui. « Vus » = téléphones différents. Les achats d’avant le 07/11 ne sont pas attribués.</p>
     <div class="carte">${conv.length ? `<div class="defile" style="max-height:none"><table><tr><th>Écran</th><th>Vus</th><th>Achats</th><th>Conversion</th></tr>${conv.map((l) => `<tr><td>${esc(NOMS_PAYWALL[l.o] ?? l.o)}</td><td>${nb(l.vus)}</td><td>${nb(l.achats)}</td><td>${pct(l.achats, l.vus)}</td></tr>`).join('')}</table></div>` : '<div class="vide">Pas encore de données</div>'}</div>
 
+    <h2>Rappels</h2>
+    <p class="intro">La demande « Je te préviens demain ? » après le 1er repas ou la 1re séance, puis 1 rappel maximum par jour, jamais un jour déjà validé. Messages dédiés de J+1 à J+7, puis de plus en plus espacés.</p>
+    <div class="tuiles">
+      ${tuile('Ont accepté les rappels', nb(notifOui), (notifOui + notifNon) ? `${pct(notifOui, notifOui + notifNon)} des ${nb(notifOui + notifNon)} réponses${peu(notifOui + notifNon)}` : 'Arrive avec la prochaine mise à jour')}
+      ${tuile('Notifications ouvertes', nb(Object.values(nt.ouvertes ?? {}).reduce((t, v) => t + v, 0)), 'Taps sur un rappel')}
+    </div>
+    <div class="grille" style="margin-top:12px">
+      ${barres('Rappels qui font revenir', 'Nombre de taps par type de message', depuisObjet(nt.ouvertes).map((o) => ({ ...o, nom: NOMS_NOTIFS[o.nom] ?? o.nom })))}
+    </div>
+
     <h2>Demande de suivi (pub)</h2>
     <p class="intro">Le petit pop-up puis la fenêtre d’Apple, après la première séance. Sans « Autoriser », Meta ne reçoit rien.</p>
     <div class="tuiles">
@@ -395,6 +408,7 @@ function demo() {
         conversion: { onboarding: { vus: 300, achats: 9 }, relance: { vus: 120, achats: 7 }, verrou: { vus: 44, achats: 3 }, profil: { vus: 20, achats: 1 } },
         sessions: { nb: 2400, moyenne: 4.6, mediane: 2, par_jour_actif: 7.8, repartition: { moins_1: 520, '1_3': 900, '3_10': 680, '10_30': 250, plus_30: 50 } },
         suivi: { vus: 260, reponses: { granted: 70, denied: 180 } },
+        notifs: { reponses: { oui: 140, non: 90 }, ouvertes: { d1: 48, d2: 30, d3: 26, quotidien: 40, seance: 22, serie: 18 } },
         pages: { cartejoueur: 310, collection: 160, amis: 90, calendrier: 70, reglages: 40 },
         retention: [{ jour_n: 1, cohorte: 900, revenus: 300 }, { jour_n: 3, cohorte: 860, revenus: 170 }, { jour_n: 7, cohorte: 790, revenus: 110 }, { jour_n: 14, cohorte: 620, revenus: 60 }, { jour_n: 30, cohorte: 18, revenus: 3 }],
       },
