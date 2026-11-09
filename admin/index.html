@@ -168,7 +168,7 @@ function barres(titre, sous, lignes, format = (v) => nb(v)) {
 const depuisObjet = (o) => Object.entries(o ?? {}).map(([nom, valeur]) => ({ nom, valeur })).sort((a, b) => b.valeur - a.valeur);
 const NOMS_METRIQUES = { active_trials: 'Essais en cours', active_subscriptions: 'Abonnés payants', mrr: 'Revenu mensuel récurrent', revenue: 'Revenus', new_customers: 'Nouveaux clients', active_users: 'Utilisateurs actifs (RevenueCat)' };
 const NOMS_PAGES = { cartejoueur: 'Ma carte', collection: 'Collection', badges: 'Badges', calendrier: 'Calendrier', amis: 'Classement & amis', reglages: 'Réglages', compte: 'Compte' };
-const NOMS_PAYWALL = { onboarding: 'Fin du questionnaire', relance: 'Offre 3,99 € (La Légende)', relance_j0: 'Offre 3,99 € au 1er refus', premiereSeance: 'Après la 1re séance', verrou: 'Fonction verrouillée', profil: 'Profil', seances: 'Séances illimitées', scanner: 'Scanner', courses: 'Courses', serie: 'Série' };
+const NOMS_PAYWALL = { onboarding: 'Fin du questionnaire', relance: 'Offre 3,99 € (La Légende)', relance_j0: 'Offre 3,99 € au 1er refus', black_friday: 'Black Friday (bandeau ou notification)', premiereSeance: 'Après la 1re séance', verrou: 'Fonction verrouillée', profil: 'Profil', seances: 'Séances illimitées', scanner: 'Scanner', courses: 'Courses', serie: 'Série' };
 const NOMS_ONGLETS = { accueil: 'Accueil', repas: 'Repas', sport: 'Sport', courses: 'Courses', profil: 'Profil' };
 const etatSource = (s, nom) => !s ? `<div class="vide">${nom} : indisponible</div>` : s.branche === false ? `<div class="vide">${nom} pas encore branché</div>` : s.erreur ? `<div class="erreur">${esc(nom)} : ${esc(s.erreur)}</div>` : '';
 const pastille = (nom, s, ok) => `<span><b>${s?.erreur ? '✕' : ok ? '✓' : '○'} ${esc(nom)}</b> ${s?.erreur ? 'en erreur' : ok ? 'connecté' : 'pas branché'}</span>`;
@@ -218,7 +218,7 @@ function afficher() {
   const NOMS_ABSENCE = { '3_6j': '3 à 6 j', '7_13j': '7 à 13 j', '14j_plus': '14 j et +' };
   const msgs = i?.messages ?? [];
   const notifOui = nt.reponses?.oui ?? 0, notifNon = nt.reponses?.non ?? 0;
-  const NOMS_NOTIFS = { d1: 'J+1 « Jour 2 »', d2: 'J+2 « kg à prendre »', d3: 'J+3 série', d4: 'J+4 sac', d5: 'J+5', d6: 'J+6 « presque une semaine »', d7: 'J+7 bilan', quotidien: 'Rappel du jour', seance: 'Jour de séance', serie: 'Série en cours', serie_retour: 'Série à récupérer', sac: 'Sac prêt', reparation: 'Sauvetage de série' };
+  const NOMS_NOTIFS = { black_friday: 'Black Friday', d1: 'J+1 « Jour 2 »', d2: 'J+2 « kg à prendre »', d3: 'J+3 série', d4: 'J+4 sac', d5: 'J+5', d6: 'J+6 « presque une semaine »', d7: 'J+7 bilan', quotidien: 'Rappel du jour', seance: 'Jour de séance', serie: 'Série en cours', serie_retour: 'Série à récupérer', sac: 'Sac prêt', reparation: 'Sauvetage de série' };
   const rcEtat = etatSource(rc, 'RevenueCat');
   const ascEtat = etatSource(apple, 'App Store Connect');
   const metaEtat = etatSource(meta, 'Meta');
