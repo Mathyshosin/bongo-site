@@ -205,7 +205,8 @@ function afficher() {
   const NOMS_DUREES = [['moins_1', 'Moins d’1 min'], ['1_3', '1 à 3 min'], ['3_10', '3 à 10 min'], ['10_30', '10 à 30 min'], ['plus_30', '30 min et plus']];
   const suivi = u.suivi ?? {};
   const acceptes = suivi.reponses?.granted ?? 0;
-  const repondu = Object.values(suivi.reponses ?? {}).reduce((t, v) => t + v, 0);
+  const bloques = suivi.reponses?.bloque_iphone ?? 0;
+  const repondu = Object.entries(suivi.reponses ?? {}).filter(([k]) => k !== 'bloque_iphone').reduce((t, [, v]) => t + v, 0);
   const nt = u.notifs ?? {};
   const notifOui = nt.reponses?.oui ?? 0, notifNon = nt.reponses?.non ?? 0;
   const NOMS_NOTIFS = { d1: 'J+1 « Jour 2 »', d2: 'J+2 « kg à prendre »', d3: 'J+3 série', d4: 'J+4 sac', d5: 'J+5', d6: 'J+6 « presque une semaine »', d7: 'J+7 bilan', quotidien: 'Rappel du jour', seance: 'Jour de séance', serie: 'Série en cours', serie_retour: 'Série à récupérer', sac: 'Sac prêt', reparation: 'Sauvetage de série' };
@@ -335,9 +336,10 @@ function afficher() {
     <h2>Demande de suivi (pub)</h2>
     <p class="intro">Le petit pop-up puis la fenêtre d’Apple, après la première séance. Sans « Autoriser », Meta ne reçoit rien.</p>
     <div class="tuiles">
-      ${tuile('Ont vu la demande', nb(suivi.vus ?? 0), suivi.vus ? '' : 'Arrive avec la version 1.4.4')}
+      ${tuile('Ont vu la demande', nb(suivi.vus ?? 0), suivi.vus ? '' : 'Après la 1re séance, à l’ouverture suivante')}
       ${tuile('Ont accepté', nb(acceptes))}
       ${tuile('Taux d’acceptation', pct(acceptes, repondu), repondu ? `Sur ${nb(repondu)} réponses${peu(repondu)}` : '')}
+      ${tuile('iPhones bloqués d’office', nb(bloques), 'Réglage iPhone coupé : Apple refuse sans rien montrer')}
     </div>
 
     <h2>Communauté</h2>
@@ -407,7 +409,7 @@ function demo() {
         abandon: { 0: 310, 1: 120, 2: 70, 3: 45, 4: 30, 5: 22, 6: 18, 7: 15, 8: 10, 9: 9, 10: 8, 11: 6, 12: 5, 13: 4, 14: 120 },
         conversion: { onboarding: { vus: 300, achats: 9 }, relance: { vus: 120, achats: 7 }, verrou: { vus: 44, achats: 3 }, profil: { vus: 20, achats: 1 } },
         sessions: { nb: 2400, moyenne: 4.6, mediane: 2, par_jour_actif: 7.8, repartition: { moins_1: 520, '1_3': 900, '3_10': 680, '10_30': 250, plus_30: 50 } },
-        suivi: { vus: 260, reponses: { granted: 70, denied: 180 } },
+        suivi: { vus: 260, reponses: { granted: 70, denied: 180, bloque_iphone: 95 } },
         notifs: { reponses: { oui: 140, non: 90 }, ouvertes: { d1: 48, d2: 30, d3: 26, quotidien: 40, seance: 22, serie: 18 } },
         pages: { cartejoueur: 310, collection: 160, amis: 90, calendrier: 70, reglages: 40 },
         retention: [{ jour_n: 1, cohorte: 900, revenus: 300 }, { jour_n: 3, cohorte: 860, revenus: 170 }, { jour_n: 7, cohorte: 790, revenus: 110 }, { jour_n: 14, cohorte: 620, revenus: 60 }, { jour_n: 30, cohorte: 18, revenus: 3 }],
