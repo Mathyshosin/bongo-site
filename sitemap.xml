@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://bongoapp.fr/</loc><lastmod>2026-11-08</lastmod><priority>1.0</priority></url>
-  <url><loc>https://bongoapp.fr/blog/</loc><lastmod>2026-11-08</lastmod><priority>0.9</priority></url>
+  <url><loc>https://bongoapp.fr/</loc><lastmod>2026-11-09</lastmod><priority>1.0</priority></url>
+  <url><loc>https://bongoapp.fr/blog/</loc><lastmod>2026-11-09</lastmod><priority>0.9</priority></url>
   <url><loc>https://bongoapp.fr/guides/</loc><lastmod>2026-10-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://bongoapp.fr/simulateur/</loc><lastmod>2026-11-02</lastmod><priority>0.9</priority></url>
   <url><loc>https://bongoapp.fr/a-propos/</loc><lastmod>2026-11-02</lastmod><priority>0.5</priority></url>
@@ -16,6 +16,7 @@
   <url><loc>https://bongoapp.fr/guides/combien-de-temps-pour-prendre-du-muscle/</loc><lastmod>2026-10-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://bongoapp.fr/guides/application-prise-de-masse/</loc><lastmod>2026-10-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://bongoapp.fr/guides/prix-des-proteines/</loc><lastmod>2026-10-28</lastmod><priority>0.8</priority></url>
+  <url><loc>https://bongoapp.fr/blog/recettes/</loc><lastmod>2026-11-09</lastmod><priority>0.6</priority></url>
   <url><loc>https://bongoapp.fr/blog/entrainement/</loc><lastmod>2026-11-08</lastmod><priority>0.6</priority></url>
   <url><loc>https://bongoapp.fr/blog/comment-grossir-quand-on-est-maigre/</loc><lastmod>2026-11-02</lastmod><priority>0.7</priority></url>
   <url><loc>https://bongoapp.fr/blog/gainer-maison-recette/</loc><lastmod>2026-11-02</lastmod><priority>0.7</priority></url>
@@ -26,5 +27,6 @@
   <url><loc>https://bongoapp.fr/blog/se-peser-prise-de-masse/</loc><lastmod>2026-11-06</lastmod><priority>0.7</priority></url>
   <url><loc>https://bongoapp.fr/blog/journee-3000-calories/</loc><lastmod>2026-11-07</lastmod><priority>0.7</priority></url>
   <url><loc>https://bongoapp.fr/blog/muscler-pectoraux-maison/</loc><lastmod>2026-11-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://bongoapp.fr/blog/recette-micro-ondes-etudiant/</loc><lastmod>2026-11-09</lastmod><priority>0.7</priority></url>
   <url><loc>https://bongoapp.fr/confidentialite.html</loc><lastmod>2026-10-28</lastmod><priority>0.2</priority></url>
 </urlset>
