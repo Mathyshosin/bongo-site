@@ -125,7 +125,7 @@ def page_guide(g):
                 "description": g["description"],
                 "inLanguage": "fr-FR",
                 "datePublished": PUBLIE,
-                "dateModified": MAJ,
+                "dateModified": g.get("maj", MAJ),
                 "author": ORGANISATION,
                 "publisher": ORGANISATION,
                 "mainEntityOfPage": url,
@@ -174,7 +174,7 @@ def page_guide(g):
       <p class="sur">Guide prise de masse</p>
       <h1>{html.escape(g['titre'])}</h1>
       <p class="reponse"><strong>Réponse courte :</strong> {html.escape(REPONSES.get(g['slug'], g['description']))}</p>
-      <p class="meta">Par l'équipe BONGO · mis à jour le <time datetime="{MAJ}">{date.fromisoformat(MAJ).strftime('%d/%m/%Y')}</time></p>
+      <p class="meta">Par l'équipe BONGO · mis à jour le <time datetime="{g.get('maj', MAJ)}">{date.fromisoformat(g.get('maj', MAJ)).strftime('%d/%m/%Y')}</time></p>
       <section class="en-bref" aria-label="En bref">
         <h2>En bref</h2>
         <ul>
@@ -837,7 +837,7 @@ def main():
     # Plan du site : chaque page garde sa vraie date, Google se méfie des dates qui changent tous les jours
     dernier = publies[-1]["date"].isoformat() if publies else MAJ
     urls = [(BASE, dernier, "1.0"), (BASE + "blog/", dernier, "0.9"), (BASE + "guides/", MAJ, "0.8"), (BASE + "simulateur/", "2026-11-02", "0.9"), (BASE + "a-propos/", "2026-11-02", "0.5")]
-    urls += [(f"{BASE}guides/{g['slug']}/", MAJ, "0.8") for g in GUIDES]
+    urls += [(f"{BASE}guides/{g['slug']}/", g.get("maj", MAJ), "0.8") for g in GUIDES]
     urls += [(f"{BASE}blog/{cle}/", max(a["date"] for a in publies if a["categorie"] == cle).isoformat(), "0.6") for cle in categories_ouvertes(publies)]
     urls += [(f"{BASE}blog/{a['slug']}/", a["date"].isoformat(), "0.7") for a in publies]
     urls += [(BASE + "confidentialite.html", MAJ, "0.2")]
