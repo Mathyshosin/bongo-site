@@ -2518,3 +2518,94 @@ Questions fréquentes :
   Ce n'est pas son principal intérêt pour le muscle. Si tu ne t'entraînes pas, commence par les séances et les repas.
 - La créatine est-elle dangereuse pour les reins ?
   La revue de Kreider et al. (2017) ne trouve pas de preuve solide d'un effet négatif chez les personnes en bonne santé. En cas de maladie rénale ou de doute, demande l'avis de ton médecin avant d'en prendre.
+
+# Courbatures : peut-on s'entraîner quand même, et qu'est-ce qui soulage ?
+URL : https://bongoapp.fr/blog/courbatures-musculation/
+Publié le 2026-11-18
+
+Avec des courbatures légères, tu peux t'entraîner : commence doucement ou travaille d'autres muscles. Si elles gênent fortement tes mouvements, attends un à deux jours de plus. Bouger en douceur peut soulager, et le massage a donné les meilleurs résultats dans une grande analyse de 99 études. Les courbatures ne prouvent pas qu'une séance a été efficace.
+
+En bref :
+- Courbatures légères : tu peux t'entraîner, en adaptant la séance.
+- Courbatures fortes : change de muscles ou fais une séance très légère.
+- Ce qui soulage : massage, récupération active et autres techniques, avec des effets variables.
+- Pas de courbatures ne veut pas dire séance ratée : elles sont surtout fréquentes sur les mouvements nouveaux.
+- Une douleur intense avec des urines très foncées : urgences ou 15. Une douleur vive ou un gonflement : avis médical.
+
+## Peut-on s'entraîner avec des courbatures ?
+
+Oui, si la gêne reste légère à modérée et que ton mouvement est normal. Après l'échauffement, la gêne diminue souvent. Si elle augmente ou si elle t'oblige à changer ta façon de bouger, change d'exercice ou repose-toi. Le tableau ci-dessous te donne un repère simple.
+
+ | | Ce que tu ressens | Quoi faire
+
+ | Gêne légère, qui disparaît en bougeant | Séance normale, avec un échauffement plus long
+
+ | Gêne modérée sur un seul groupe de muscles | Travaille d'autres muscles aujourd'hui
+
+ | Courbatures fortes, mouvement limité | Marche, mobilité douce, et reprise un à deux jours plus tard
+
+ | Douleur vive, gonflement ou signe du tableau plus bas | Pas de séance, et demande un avis médical
+
+Travailler d'autres muscles ne te fait pas perdre grand-chose. À volume égal, la fréquence d'entraînement n'a pas d'effet marqué sur la prise de muscle (Schoenfeld et al., 2019). Si tu décales ta séance de jambes, tu peux rattraper ces séries plus tard dans la semaine, sans stress. Nos repères sur le nombre de séances par semaine t'aident à réorganiser ton planning.
+
+## Que sont exactement les courbatures ?
+
+Ce sont des douleurs musculaires qui apparaissent après l'effort, souvent le lendemain ou le surlendemain, et qui s'en vont en quelques jours. Elles touchent plutôt les exercices nouveaux, les grandes reprises et les descentes lentes, par exemple le bas d'une pompe ou d'une fente. Leur mécanisme exact reste discuté, inutile de se perdre dedans.
+
+La plupart des gens en ont beaucoup moins dès qu'ils répètent les mêmes mouvements. C'est pour ça qu'une reprise fait souvent bien plus mal qu'une séance normale, même plus dure. Le corps s'habitue vite à ces efforts.
+
+## Les courbatures prouvent-elles que la séance a marché ?
+
+Non. Une séance peut laisser de grosses courbatures à cause d'un mouvement nouveau, sans être meilleure. Et une séance sans courbatures peut très bien faire progresser. Pour la prise de muscle, regarde plutôt ton volume : plus de séries sur la semaine sont associées en général à plus de muscle (Schoenfeld et al., 2017). Ajoute à cela des séries dures et des répétitions en plus d'une semaine à l'autre.
+
+Si tu cherches à avoir mal à chaque séance, tu risques de récupérer moins bien sans rien gagner de plus. Note plutôt tes répétitions : c'est une mesure bien plus fiable.
+
+## Qu'est-ce qui soulage vraiment les courbatures ?
+
+Une méta-analyse de 99 études a comparé les techniques de récupération après l'effort. La récupération active, le massage, les vêtements de compression, l'immersion dans l'eau, l'alternance chaud et froid et le froid ont réduit les courbatures, avec des effets petits à grands selon les techniques. Le massage est celui qui ressort le plus (Dupuy et al., 2018).
+
+- Récupération active : marche, vélo tranquille, quelques mouvements légers. C'est gratuit et facile à faire.
+
+- Massage : c'est la technique la plus efficace dans cette analyse. Un massage par un professionnel n'est pas toujours dans le budget, et cette étude ne dit pas si se masser soi-même fait pareil.
+
+- Eau et froid : l'analyse parle d'immersion et de froid. Si une simple douche te fait du bien, tant mieux, mais ne lui prête pas les mêmes effets.
+
+- Bien dormir et manger : ce n'est pas le sujet de cette analyse, mais le sommeil et ce que tu manges font partie de ta progression de toute façon.
+
+Cette analyse porte sur la récupération, pas sur la prise de muscle. Une technique qui soulage ne fait pas forcément progresser plus vite. Pour un antidouleur, demande conseil à un pharmacien ou à ton médecin.
+
+## Comment distinguer une courbature d'une douleur à faire vérifier ?
+
+La courbature est diffuse, dans le muscle, des deux côtés si les deux ont travaillé, et elle diminue en quelques jours. Ce tableau donne des repères. Il ne remplace pas un avis médical et ne permet pas de poser un diagnostic.
+
+ | | Plutôt une courbature | Demande un avis médical
+
+ | Apparaît quelques heures à deux jours après l'effort | Douleur vive et soudaine pendant un mouvement, avec parfois un claquement
+
+ | Diffuse, dans le muscle travaillé | Douleur dans une articulation ou très localisée
+
+ | Sensible au toucher et à l'étirement | Gonflement important, bleu étendu, chaleur ou fièvre
+
+ | Diminue en quelques jours | Pas d'amélioration après une semaine ou aggravation
+
+ | Mouvement gêné, mais possible | Forte perte de force, engourdissement, fourmillements
+
+Un signe demande de consulter sans attendre : une douleur musculaire intense, avec des muscles gonflés ou très faibles, et des urines très foncées, couleur thé ou cola. Cela peut signaler une rhabdomyolyse : des fibres musculaires se détruisent en grand nombre et leur contenu passe dans le sang, ce qui peut abîmer les reins. C'est rare, et cela survient en général quelques heures à quelques jours après un effort intense ou inhabituel. Va aux urgences ou appelle le 15, sans attendre que ça passe. Même chose pour des urines très foncées après un gros effort, même avec peu de douleur, ou pour un grand malaise.
+
+## Comment avoir moins de courbatures à la prochaine séance ?
+
+Augmente progressivement. Pour limiter les grosses courbatures, évite les sauts de volume. Commence par 2 séries si tu reprends après une pause, et ajoute-en une par semaine. Les variantes de notre progression de pompes montrent bien cette logique. Le plan complet est dans notre programme pour débutant.
+
+Les séances guidées de BONGO s'adaptent à ta forme du jour. Quand les courbatures sont fortes, tu peux aussi simplement remplacer ta séance par une marche.
+
+Deuxième jour de courbatures ? Fais 10 minutes de marche et quelques mouvements très légers avec les muscles concernés. Cela coûte peu et donne souvent une meilleure sensation que de rester immobile.
+
+Questions fréquentes :
+- Combien de temps durent les courbatures ?
+  En général quelques jours. Elles sont souvent plus fortes un à deux jours après la séance. Si elles ne s'améliorent pas après une semaine, ou s'aggravent, demande un avis médical.
+- Pourquoi je n'ai plus de courbatures ?
+  C'est normal. Le corps s'habitue aux mouvements répétés. Cela ne veut pas dire que tu ne progresses plus : regarde plutôt tes répétitions et tes variantes.
+- Faut-il s'étirer pour éviter les courbatures ?
+  Les étirements ne figurent pas parmi les techniques que l'analyse de Dupuy et al. retient contre les courbatures. Si cela te fait du bien, reste doux, surtout quand les muscles sont déjà sensibles.
+- Les protéines font-elles disparaître les courbatures ?
+  Rien ne permet de le dire ici. Les protéines servent à construire le muscle sur la durée, pas à effacer une douleur le lendemain. Vise ton total sur la journée, sans en attendre un effet immédiat.
