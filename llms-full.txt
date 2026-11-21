@@ -2783,3 +2783,99 @@ Questions fréquentes :
   Note tes répétitions et tes variantes chaque semaine. La force progresse souvent avant que le corps change visiblement, donc tes notes te montrent des progrès plus tôt que le miroir.
 - Faut-il s'entraîner quand on n'a aucune envie ?
   Essaie une version courte, comme un seul tour de ta séance. Si tu te sens malade ou épuisé, repose-toi plutôt. Si le manque d'envie dure et touche le reste de ta vie, parles-en à un médecin.
+
+# Compter ses calories sans rien peser : les repères avec la main et les cuillères
+URL : https://bongoapp.fr/blog/compter-calories-sans-peser/
+Publié le 2026-11-21
+
+Compter ses calories sans balance de cuisine reste possible avec ta main : un poing de riz cuit fait environ 180 kcal, une paume de poulet 110 kcal, une cuillère à soupe d'huile 90 kcal. L'estimation reste imprécise, mais suffit si tu notes pareil chaque jour et que tu ajustes ton total selon l'évolution de ton poids sur 2 à 3 semaines.
+
+En bref :
+- La main sert de balance : poing, paume, pouce et poignée donnent un ordre de grandeur.
+- Ton chiffre peut être faux de 100 à 300 kcal : ce qui compte, c'est de te tromper pareil chaque jour.
+- Ton poids corrige l'estimation : si rien ne bouge en 2 à 3 semaines, ajoute 200 kcal par jour.
+- Si noter tes repas devient une source d'angoisse, arrête et parles-en à un professionnel.
+
+## Pourquoi compter ses calories sans balance suffit ?
+
+Parce que ton objectif n'est pas de connaître un chiffre exact. Il faut juste savoir si tu manges un peu plus que ce dont ton corps a besoin. Une revue sur la prise de masse recommande un surplus modéré, d'environ 10 à 20 % (Iraki et al., 2019). Sur une dépense de 2 500 kcal, cela fait 250 à 500 kcal par jour : assez large pour qu'une estimation fasse l'affaire, à condition de la vérifier sur la balance.
+
+Même avec une balance de cuisine, le chiffre n'est pas parfait : tu utilises des valeurs moyennes, et deux marques ne sont pas identiques. Peser ajoute de la précision, mais aussi du temps. Si la pesée te fait abandonner au bout d'une semaine, une estimation tenue dans la durée est bien plus utile. Pour trouver ton objectif, commence par calculer tes besoins en calories.
+
+## Le tableau des repères avec la main et les cuillères
+
+Ces valeurs viennent de repères arrondis d'après la table Ciqual. Elles correspondent à des portions moyennes : ta main n'a pas la même taille que celle de ton voisin, donc garde-les comme des ordres de grandeur.
+
+ | | Repère | Aliment | Équivalent | Calories | Protéines
+
+ | 1 poing | Riz cuit | 50 g cru | 180 kcal | 4 g
+
+ | 1 poing | Pâtes cuites | 60 g crues | 210 kcal | 7 g
+
+ | 1 poing | Lentilles cuites | 50 g sèches | 170 kcal | 12 g
+
+ | 1 paume | Blanc de poulet | 100 g cru | 110 kcal | 23 g
+
+ | 1 paume | Steak haché à 5 % | 100 g cru | 125 kcal | 20 g
+
+ | 1 paume | Thon au naturel | 100 g égoutté | 110 kcal | 25 g
+
+ | 1 poignée | Flocons d'avoine | 50 g | 190 kcal | 7 g
+
+ | 1 poignée | Amandes | 30 g | 190 kcal | 6 g
+
+ | 1 pouce | Emmental | 30 g | 120 kcal | 8 g
+
+ | 1 cuillère à soupe rase | Beurre de cacahuète | 15 g | 90 kcal | 4 g
+
+ | 1 cuillère à soupe | Huile | 10 g | 90 kcal | 0 g
+
+ | 1 œuf | Œuf moyen | 50 g | 70 kcal | 6 g
+
+ | 1 morceau | Baguette, long comme ta main | 50 g | 140 kcal | 5 g
+
+ | 1 pot moyen | Fromage blanc | 100 g | 80 kcal | 8 g
+
+Attention aux aliments qui concentrent beaucoup de calories : l'huile, le beurre de cacahuète, le fromage et les amandes. Une petite erreur de volume y fait une plus grosse différence que sur le riz. Quand tu veux manger plus, ce sont aussi les plus pratiques.
+
+## Quelle est la vraie marge d'erreur ?
+
+Elle peut être importante, et ce n'est pas grave. Regarde le riz : un poing peut correspondre à 40 g ou 60 g de riz cru, soit 140 à 210 kcal, pour un seul aliment. Sur une journée entière, une estimation à 2 800 kcal peut représenter 2 500 ou 3 100 kcal. Ces chiffres sont un exemple : personne ne peut te donner ton erreur exacte.
+
+Ce qui rend l'estimation utile n'est pas sa précision. Tu n'as pas besoin de savoir si tu manges vraiment 2 800 kcal. Tu dois savoir si « ce que je note comme 2 800 kcal » te fait prendre du poids. Si tu estimes tes portions de la même façon chaque jour, ton erreur reste à peu près la même, et ta balance fait le reste.
+
+## Comment ajuster avec la balance ?
+
+Note tes repas pendant 2 à 3 semaines, sans chercher la perfection. Pèse-toi 2 à 3 fois par semaine, le matin avant de manger, et compare les moyennes : notre article pour bien se peser explique pourquoi le poids d'un seul jour peut tromper. Puis suis ce repère :
+
+ | | Évolution du poids | Que faire
+
+ | Prise de 0,25 à 0,5 kg par semaine | Ne change rien
+
+ | Rien ne bouge pendant 2 à 3 semaines | Ajoute environ 200 kcal par jour
+
+ | Prise nettement plus rapide que 0,5 kg par semaine | Enlève environ 200 kcal par jour
+
+Les 200 kcal à ajouter tiennent dans 2 cuillères à soupe d'huile ou une poignée d'amandes. Si tu as du mal à manger plus, regarde nos idées pour manger plus sans appétit.
+
+## Comment noter un repas en une phrase avec BONGO ?
+
+Dans BONGO, tu écris ton repas comme tu le dirais à quelqu'un : « grosse assiette de pâtes au thon, un peu d'huile, un yaourt ». L'app compte les calories et les protéines, même pour un plat inconnu comme le couscous du resto U, sans rien peser. Le chiffre reste une estimation. La courbe de poids et le bilan du dimanche te donnent ensuite de quoi ajuster.
+
+Note tes repas juste après les avoir mangés, pas le soir. Tu oublies moins la cuillère d'huile et la poignée de fromage, ce sont souvent elles qui manquent au total.
+
+## Quand vaut-il mieux arrêter de compter ?
+
+Compter ses calories doit rester un outil, et si possible un outil temporaire. Arrête et parles-en à ton médecin ou à un diététicien si tu penses à ces chiffres toute la journée, si tu culpabilises ou stresses après un repas, ou si tu évites des sorties à cause de ce que tu pourrais manger. Si tu as ou as eu un rapport difficile à la nourriture, évite de t'y mettre seul et demande d'abord conseil à un professionnel.
+
+Il n'y a aucune obligation de compter pour prendre du poids. Certaines personnes y arrivent en ajoutant simplement une collation et en surveillant la balance. Tu peux aussi, une fois tes repères pris, ne plus noter que de temps en temps.
+
+Questions fréquentes :
+- Faut-il compter ses calories pour prendre du muscle ?
+  Non, ce n'est pas obligatoire. Cela aide surtout si ton poids ne bouge pas et que tu ne sais pas combien tu manges. Quelques semaines peuvent suffire à prendre des repères.
+- Peut-on se fier aux repères avec la main ?
+  Comme ordre de grandeur, oui. Ils ne donnent pas un chiffre exact : une main n'a pas la même taille qu'une autre, et une portion peut varier. Ton poids sur plusieurs semaines reste ce qui te permet de vérifier.
+- Pèse-t-on les aliments crus ou cuits ?
+  Les valeurs changent beaucoup : le riz et les pâtes pèsent bien plus lourd une fois cuits. Le tableau indique l'équivalent cru, et le repère du poing correspond à l'aliment cuit.
+- Combien de temps faut-il noter ses repas ?
+  Deux à trois semaines suffisent pour commencer à ajuster. Certains gardent cette habitude plus longtemps parce qu'elle les aide, d'autres arrêtent une fois leurs repères pris. Les deux sont possibles.
