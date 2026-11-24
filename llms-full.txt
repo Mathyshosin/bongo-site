@@ -3069,3 +3069,99 @@ Questions fréquentes :
   Ça peut arriver quand on n'en mange pas souvent. Commence par la version moitié-moitié, rince bien les lentilles et augmente petit à petit.
 - Peut-on utiliser un autre féculent ?
   Oui. Le riz ou la semoule marchent aussi. Les calories restent proches, à quantité crue égale.
+
+# Prise de masse sans whey : est-ce possible et combien ça coûte ?
+URL : https://bongoapp.fr/blog/prise-de-masse-sans-whey/
+Publié le 2026-11-24
+
+Oui, une prise de masse sans whey est tout à fait possible, car le muscle a besoin de protéines, pas d'une poudre en particulier. Pour 25 g de protéines, compte environ 105 g de lentilles sèches (≈ 0,33 €), 310 g de fromage blanc (≈ 0,78 €) ou 4 œufs (≈ 1,06 €), contre ≈ 0,83 € en whey.
+
+En bref :
+- La whey est pratique, pas obligatoire : ce qui compte, c'est ton total de protéines de la journée.
+- Repère : environ 1,6 g de protéines par kilo et par jour (Morton et al., 2018).
+- Les lentilles sont moins chères que la whey, les œufs et le thon un peu plus chers.
+- Les aliments apportent aussi des calories, ce qui t'arrange en prise de masse.
+
+## La whey est-elle obligatoire pour prendre du muscle ?
+
+Non. La whey est une protéine de lait mise en poudre, pratique à doser et rapide à boire. Mais ton muscle ne sait pas si ses protéines viennent d'un shaker ou d'une assiette d'œufs. Une prise de masse sans whey fonctionne donc si tu atteins ton total de la journée avec des aliments.
+
+Une grande méta-analyse sur le sujet porte sur 49 études et 1 863 participants (Morton et al., 2018). Elle montre que les compléments de protéines donnent un gain moyen de masse maigre de 0,30 kg pendant un programme de musculation. C'est réel, mais modeste. Et elle trouve surtout qu'au-delà d'environ 1,6 g de protéines par kilo et par jour au total, le gain supplémentaire plafonne en moyenne. Elle porte sur les compléments de protéines en général, pas seulement sur la whey.
+
+Le vrai sujet est donc ton total. À 60 kg, le repère est d'environ 95 g par jour. À 70 kg, environ 110 g. Si tu ne sais pas où tu en es, regarde ta journée avant d'acheter quoi que ce soit.
+
+## Combien d'aliment faut-il pour remplacer une dose de whey ?
+
+Une dose de 30 g de whey apporte environ 22 g de protéines. Pour comparer sur une base simple, voici ce qu'il faut pour atteindre 25 g de protéines, avec les calories que ça apporte en même temps :
+
+ | | Aliment | Quantité pour 25 g | Calories | Prix
+
+ | Lentilles (poids sec) | 105 g | 350 kcal | ≈ 0,33 €
+
+ | Lait demi-écrémé | 760 ml | 350 kcal | ≈ 0,76 €
+
+ | Fromage blanc | 310 g | 230 kcal | ≈ 0,78 €
+
+ | Whey (pour comparer) | 33 g | 130 kcal | ≈ 0,83 €
+
+ | Haricots rouges en conserve | 330 g | 350 kcal | ≈ 1,00 €
+
+ | Œufs | 4 œufs (200 g) | 280 kcal | ≈ 1,06 €
+
+ | Steak haché 5 % | 125 g | 160 kcal | ≈ 1,09 €
+
+ | Thon au naturel | 100 g | 110 kcal | ≈ 1,10 €
+
+ | Tofu | 190 g | 270 kcal | ≈ 1,15 €
+
+ | Blanc de poulet (cru) | 110 g | 120 kcal | ≈ 1,20 €
+
+Valeurs calculées à partir de repères arrondis d'après la table Ciqual, prix indicatifs en supermarché discount fin 2026. Pour la comparaison complète sur 20 g, voir notre guide sur le prix des protéines.
+
+## Ce que le tableau montre vraiment
+
+Se passer de whey ne fait pas forcément économiser. Au gramme de protéine, elle est moins chère que le thon ou le poulet. Trois choses comptent plus que le prix :
+
+- Les lentilles sont nettement les moins chères, et le lait et le fromage blanc viennent ensuite. Pour les recettes, notre bolognaise aux lentilles est un bon départ.
+
+- Les calories sont un avantage en prise de masse. 25 g de protéines en lentilles apportent 350 kcal, contre 130 kcal pour la whey. Si tu cherches à ajouter des calories, c'est plutôt une bonne nouvelle.
+
+- Le volume est le point faible. Boire 760 ml de lait ou manger 310 g de fromage blanc d'un coup, c'est beaucoup. Répartis sur la journée.
+
+## Une journée sans whey à 120 g de protéines, ça ressemble à quoi ?
+
+Voici un exemple simple avec des produits de supermarché, assez pour le repère de 1,6 g par kilo jusqu'à environ 75 kg :
+
+ | | Moment | Ce que tu manges | Protéines | Calories | Prix
+
+ | Matin | 80 g de flocons, 300 ml de lait | 20 g | 440 kcal | ≈ 0,42 €
+
+ | Midi | 150 g de pâtes crues, 100 g de thon | 43 g | 640 kcal | ≈ 1,28 €
+
+ | Goûter | 200 g de fromage blanc | 16 g | 150 kcal | ≈ 0,50 €
+
+ | Soir | 100 g de lentilles sèches, 3 œufs | 43 g | 550 kcal | ≈ 1,12 €
+
+ | Total | | 122 g | 1 780 kcal | ≈ 3,32 €
+
+Ce total ne suffit pas côté calories pour une prise de masse : ajoute des légumes, de l'huile, du pain, un fruit ou du beurre de cacahuète selon tes besoins. Le but ici est de montrer que le total de protéines tient sans poudre, pour un budget serré.
+
+Pour vérifier ton propre total, tu peux écrire tes repas en une phrase dans BONGO : l'app compte les protéines et les calories sans rien peser. Et sa liste de courses selon ton budget (complète avec BONGO+) t'aide à remplir le panier. Tu trouveras aussi d'autres idées sans poudre dans nos pancakes protéinés sans whey et notre article sur la prise de masse végétarienne.
+
+Les céréales manquent de lysine et les légumineuses d'acides aminés soufrés. En variant les deux dans la journée, comme des lentilles à midi et du pain le soir, tu n'as pas à y penser à chaque repas.
+
+## Dans quels cas la whey peut quand même aider ?
+
+Quand tu n'arrives pas à atteindre ton total avec tes repas, par manque de temps ou d'appétit, ou quand tu veux une solution rapide à préparer. Regarde d'abord combien il te manque par jour. Si c'est 10 g, un yaourt et un verre de lait de plus règlent le problème. Si c'est 30 g tous les jours et que tu n'y arrives pas, la whey devient une option pratique. Ce n'est ni un passage obligé, ni un produit à éviter.
+
+Si tu es allergique aux protéines de lait, ou si un médecin t'a donné des consignes sur tes apports en protéines (par exemple pour une maladie des reins), suis son avis plutôt que ces repères.
+
+Questions fréquentes :
+- Peut-on prendre du muscle sans protéines en poudre ?
+  Oui. Le muscle utilise les protéines quel qu'en soit l'origine. Ce qui compte, c'est le total de la journée, autour de 1,6 g par kilo, avec un entraînement régulier et assez de calories.
+- Quel aliment remplace le mieux la whey ?
+  Pour le prix, les lentilles, le fromage blanc et le lait. Pour la facilité, les œufs, le fromage blanc et le thon. Choisis ce que tu aimes, car c'est ce que tu tiendras.
+- La whey est-elle mauvaise pour la santé ?
+  Pour un adulte en bonne santé, c'est simplement une protéine de lait. Si tu as une allergie au lait, une maladie rénale ou des consignes médicales, demande l'avis de ton médecin avant d'en prendre.
+- Une prise de masse sans whey coûte-t-elle plus cher ?
+  Pas forcément. Les lentilles, le lait et le fromage blanc reviennent moins cher que la whey pour 25 g de protéines. Le thon, le poulet et le tofu coûtent un peu plus.
